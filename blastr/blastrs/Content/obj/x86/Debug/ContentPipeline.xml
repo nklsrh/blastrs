@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>SamplePlayer.png</Source>
+      <Name>SamplePlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\SamplePlayer.xnb</Output>
+      <Time>2011-03-30T22:56:44.671875+11:00</Time>
+    </Item>
+    <Item>
+      <Source>stadia.png</Source>
+      <Name>stadia</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadia.xnb</Output>
+      <Time>2011-03-30T23:07:25.1367187+11:00</Time>
+    </Item>
+    <Item>
+      <Source>SamplePurple.png</Source>
+      <Name>SamplePurple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\SamplePurple.xnb</Output>
+      <Time>2011-03-31T08:35:46.0771484+11:00</Time>
+    </Item>
+    <Item>
+      <Source>stadiaCollisionMap.png</Source>
+      <Name>stadiaCollisionMap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaCollisionMap.xnb</Output>
+      <Time>2011-03-31T08:44:38.7148437+11:00</Time>
+    </Item>
+    <Item>
+      <Source>stadiaWhite.png</Source>
+      <Name>stadiaWhite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaWhite.xnb</Output>
+      <Time>2011-03-31T11:21:14.0517578+11:00</Time>
+    </Item>
+    <Item>
+      <Source>bombot.png</Source>
+      <Name>bombot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\bombot.xnb</Output>
+      <Time>2011-03-31T11:34:02.961914+11:00</Time>
+    </Item>
+    <Item>
+      <Source>HoleyCollisionMap.png</Source>
+      <Name>HoleyCollisionMap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\HoleyCollisionMap.xnb</Output>
+      <Time>2011-03-31T12:43:10.1689453+11:00</Time>
+    </Item>
+    <Item>
+      <Source>stadiaHoley.png</Source>
+      <Name>stadiaHoley</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaHoley.xnb</Output>
+      <Time>2011-03-31T12:43:10.1757812+11:00</Time>
+    </Item>
+    <Item>
+      <Source>star.png</Source>
+      <Name>star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\star.xnb</Output>
+      <Time>2011-03-31T12:48:47.9667968+11:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T00:16:14+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T00:16:16+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T00:16:26+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T00:16:12+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+10:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2010-05-27T18:41:23.727539+10:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

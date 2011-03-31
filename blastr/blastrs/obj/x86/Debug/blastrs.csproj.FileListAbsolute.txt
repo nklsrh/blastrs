@@ -1,0 +1,15 @@
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\SamplePlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\blastrs.exe
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\obj\x86\Debug\blastrs.exe
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\obj\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadia.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\SamplePurple.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaCollisionMap.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaWhite.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\bombot.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\HoleyCollisionMap.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaHoley.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\star.xnb
