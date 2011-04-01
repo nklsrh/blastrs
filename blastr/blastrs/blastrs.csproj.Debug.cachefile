@@ -1,9 +1,9 @@
-Content\stadia.xnb
-Content\bombot.xnb
-Content\stadiaHoley.xnb
-Content\SamplePurple.xnb
-Content\star.xnb
 Content\SamplePlayer.xnb
+Content\stadia.xnb
+Content\SamplePurple.xnb
 Content\stadiaCollisionMap.xnb
-Content\HoleyCollisionMap.xnb
 Content\stadiaWhite.xnb
+Content\bombot.xnb
+Content\HoleyCollisionMap.xnb
+Content\stadiaHoley.xnb
+Content\star.xnb

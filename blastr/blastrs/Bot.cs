@@ -29,7 +29,7 @@ namespace blastrs
         /// </summary>
         public Vector2 Position;
         /// <summary>
-        /// how fast it is moving, in x and y components
+        /// how fast it is moving, in x and y components I THINK I KNOW WHAT U MEAN BY POSITION KTHX
         /// </summary>
         public Vector2 Speed;
         /// <summary>
