@@ -24,8 +24,22 @@ namespace blastrs
         {
             // TODO: Construct any child components here
         }
+        /// <summary>
+        /// where the bot is
+        /// </summary>
         public Vector2 Position;
+        /// <summary>
+        /// how fast it is moving, in x and y components
+        /// </summary>
         public Vector2 Speed;
+        /// <summary>
+        /// how many pixels it can travel in a frame
+        /// </summary>
+        public float SpeedPower;
+        /// <summary>
+        /// where the bot wants to move
+        /// </summary>
+        public Vector2 Target;
         public Texture2D Sprite;
         public float Scale;
         public TimeSpan BlastTimer;
@@ -45,7 +59,8 @@ namespace blastrs
             Position.X = new Random().Next(game.graphics.PreferredBackBufferWidth / 2 - 100, game.graphics.PreferredBackBufferWidth / 2 + 100);
             Position.Y = 0;
             Dropped = false;
-            Speed = new Vector2(new Random().Next(-1, 1), new Random().Next(-1, 1));
+            SpeedPower = 1;
+            //Speed = new Vector2(new Random().Next(-1, 1), new Random().Next(-1, 1));
 
             base.Initialize();
         }
@@ -54,14 +69,33 @@ namespace blastrs
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime, Game1 game)
+        public void Update(GameTime gameTime, Game1 game, Player[] targets)
         {
+
+            Target = targets[0].Position;
+
+            for (int r = 0; r < targets.Rank; r++)
+            {
+                if (Vector2.Distance(Position, targets[r].Position) < Vector2.Distance(Position, Target))
+                {
+                    Target = targets[r].Position;
+                }
+            }
+
+            Speed.X = SpeedPower * (Vector2.Distance(Position, Target) / (Target.X - Position.X));
+            Speed.Y = SpeedPower * (Vector2.Distance(Position, Target) / (Target.Y - Position.Y));
+
+            if (Target.X == Position.X) { Speed.X = 0; }
+            if (Target.Y == Position.Y) { Speed.Y = 0; }
+
             // TODO: Add your update code here
             Position += Speed;
 
             BlastTimer -= gameTime.ElapsedGameTime;
 
-           try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); }catch { }
+            try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); }catch { }
+
+
 
             if (BlastTimer <= TimeSpan.Zero)
             {

@@ -28,3 +28,18 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\obj\x86\Debug\R
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\obj\x86\Debug\blastrs.exe
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\obj\x86\Debug\blastrs.pdb
+E:\iFest\Blastr\bin\x86\Debug\Content\stadia.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\bombot.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\stadiaHoley.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\SamplePurple.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\star.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\SamplePlayer.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\stadiaCollisionMap.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\HoleyCollisionMap.xnb
+E:\iFest\Blastr\bin\x86\Debug\Content\stadiaWhite.xnb
+E:\iFest\Blastr\bin\x86\Debug\blastrs.exe
+E:\iFest\Blastr\bin\x86\Debug\blastrs.pdb
+E:\iFest\Blastr\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\iFest\Blastr\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\iFest\Blastr\obj\x86\Debug\blastrs.exe
+E:\iFest\Blastr\obj\x86\Debug\blastrs.pdb

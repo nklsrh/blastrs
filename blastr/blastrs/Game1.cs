@@ -21,7 +21,7 @@ namespace blastrs
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
-        Player[] Player = new Player[2];
+        public Player[] Player = new Player[2];
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
@@ -127,7 +127,7 @@ namespace blastrs
             
                 if (Bot[0].Dropped)
                 {
-                    Bot[0].Update(gameTime, this);
+                    Bot[0].Update(gameTime, this, Player);
                     try
                     {
                         Stadium.CheckCollisionWithBots(Bot[0], gameTime);
