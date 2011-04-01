@@ -39,7 +39,7 @@ namespace blastrs
         /// <summary>
         /// where the bot wants to move
         /// </summary>
-        public Vector2 Target;
+        public int Target;
         public Texture2D Sprite;
         public float Scale;
         public TimeSpan BlastTimer;
@@ -59,7 +59,9 @@ namespace blastrs
             Position.X = new Random().Next(game.graphics.PreferredBackBufferWidth / 2 - 100, game.graphics.PreferredBackBufferWidth / 2 + 100);
             Position.Y = 0;
             Dropped = false;
-            SpeedPower = 1;
+            SpeedPower = 0.1f;
+
+            
             //Speed = new Vector2(new Random().Next(-1, 1), new Random().Next(-1, 1));
 
             base.Initialize();
@@ -71,23 +73,26 @@ namespace blastrs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Game1 game, Player[] targets)
         {
-            Target = targets[0].Position;
 
-            for (int r = 0; r < targets.Rank; r++)
+            Target = 0;
+
+            for (int r = 0; r < targets.Length; r++)
             {
-                if (Vector2.Distance(Position, targets[r].Position) < Vector2.Distance(Position, Target))
+                if (Vector2.Distance(Position, targets[Target].Position) > Vector2.Distance(Position, targets[r].Position))
                 {
-                    Target = targets[r].Position;
+                    Target = r;
                 }
             }
 
-            Speed.X = SpeedPower * (Vector2.Distance(Position, Target) / (Target.X - Position.X));
-            Speed.Y = SpeedPower * (Vector2.Distance(Position, Target) / (Target.Y - Position.Y));
+            Position = Vector2.SmoothStep(Position, targets[Target].Position, 0.05f);
 
-            if (Target.X == Position.X) { Speed.X = 0; }
-            if (Target.Y == Position.Y) { Speed.Y = 0; }
+            //Speed.X = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.X - Position.X));
+            //Speed.Y = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.Y - Position.Y));
 
-            Position += Speed;
+            if (targets[Target].Position.X == Position.X) { Speed.X = 0; }
+            if (targets[Target].Position.Y == Position.Y) { Speed.Y = 0; }
+
+            //Position += Speed;
 
             BlastTimer -= gameTime.ElapsedGameTime;
 

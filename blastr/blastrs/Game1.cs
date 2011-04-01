@@ -57,6 +57,8 @@ namespace blastrs
                 Player[r].Score = 1000;
             }
 
+            Player[1].Position.X += 150;
+
             Stadium = new Stadium(this);
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW
 

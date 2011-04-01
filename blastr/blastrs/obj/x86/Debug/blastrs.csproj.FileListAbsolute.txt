@@ -50,3 +50,25 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\C
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\greenPlayer.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\redPlayer.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\shadow.xnb
+E:\iFest\Blastr_Revision2\obj\x86\Debug\blastrs.exe
+E:\iFest\Blastr_Revision2\obj\x86\Debug\blastrs.pdb
+E:\iFest\Blastr_Revision2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\iFest\Blastr_Revision2\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\stadiaHoley.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\SamplePurple.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\stadia.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\arenaCollisionMap.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\stadiaCollisionMap.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\bombot.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\shadow.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\bluePlayer.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\SamplePlayer.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\stadiaWhite.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\star.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\HoleyCollisionMap.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\greenPlayer.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\redPlayer.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\font.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\arena.xnb
+E:\iFest\Blastr_Revision2\bin\x86\Debug\blastrs.exe
+E:\iFest\Blastr_Revision2\bin\x86\Debug\blastrs.pdb
