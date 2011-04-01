@@ -43,3 +43,10 @@ E:\iFest\Blastr\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\iFest\Blastr\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 E:\iFest\Blastr\obj\x86\Debug\blastrs.exe
 E:\iFest\Blastr\obj\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\arena.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\font.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\arenaCollisionMap.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bluePlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\greenPlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\redPlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\shadow.xnb

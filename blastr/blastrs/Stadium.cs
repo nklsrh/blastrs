@@ -58,12 +58,12 @@ namespace blastrs
         public void CheckCollisionWithPlayer(Player Player, GameTime gameTime)
         {
             bgColorArr = new Color[1];
-            CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X + 50, (int)(Player.Position.Y - 20), 1, 1), bgColorArr, 0, 1);
+            CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1), bgColorArr, 0, 1);
             bgColor = bgColorArr[0];
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
             {
-                Player.Position = new Vector2(game.graphics.PreferredBackBufferWidth / 2, game.graphics.PreferredBackBufferHeight / 2);
+                Player.Position = new Vector2(1366/2, 768/2);
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
@@ -76,7 +76,7 @@ namespace blastrs
         public void CheckCollisionWithBots(Bot Bot, GameTime gameTime)
         {
             bgColorArr = new Color[1];
-            CollisionMap.GetData<Color>(0, new Rectangle((int)Bot.Position.X + 50, (int)(Bot.Position.Y - 20), 1, 1), bgColorArr, 0, 1);
+            CollisionMap.GetData<Color>(0, new Rectangle((int)Bot.Position.X, (int)Bot.Position.Y, 1, 1), bgColorArr, 0, 1);
             bgColor = bgColorArr[0];
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
@@ -88,9 +88,9 @@ namespace blastrs
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
-            
             sb.Draw(Sprite, CameraPosition, null, Color.White, 0f, new Vector2(Sprite.Width/2, Sprite.Height/2), 1f, SpriteEffects.None, 1f);
             //sb.Draw(CollisionMap, Vector2.Zero, Color.White);
+
             sb.End();
         }
     }

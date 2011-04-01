@@ -34,6 +34,7 @@ namespace blastrs
         public Color TintColour;
         public Texture2D StarImage;
         public bool Blasting;
+        public Texture2D Shadow;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
@@ -54,10 +55,11 @@ namespace blastrs
         {
             // TODO: Add your update code here
             ClampSpeed();
-
+            
             Position += Speed;
             CameraPosition = Position;
-            Scale = Position.Y / 300;
+            //Scale = Position.Y / 300;
+            Scale = 1;
 
             base.Update(gameTime);
         }
@@ -85,6 +87,7 @@ namespace blastrs
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
+            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y), null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
             sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
             if (Blasting)
             {   

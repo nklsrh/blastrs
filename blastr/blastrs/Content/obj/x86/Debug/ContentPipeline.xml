@@ -82,6 +82,69 @@
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\star.xnb</Output>
       <Time>2011-04-01T12:41:30.6416015+11:00</Time>
     </Item>
+    <Item>
+      <Source>arena.png</Source>
+      <Name>arena</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\arena.xnb</Output>
+      <Time>2011-04-01T20:18:34.6777343+11:00</Time>
+    </Item>
+    <Item>
+      <Source>font.spritefont</Source>
+      <Name>font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\font.xnb</Output>
+      <Time>2011-04-01T19:05:02.3544921+11:00</Time>
+    </Item>
+    <Item>
+      <Source>arenaCollisionMap.png</Source>
+      <Name>arenaCollisionMap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\arenaCollisionMap.xnb</Output>
+      <Time>2011-04-01T19:21:33.5546875+11:00</Time>
+    </Item>
+    <Item>
+      <Source>bluePlayer.png</Source>
+      <Name>bluePlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bluePlayer.xnb</Output>
+      <Time>2011-04-01T19:43:27.9013671+11:00</Time>
+    </Item>
+    <Item>
+      <Source>greenPlayer.png</Source>
+      <Name>greenPlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\greenPlayer.xnb</Output>
+      <Time>2011-04-01T19:43:27.9111328+11:00</Time>
+    </Item>
+    <Item>
+      <Source>redPlayer.png</Source>
+      <Name>redPlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\redPlayer.xnb</Output>
+      <Time>2011-04-01T19:43:27.915039+11:00</Time>
+    </Item>
+    <Item>
+      <Source>shadow.png</Source>
+      <Name>shadow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\shadow.xnb</Output>
+      <Time>2011-04-01T20:21:26.1455078+11:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

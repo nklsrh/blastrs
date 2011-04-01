@@ -71,7 +71,6 @@ namespace blastrs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Game1 game, Player[] targets)
         {
-
             Target = targets[0].Position;
 
             for (int r = 0; r < targets.Rank; r++)
@@ -88,14 +87,11 @@ namespace blastrs
             if (Target.X == Position.X) { Speed.X = 0; }
             if (Target.Y == Position.Y) { Speed.Y = 0; }
 
-            // TODO: Add your update code here
             Position += Speed;
 
             BlastTimer -= gameTime.ElapsedGameTime;
 
             try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); }catch { }
-
-
 
             if (BlastTimer <= TimeSpan.Zero)
             {
@@ -111,13 +107,13 @@ namespace blastrs
             base.Update(gameTime);
         }
 
-        public void Drop(GameTime gameTime) //MUST FIX THE WIDTH AND HEIGHT THINGY IT WAS USING UP TOO MUCH CPU IVE SET IT TO DEFAULT 800 by 600
+        public void Drop(GameTime gameTime) //MUST FIX THE WIDTH AND HEIGHT THINGY IT WAS USING UP TOO MUCH CPU IVE SET IT TO DEFAULT 1366 by 768
         {
-            Position.Y += (600 / 2 - Position.Y) / 20f;
-            if (Position.Y >= 600 / 2 - 4)
+            Position.Y += (768 / 2 - Position.Y) / 20f;
+            if (Position.Y >= 768 / 2 - 4)
             {
                 Dropped = true;
-                Position = new Vector2(Position.X, 600 / 2);
+                Position = new Vector2(Position.X, 768 / 2);
             }
         }
 

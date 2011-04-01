@@ -26,6 +26,7 @@ namespace blastrs
         Input Input;
         Blast[] Blast = new Blast[10];
         Bot[] Bot = new Bot[3];
+        public SpriteFont Font;
 
         public Game1()
         {
@@ -41,6 +42,10 @@ namespace blastrs
         /// </summary>
         protected override void Initialize()
         {
+            graphics.PreferredBackBufferWidth = 1366;
+            graphics.PreferredBackBufferHeight = 768;
+            graphics.ApplyChanges();
+
             // TODO: Add your initialization logic here
             for (int r = 0; r <= Player.Rank; r++)
             {
@@ -79,15 +84,19 @@ namespace blastrs
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Player[0].Sprite = Content.Load<Texture2D>("SamplePlayer");
+            Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
             Player[0].StarImage = Content.Load<Texture2D>("star");
-            Player[1].Sprite = Content.Load<Texture2D>("SamplePurple");
+            Player[0].Shadow = Content.Load<Texture2D>("shadow");
+            Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
             Player[1].StarImage = Content.Load<Texture2D>("star");
+            Player[1].Shadow = Content.Load<Texture2D>("shadow");
 
             Bot[0].Sprite = Content.Load<Texture2D>("bombot");
 
-            Stadium.Sprite = Content.Load<Texture2D>("stadiaHoley");
-            Stadium.CollisionMap = Content.Load<Texture2D>("HoleyCollisionMap");
+            Stadium.Sprite = Content.Load<Texture2D>("arena");
+            Stadium.CollisionMap = Content.Load<Texture2D>("arenaCollisionMap");
+
+            Font = Content.Load<SpriteFont>("font");
             // TODO: use this.Content to load your game content here
         }
 
@@ -120,7 +129,7 @@ namespace blastrs
 
                 for (int b = 0; b <= Blast.Rank; b++)
                 {
-                        Blast[b].Update(gameTime, Player[r]); //THERE ARE MORE BLASTS THAN BOTS SO try catch LOLOL
+                        Blast[b].Update(gameTime, Player[r]); 
                 }
             }
 
@@ -171,7 +180,16 @@ namespace blastrs
             // TODO: Add your drawing code here
             Bot[0].Draw(gameTime, spriteBatch);
 
+            DrawScore();
+
             base.Draw(gameTime);
+        }
+
+        public void DrawScore()
+        {
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(25, 25), Color.Orange);
+            spriteBatch.End();
         }
     }
 }
