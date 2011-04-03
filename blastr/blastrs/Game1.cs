@@ -21,12 +21,19 @@ namespace blastrs
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
-        public Player[] Player = new Player[2];
+        public Player[] Player = new Player[3];
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
         Bot[] Bot = new Bot[3];
         public SpriteFont Font;
+        Menu Menu;
+
+        public Random randomsssss;
+
+        //Video video;
+        //VideoPlayer player;
+        Texture2D videoTexture;
 
         public Game1()
         {
@@ -34,12 +41,7 @@ namespace blastrs
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
+
         protected override void Initialize()
         {
             graphics.PreferredBackBufferWidth = 1366;
@@ -47,140 +49,166 @@ namespace blastrs
             graphics.ApplyChanges();
 
             // TODO: Add your initialization logic here
-            for (int r = 0; r <= Player.Rank; r++)
+            for (int r = 0; r < 3; r++)
             {
                 Player[r] = new Player(this);
                 Player[r].Position = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = Vector2.Zero;
-                Player[r].SpeedPower = 0.1f;
+                Player[r].SpeedPower = 0.4f;
                 Player[r].Score = 1000;
+                Player[r].Blasting = false;
             }
-
-            Player[1].Position.X += 150;
 
             Stadium = new Stadium(this);
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW
 
             Input = new Input(this);
-            Input.Initialize(Player[0], Player[1]);
+            Input.Initialize(Player[0], Player[1], Player[2]);
 
-            for (int r = 0; r <= Blast.Rank; r++)
+            for (int r = 0; r < 10; r++)
             {
                 Blast[r] = new Blast(this);
             }
 
-                Bot[0] = new Bot(this);
-                Bot[0].Initialize(this);
-               
+            for (int r = 0; r < 3; r++)
+            {
+                Bot[r] = new Bot(this);
+                Bot[r].Initialize(this);
+            }
+
+            randomsssss = new Random(917329);
 
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
+
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
             Player[0].StarImage = Content.Load<Texture2D>("star");
             Player[0].Shadow = Content.Load<Texture2D>("shadow");
+
             Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
             Player[1].StarImage = Content.Load<Texture2D>("star");
             Player[1].Shadow = Content.Load<Texture2D>("shadow");
 
-            Bot[0].Sprite = Content.Load<Texture2D>("bombot");
+            Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
+            Player[2].StarImage = Content.Load<Texture2D>("star");
+            Player[2].Shadow = Content.Load<Texture2D>("shadow");
 
+            for (int r = 0; r < 3; r++)
+            {
+                Bot[r].Sprite = Content.Load<Texture2D>("bombot2");
+                Bot[r].Shadow = Content.Load<Texture2D>("shadow");
+            }  
+            
             Stadium.Sprite = Content.Load<Texture2D>("arena");
             Stadium.CollisionMap = Content.Load<Texture2D>("arenaCollisionMap");
+            
+            for (int r = 0; r < 10; r++)
+            {
+                Blast[r].Initialize();
+                Blast[r].Sprite = Content.Load<Texture2D>("star");
+            }
 
             Font = Content.Load<SpriteFont>("font");
+
+            //video = Content.Load<Video>("smallIntro2");
+            //player = new VideoPlayer();
+
+        //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
+            Menu = new Menu(this);
+            Menu.CurrentScreen = Menu.Card.MainMenu;
+            Menu.Initialize(this, spriteBatch, Content);
             // TODO: use this.Content to load your game content here
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            Input.Update(gameTime, Blast, spriteBatch);
-            
-            for (int r = 0; r <= Player.Rank; r++)
-            {
-                Player[r].Update(gameTime);
-                Stadium.CheckCollisionWithPlayer(Player[r], gameTime);
 
-                for (int b = 0; b <= Blast.Rank; b++)
+            if (Menu.CurrentScreen == Menu.Card.InGame)
+            {
+                for (int r = 0; r < 3; r++)
                 {
-                        Blast[b].Update(gameTime, Player[r]); 
+                    Player[r].Update(gameTime);
+                    Stadium.CheckCollisionWithPlayer(Player[r], gameTime);
+
+                    for (int b = 0; b < 10; b++)
+                    {
+                        Blast[b].Update(gameTime, Player[r]);
+                    }
+                }
+
+                for (int r = 0; r < 3; r++)
+                {
+                    if (Bot[r].Dropped)
+                    {
+                        Bot[r].Update(gameTime, this, Player, Blast[r+3]);
+
+                        try
+                        {
+                            Stadium.CheckCollisionWithBots(Bot[r], gameTime);
+                        }
+                        catch { }
+                    }
+                    else
+                    {
+                        randomsssss = new Random(123123);
+                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(500, 800), randomsssss.Next(200, 600)));
+                    }
                 }
             }
-
             
-                if (Bot[0].Dropped)
-                {
-                    Bot[0].Update(gameTime, this, Player);
-                    try
-                    {
-                        Stadium.CheckCollisionWithBots(Bot[0], gameTime);
-                    }
-                    catch { }
-                }
-                else
-                {
-                    Bot[0].Drop(gameTime);
-                }
-            
- 
-        //if (Bot[0].Blasted)
-        //            {
-        //                Blast[0 + 3].Position = Bot[0].Position;
-        //                Blast[0 + 3].Radius = 300;
-        //                Blast[0 + 3].Power = 3000;
-        //                Blast[0 + 3].Direction = Vector2.One;
-        //            }
 
-            Window.Title = Bot[0].BlastTimer.ToString();
+            //if (Menu.CurrentScreen = Menu.Card.Intro)
+            //{
+            //    if (player.State == MediaState.Stopped && player.IsLooped = false)
+            //    {
+            //        player.IsLooped = true;
+            //        player.Play(video);
+            //    }
+            //}
+
+            //Window.Title = Bot[0].BlastTimer.ToString();
             // TODO: Add your update logic here
 
+            Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content);
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
 
             Stadium.Draw(gameTime, spriteBatch);
 
-            for (int r = 0; r <= Player.Rank; r++)
+            for (int r = 0; r < 3; r++)
             {
                 Player[r].Draw(gameTime, spriteBatch);
             }
-            // TODO: Add your drawing code here
-            Bot[0].Draw(gameTime, spriteBatch);
+
+            for (int r = 0; r < 3; r++)
+            {
+                Bot[r].Draw(gameTime, spriteBatch);
+            } 
+
+            for (int r = 0; r < 10; r++)
+            {
+                Blast[r].Draw(spriteBatch);
+            }
+
+           // if (player.State != MediaState.Stopped)
+           //     videoTexture = player.GetTexture();
+            Menu.Draw(gameTime, spriteBatch, videoTexture);
 
             DrawScore();
 
