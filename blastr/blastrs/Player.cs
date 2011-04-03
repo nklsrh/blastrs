@@ -91,7 +91,7 @@ namespace blastrs
             sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
             if (Blasting)
             {   
-                sb.Draw(StarImage, Position, null, TintColour, (float)(gameTime.ElapsedGameTime.Milliseconds / 1000f), new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
+                //sb.Draw(StarImage, Position, null, TintColour, (float)(gameTime.ElapsedGameTime.Milliseconds / 1000f), new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
             }
             sb.End();
         }
