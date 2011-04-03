@@ -1,11 +1,4 @@
-Content\SamplePlayer.xnb
-Content\stadia.xnb
-Content\SamplePurple.xnb
-Content\stadiaCollisionMap.xnb
-Content\stadiaWhite.xnb
 Content\bombot.xnb
-Content\HoleyCollisionMap.xnb
-Content\stadiaHoley.xnb
 Content\star.xnb
 Content\arena.xnb
 Content\arenaCollisionMap.xnb
@@ -14,3 +7,7 @@ Content\greenPlayer.xnb
 Content\redPlayer.xnb
 Content\shadow.xnb
 Content\font.xnb
+Content\MainMenu.xnb
+Content\controls.xnb
+Content\PlayerInformation.xnb
+Content\bombot2.xnb

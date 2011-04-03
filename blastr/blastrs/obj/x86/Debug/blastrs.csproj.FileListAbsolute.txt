@@ -13,14 +13,7 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\De
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\HoleyCollisionMap.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\stadiaHoley.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastrs\blastrs\bin\x86\Debug\Content\star.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\SamplePlayer.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadia.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\SamplePurple.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaCollisionMap.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaWhite.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bombot.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\HoleyCollisionMap.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaHoley.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\star.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\blastrs.exe
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\blastrs.pdb
@@ -72,3 +65,7 @@ E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\font.xnb
 E:\iFest\Blastr_Revision2\bin\x86\Debug\Content\arena.xnb
 E:\iFest\Blastr_Revision2\bin\x86\Debug\blastrs.exe
 E:\iFest\Blastr_Revision2\bin\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\MainMenu.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\controls.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\PlayerInformation.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bombot2.xnb
