@@ -28,6 +28,9 @@ namespace blastrs
         public float Power;
         public Vector2 Direction;
         public Circle Area;
+        public Texture2D Sprite;
+        public bool Ready;
+        public TimeSpan blastTime = new TimeSpan(0,0,1);
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
@@ -36,6 +39,9 @@ namespace blastrs
         {
             // TODO: Add your initialization code here
             Area = new Circle();
+            Ready = true;
+            Power = 200;
+            Radius = 250;
             base.Initialize();
         }
 
@@ -46,17 +52,32 @@ namespace blastrs
         public void Update(GameTime gameTime, Player Player)
         {
             // TODO: Add your update code here3
-            Position += Vector2.Multiply(Direction, Power);
-
-            Area.Center = Position;
-            Area.Radius = Radius;
-
-            if (Area.Intersects(new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1)))
+            if (!Ready)
             {
-                Player.Speed += Vector2.Multiply(Direction, 1.5f);
+                blastTime -= gameTime.ElapsedGameTime;
+                Position += Direction;
+
+                Area.Center = Position;
+                Area.Radius = Radius;
+
+                if (Area.Intersects(new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1)))
+                {
+                    Player.Speed += Direction;
+                }
+                if (blastTime <= TimeSpan.Zero)
+                {
+                    Ready = true;
+                    blastTime = new TimeSpan(0, 0, 3);
+                }
             }
 
             base.Update(gameTime);
+        }
+        public void Draw(SpriteBatch sb)
+        {
+            sb.Begin();
+            sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 0f); 
+            sb.End();
         }
     }
 }
