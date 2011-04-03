@@ -2,51 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>SamplePlayer.png</Source>
-      <Name>SamplePlayer</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\SamplePlayer.xnb</Output>
-      <Time>2011-04-01T12:41:30.4902343+11:00</Time>
-    </Item>
-    <Item>
-      <Source>stadia.png</Source>
-      <Name>stadia</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadia.xnb</Output>
-      <Time>2011-04-01T12:41:30.5830078+11:00</Time>
-    </Item>
-    <Item>
-      <Source>SamplePurple.png</Source>
-      <Name>SamplePurple</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\SamplePurple.xnb</Output>
-      <Time>2011-04-01T12:41:30.6240234+11:00</Time>
-    </Item>
-    <Item>
-      <Source>stadiaCollisionMap.png</Source>
-      <Name>stadiaCollisionMap</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaCollisionMap.xnb</Output>
-      <Time>2011-04-01T12:41:30.5039062+11:00</Time>
-    </Item>
-    <Item>
-      <Source>stadiaWhite.png</Source>
-      <Name>stadiaWhite</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaWhite.xnb</Output>
-      <Time>2011-04-01T12:41:30.609375+11:00</Time>
-    </Item>
-    <Item>
       <Source>bombot.png</Source>
       <Name>bombot</Name>
       <Importer>TextureImporter</Importer>
@@ -54,24 +9,6 @@
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bombot.xnb</Output>
       <Time>2011-04-01T12:41:30.5419921+11:00</Time>
-    </Item>
-    <Item>
-      <Source>HoleyCollisionMap.png</Source>
-      <Name>HoleyCollisionMap</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\HoleyCollisionMap.xnb</Output>
-      <Time>2011-04-01T12:41:30.6572265+11:00</Time>
-    </Item>
-    <Item>
-      <Source>stadiaHoley.png</Source>
-      <Name>stadiaHoley</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\stadiaHoley.xnb</Output>
-      <Time>2011-04-01T12:41:30.5976562+11:00</Time>
     </Item>
     <Item>
       <Source>star.png</Source>
@@ -144,6 +81,42 @@
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\font.xnb</Output>
       <Time>2011-04-01T19:05:02.3544921+11:00</Time>
+    </Item>
+    <Item>
+      <Source>MainMenu.png</Source>
+      <Name>MainMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\MainMenu.xnb</Output>
+      <Time>2011-04-03T13:43:14.7977266+10:00</Time>
+    </Item>
+    <Item>
+      <Source>controls.png</Source>
+      <Name>controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\controls.xnb</Output>
+      <Time>2011-04-03T13:43:28.6268281+10:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerInformation.png</Source>
+      <Name>PlayerInformation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\PlayerInformation.xnb</Output>
+      <Time>2011-04-03T15:01:12.4248047+10:00</Time>
+    </Item>
+    <Item>
+      <Source>bombot2.png</Source>
+      <Name>bombot2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bombot2.xnb</Output>
+      <Time>2011-04-03T15:18:02.0429688+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
