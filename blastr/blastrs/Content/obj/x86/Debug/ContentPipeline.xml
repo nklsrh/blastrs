@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\bombot.xnb</Output>
-      <Time>2011-04-04T22:43:47.0197091+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\bombot.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>star.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\star.xnb</Output>
-      <Time>2011-04-04T22:43:47.0097085+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\star.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>arena.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\arena.xnb</Output>
-      <Time>2011-04-04T22:43:47.0237093+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\arena.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>arenaCollisionMap.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\arenaCollisionMap.xnb</Output>
-      <Time>2011-04-04T22:43:46.9887073+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\arenaCollisionMap.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>bluePlayer.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\bluePlayer.xnb</Output>
-      <Time>2011-04-04T22:43:47.0057083+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\bluePlayer.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>greenPlayer.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\greenPlayer.xnb</Output>
-      <Time>2011-04-04T22:43:47.0167089+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\greenPlayer.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>redPlayer.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\redPlayer.xnb</Output>
-      <Time>2011-04-04T22:43:47.0257094+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\redPlayer.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>shadow.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\shadow.xnb</Output>
-      <Time>2011-04-04T22:43:47.0207091+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\shadow.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>MainMenu.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainMenu.xnb</Output>
-      <Time>2011-04-04T22:43:47.0147088+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\MainMenu.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>Controls.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\Controls.xnb</Output>
-      <Time>2011-04-04T22:43:46.9997079+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\Controls.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>PlayerInformation.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\PlayerInformation.xnb</Output>
-      <Time>2011-04-04T22:43:46.9937076+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\PlayerInformation.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>bombot2.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\bombot2.xnb</Output>
-      <Time>2011-04-04T22:43:47.0027081+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\bombot2.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>yellowPlayer.png</Source>
@@ -115,83 +115,47 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\yellowPlayer.xnb</Output>
-      <Time>2011-04-04T22:43:47.0267095+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\yellowPlayer.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
-    <Item>
-      <Source>font.spritefont</Source>
-      <Name>font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2011-04-04T22:43:47.017709+10:00</Time>
-    </Item>
-    <Item>
-      <Source>BoldFont.spritefont</Source>
-      <Name>BoldFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\BoldFont.xnb</Output>
-      <Time>2011-04-04T22:43:47.018709+10:00</Time>
-    </Item>
-    <Item>
-      <Source>SideSwipes\SideSwiper.png</Source>
-      <Name>SideSwipes\SideSwiper</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb</Output>
-      <Time>2011-04-04T22:45:34.0838328+10:00</Time>
-    </Item>
-    <Item>
-      <Source>MainToControls\Controls.png</Source>
-      <Name>MainToControls\Controls</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainToControls\Controls.xnb</Output>
-      <Time>2011-04-04T23:16:42.5919552+10:00</Time>
-    </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\iFest\Blastr_Revision5\Content\</RootDirectory>
-      <LoggerRootDirectory>E:\iFest\Blastr_Revision5\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\iFest\Blastr_Revision5\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2009-05-27T23:16:14+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T00:16:14+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2009-05-27T23:16:06+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2009-05-27T23:16:16+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T00:16:16+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2009-05-27T23:16:26+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T00:16:26+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2009-05-27T23:16:12+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T00:16:12+10:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2009-05-27T23:16:06+10:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+10:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-02-11T16:26:25.3845239+11:00</Value>
+        <Value>2010-05-27T18:41:23.727539+10:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
