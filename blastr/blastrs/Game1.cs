@@ -201,7 +201,7 @@ namespace blastrs
                 Bot[r].Draw(gameTime, spriteBatch);
             } 
 
-            for (int r = 0; r < 10; r++)
+            for (int r = 0; r < 3; r++)
             {
                 Blast[r].Draw(spriteBatch);
             }

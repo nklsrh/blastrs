@@ -41,7 +41,8 @@ namespace blastrs
             Area = new Circle();
             Ready = true;
             Power = 200;
-            Radius = 250;
+            Radius = 150;
+
             base.Initialize();
         }
 
@@ -76,7 +77,10 @@ namespace blastrs
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 0f); 
+            if (!Ready)
+            {
+                sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power / 50, SpriteEffects.None, 0f);
+            }
             sb.End();
         }
     }

@@ -85,13 +85,16 @@ namespace blastrs
 
             if (BlastTimer <= TimeSpan.Zero)
             {
-                Blasted = true;
+                if (!Blasted)
+                {
+                    blast.Position = Position;
+                    blast.Direction = Vector2.Multiply(Speed, 100f);
+                    blast.blastTime = new TimeSpan(0, 0, 1);
+                    blast.Power = 1000;
+                    blast.Ready = false;
+                }
 
-                blast.Position = Position;
-                blast.Direction = new Vector2((float)new Random().Next(-1, 1), (float)new Random().Next(-1, 1));
-                blast.blastTime = new TimeSpan(0, 0, 1);
-                blast.Power = 10;
-                blast.Ready = false;
+                Blasted = true;
 
                 if (BlastTimer <= -(new TimeSpan(0, 0, 2)))
                 {
