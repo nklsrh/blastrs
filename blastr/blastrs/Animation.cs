@@ -42,6 +42,9 @@ namespace blastrs
         public List<List<float>> Opacity_Data = new List<List<float>>();
         public List<List<Int32>> Opacity_KeyFrame = new List<List<Int32>>();
 
+        public List<List<Vector2>> Pivot_Data = new List<List<Vector2>>();
+        public List<List<Int32>> Pivot_KeyFrame = new List<List<Int32>>();
+
         public Int32 EndFrame;
 
         public enum DataType
@@ -106,6 +109,12 @@ namespace blastrs
                         {
                             EndFrame = Position_KeyFrame[index][Position_KeyFrame[index].Count - 1];
                         }
+                        if (Position_KeyFrame[index][0] != 0)
+                        {
+                            Position_KeyFrame[index].Add(Position_KeyFrame[index][0]);
+                            Position_KeyFrame[index][0] = 0;
+                            Position_Data[index].Add(Position_Data[index][0]);
+                        }
                     }
                     else if (dataType == DataType.Opacity)
                     {
@@ -116,6 +125,12 @@ namespace blastrs
                         {
                             EndFrame = Opacity_KeyFrame[index][Opacity_KeyFrame[index].Count - 1];
                         }
+                        if (Opacity_KeyFrame[index][0] != 0)
+                        {
+                            Opacity_KeyFrame[index].Add(Opacity_KeyFrame[index][0]);
+                            Opacity_KeyFrame[index][0] = 0;
+                            Opacity_Data[index].Add(Opacity_Data[index][0]);
+                        }
                     }
                     else if (dataType == DataType.Scale)
                     {
@@ -125,6 +140,12 @@ namespace blastrs
                         if (Scale_KeyFrame[index][Scale_KeyFrame[index].Count - 1] > EndFrame)
                         {
                             EndFrame = Scale_KeyFrame[index][Scale_KeyFrame[index].Count - 1];
+                        }
+                        if (Scale_KeyFrame[index][0] != 0)
+                        {
+                            Scale_KeyFrame[index].Add(Scale_KeyFrame[index][0]);
+                            Scale_KeyFrame[index][0] = 0;
+                            Scale_Data[index].Add(Scale_Data[index][0]);
                         }
                     }
                 }
