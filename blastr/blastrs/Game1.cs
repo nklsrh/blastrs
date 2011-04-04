@@ -18,6 +18,8 @@ namespace blastrs
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public Animation testanim;
+
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
@@ -45,6 +47,8 @@ namespace blastrs
 
         protected override void Initialize()
         {
+            testanim = new Animation(this);
+
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
             graphics.ApplyChanges();
@@ -88,6 +92,8 @@ namespace blastrs
 
         protected override void LoadContent()
         {
+            testanim.LoadAnimationData("Test Animation", Content);
+
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -219,6 +225,15 @@ namespace blastrs
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
             Menu.Draw(gameTime, spriteBatch, videoTexture);
+
+            if (testanim.IsPlaying == false)
+            {
+                testanim.Play();
+            }
+            if (testanim.IsPlaying == true)
+            {
+                testanim.Draw(spriteBatch, gameTime);
+            }
 
             base.Draw(gameTime);
         }

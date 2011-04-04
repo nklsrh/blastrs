@@ -6,8 +6,11 @@ Content\bluePlayer.xnb
 Content\greenPlayer.xnb
 Content\redPlayer.xnb
 Content\shadow.xnb
-Content\font.xnb
 Content\MainMenu.xnb
-Content\controls.xnb
+Content\Controls.xnb
 Content\PlayerInformation.xnb
 Content\bombot2.xnb
+Content\font.xnb
+Content\BoldFont.xnb
+Content\Test Animation\Image1.xnb
+Content\Test Animation\anim.dat
