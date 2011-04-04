@@ -1,24 +1,27 @@
-﻿##Image1
-
-//the scale of the image
-BEGIN Scale
-<0> 1,1
-<50> 5,5
-END Scale
+﻿##SideSwiper
 	
 //the opacity of the image
 BEGIN Opacity
-<10> 1
-<50> 0
+<0> 0.5
+<20> 1
+<40> 0.5
 END Opacity
 
-//the pivot of the image
+//the pivot (origin) of the image
 BEGIN Pivot
-<0> 0,0
+<0> 1000,25
 END Pivot
 
 BEGIN Position
-<15> 50,50
-<45> 1000,-10
-<60> 200,200
+<0> 683,450
+<40> 783,418
 END Position
+
+//the rotation of the image, in degrees
+BEGIN Rotation
+<0> -18
+END Rotation
+
+BEGIN Scale
+<0> 1,0.5
+END Scale
