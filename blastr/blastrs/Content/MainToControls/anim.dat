@@ -1,0 +1,23 @@
+﻿##Image1
+
+//the scale of the image
+BEGIN Scale
+<0> 1,1
+<50> 1,1
+END Scale
+	
+//the opacity of the image
+BEGIN Opacity
+<10> 1
+<50> 0
+END Opacity
+
+//the pivot of the image
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 0,0
+<300> -1366,0
+END Position
