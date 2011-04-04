@@ -47,11 +47,21 @@ namespace blastrs
 
         public Int32 EndFrame;
 
+        public Int32 CurrentFrame;
+        public Int32 PlayCount;
+        public Boolean IsPlaying;
+
+        public List<Vector2> Position = new List<Vector2>();
+        public List<Vector2> Pivot = new List<Vector2>();
+        public List<float> Opacity = new List<float>();
+        public List<Vector2> Scale = new List<Vector2>();
+
         public enum DataType
         {
             Position,
             Scale,
-            Opacity
+            Opacity,
+            Pivot
         }
 
         /// <summary>
@@ -84,6 +94,15 @@ namespace blastrs
 
                     Opacity_Data.Add(new List<float>());
                     Opacity_KeyFrame.Add(new List<Int32>());
+
+                    Pivot_Data.Add(new List<Vector2>());
+                    Pivot_KeyFrame.Add(new List<Int32>());
+
+                    Position.Add(Vector2.Zero);
+                    Opacity.Add(1);
+                    Scale.Add(Vector2.One);
+                    Pivot.Add(Vector2.Zero);
+
                     index += 1;
                 }
                 else if (line == "BEGIN " + DataType.Position.ToString())
@@ -97,6 +116,10 @@ namespace blastrs
                 else if (line == "BEGIN " + DataType.Opacity.ToString())
                 {
                     dataType = DataType.Opacity;
+                }
+                else if (line == "BEGIN " + DataType.Pivot.ToString())
+                {
+                    dataType = DataType.Pivot;
                 }
                 else if (line.StartsWith("<"))
                 {
@@ -148,7 +171,164 @@ namespace blastrs
                             Scale_Data[index].Add(Scale_Data[index][0]);
                         }
                     }
+                    else if (dataType == DataType.Pivot)
+                    {
+                        Pivot_KeyFrame[index].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
+                        Pivot_Data[index].Add(new Vector2((float)Convert.ToDouble(line.Split(' ').Last().Split(',').First()), (float)Convert.ToDouble(line.Split(' ').Last().Split(',').Last())));
+
+                        if (Pivot_KeyFrame[index][Pivot_KeyFrame[index].Count - 1] > EndFrame)
+                        {
+                            EndFrame = Pivot_KeyFrame[index][Pivot_KeyFrame[index].Count - 1];
+                        }
+                        if (Pivot_KeyFrame[index][0] != 0)
+                        {
+                            Pivot_KeyFrame[index].Add(Pivot_KeyFrame[index][0]);
+                            Pivot_KeyFrame[index][0] = 0;
+                            Pivot_Data[index].Add(Pivot_Data[index][0]);
+                        }
+                    }
                 }
+            }
+            reader.Close();
+
+            for (int i = 0; i < Images.Count; i++)
+            {
+                try
+                {
+                    if (Position_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Position_KeyFrame[i].Add(EndFrame);
+                        Position_Data[i].Add(Position_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Position_KeyFrame[i].Add(0);
+                    Position_KeyFrame[i].Add(EndFrame);
+                    Position_Data[i].Add(new Vector2(0,0));
+                    Position_Data[i].Add(new Vector2(0,0));
+                }
+
+                try
+                {
+                    if (Opacity_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Opacity_KeyFrame[i].Add(EndFrame);
+                        Opacity_Data[i].Add(Opacity_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Opacity_KeyFrame[i].Add(0);
+                    Opacity_KeyFrame[i].Add(EndFrame);
+                    Opacity_Data[i].Add(1);
+                    Opacity_Data[i].Add(1);
+                }
+
+                try
+                {
+                    if (Scale_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Scale_KeyFrame[i].Add(EndFrame);
+                        Scale_Data[i].Add(Scale_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Scale_KeyFrame[i].Add(0);
+                    Scale_KeyFrame[i].Add(EndFrame);
+                    Scale_Data[i].Add(new Vector2(1, 1));
+                    Scale_Data[i].Add(new Vector2(1,1));
+                }
+
+                try
+                {
+                    if (Pivot_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Pivot_KeyFrame[i].Add(EndFrame);
+                        Pivot_Data[i].Add(Pivot_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Pivot_KeyFrame[i].Add(0);
+                    Pivot_KeyFrame[i].Add(EndFrame);
+                    Pivot_Data[i].Add(new Vector2(0, 0));
+                    Pivot_Data[i].Add(new Vector2(0,0));
+                }
+            }
+        }
+
+        /// <summary>
+        /// plays the given animation and draws it with respect to the parent object
+        /// </summary>
+        /// <param name="parent"></param>
+        public void Draw(Player parent, SpriteBatch spriteBatch)
+        {
+
+        }
+
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+            for (int i = 0; i < Images.Count; i++)
+            {
+                for (int j = 0; j < Position_KeyFrame[i].Count; j++)
+                {
+                    if (Position_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Position[i] = Vector2.Lerp(Position_Data[i][j - 1], Position_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Position_KeyFrame[i][j - 1])) / Convert.ToDouble(Position_KeyFrame[i][j] - Position_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Scale_KeyFrame[i].Count; j++)
+                {
+                    if (Scale_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Scale[i] = Vector2.Lerp(Scale_Data[i][j - 1], Scale_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Scale_KeyFrame[i][j - 1])) / Convert.ToDouble(Scale_KeyFrame[i][j] - Scale_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Pivot_KeyFrame[i].Count; j++)
+                {
+                    if (Pivot_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Pivot[i] = Vector2.Lerp(Pivot_Data[i][j - 1], Pivot_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Pivot_KeyFrame[i][j - 1])) / Convert.ToDouble(Pivot_KeyFrame[i][j] - Pivot_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Opacity_KeyFrame[i].Count; j++)
+                {
+                    if (Opacity_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Opacity[i] = MathHelper.Lerp(Opacity_Data[i][j - 1], Opacity_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Opacity_KeyFrame[i][j - 1])) / Convert.ToDouble(Opacity_KeyFrame[i][j] - Opacity_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+
+                spriteBatch.Begin();
+                spriteBatch.Draw(Images[i], Position[i], null, new Color(1, 1, 1, Opacity[i]), 0, Pivot[i], Scale[i], SpriteEffects.None, 1);
+                spriteBatch.End();
+            }
+
+            CurrentFrame += 1;
+
+            if (CurrentFrame > EndFrame)
+            {
+                IsPlaying = false;
+                CurrentFrame = 0;
+            }
+        }
+
+        public void Draw(Vector2 parent, SpriteBatch spriteBatch)
+        {
+
+        }
+
+        public void Play()
+        {
+            if (IsPlaying == false)
+            {
+                IsPlaying = true;
             }
         }
     }
