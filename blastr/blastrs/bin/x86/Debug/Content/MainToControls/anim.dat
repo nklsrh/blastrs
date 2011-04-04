@@ -2,19 +2,18 @@
 	
 //the opacity of the image
 BEGIN Opacity
-<0> 0
-<30> 1
+<0> 1
 END Opacity
 
 BEGIN Scale
-<0> 2,2
-<30> 1,1
+<0> 1,1
 END Scale
 
 BEGIN Pivot
-<0> 683,384
+<0> 0,0
 END Pivot
 
 BEGIN Position
-<0> 683,384
+<0> 1366,1
+<20> 0,0
 END Position

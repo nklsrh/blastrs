@@ -11,9 +11,10 @@ Content\Controls.xnb
 Content\PlayerInformation.xnb
 Content\bombot2.xnb
 Content\yellowPlayer.xnb
+Content\MainToControls\Controls.xnb
 Content\font.xnb
 Content\BoldFont.xnb
 Content\SideSwipes\SideSwiper.xnb
-Content\MainToControls\Controls.xnb
+Content\ControlsToChars\PlayerInformation.xnb
+Content\ControlsToChars\anim.dat
 Content\MainToControls\anim.dat
-Content\SideSwipes\anim.dat

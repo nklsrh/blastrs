@@ -132,18 +132,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ControlsToChars\anim.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>anim</Name>
+    </None>
     <None Include="MainToControls\anim.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>anim</Name>
     </None>
     <None Include="SideSwipes\anim.dat">
       <Name>anim</Name>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="yellowPlayer.png">
       <Name>yellowPlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainToControls\Controls.png">
+      <Name>Controls</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -156,8 +166,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainToControls\Controls.png">
-      <Name>Controls</Name>
+    <Compile Include="ControlsToChars\PlayerInformation.png">
+      <Name>PlayerInformation</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
