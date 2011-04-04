@@ -1,16 +1,16 @@
+Content\bombot.xnb
 Content\star.xnb
-Content\BoldFont.xnb
 Content\arena.xnb
+Content\arenaCollisionMap.xnb
+Content\bluePlayer.xnb
 Content\greenPlayer.xnb
 Content\redPlayer.xnb
 Content\shadow.xnb
-Content\bombot.xnb
-Content\bluePlayer.xnb
-Content\bombot2.xnb
+Content\MainMenu.xnb
 Content\Controls.xnb
 Content\PlayerInformation.xnb
+Content\bombot2.xnb
 Content\Test Animation\Image1.xnb
-Content\Test Animation\anim.dat
 Content\font.xnb
-Content\MainMenu.xnb
-Content\arenaCollisionMap.xnb
+Content\BoldFont.xnb
+Content\Test Animation\anim.dat

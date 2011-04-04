@@ -91,3 +91,25 @@ E:\iFest\Blastr_Revision4\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\iFest\Blastr_Revision4\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 E:\iFest\Blastr_Revision4\bin\x86\Debug\Content\Test Animation\Image1.xnb
 E:\iFest\Blastr_Revision4\bin\x86\Debug\Content\Test Animation\anim.dat
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\obj\x86\Debug\blastrs.exe
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\obj\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\bombot.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\star.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\arena.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\arenaCollisionMap.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\bluePlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\greenPlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\redPlayer.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\shadow.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\MainMenu.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\Controls.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\PlayerInformation.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\bombot2.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\Test Animation\Image1.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\font.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\BoldFont.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\Test Animation\anim.dat
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\blastrs.exe
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\blastrs.pdb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
