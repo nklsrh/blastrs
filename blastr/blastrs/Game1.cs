@@ -26,8 +26,9 @@ namespace blastrs
         Input Input;
         Blast[] Blast = new Blast[10];
         Bot[] Bot = new Bot[3];
-        public SpriteFont Font;
+        public SpriteFont Font, BoldFont;
         Menu Menu;
+        TimeSpan CountDownTime;
 
         public Random randomsssss;
 
@@ -79,6 +80,8 @@ namespace blastrs
 
             randomsssss = new Random(917329);
 
+            CountDownTime = new TimeSpan(0, 3, 0);
+
             base.Initialize();
         }
 
@@ -116,7 +119,7 @@ namespace blastrs
             }
 
             Font = Content.Load<SpriteFont>("font");
-
+            BoldFont = Content.Load<SpriteFont>("BoldFont");
             //video = Content.Load<Video>("smallIntro2");
             //player = new VideoPlayer();
 
@@ -165,6 +168,8 @@ namespace blastrs
                         Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(500, 800), randomsssss.Next(200, 600)));
                     }
                 }
+
+                CountDownTime -= gameTime.ElapsedGameTime;
             }
             
 
@@ -189,37 +194,45 @@ namespace blastrs
         {
             GraphicsDevice.Clear(Color.Black);
 
-            Stadium.Draw(gameTime, spriteBatch);
-
-            for (int r = 0; r < 3; r++)
+            if (Menu.CurrentScreen == Menu.Card.InGame)
             {
-                Player[r].Draw(gameTime, spriteBatch);
+                Stadium.Draw(gameTime, spriteBatch);
+
+                for (int r = 0; r < 3; r++)
+                {
+                    Player[r].Draw(gameTime, spriteBatch);
+                }
+
+                for (int r = 0; r < 3; r++)
+                {
+                    Bot[r].Draw(gameTime, spriteBatch);
+                }
+
+                for (int r = 0; r < 3; r++)
+                {
+                    Blast[r].Draw(spriteBatch);
+                }
+
+                DrawScore();
             }
 
-            for (int r = 0; r < 3; r++)
-            {
-                Bot[r].Draw(gameTime, spriteBatch);
-            } 
-
-            for (int r = 0; r < 3; r++)
-            {
-                Blast[r].Draw(spriteBatch);
-            }
-
-           // if (player.State != MediaState.Stopped)
-           //     videoTexture = player.GetTexture();
+            // if (player.State != MediaState.Stopped)
+            //     videoTexture = player.GetTexture();
             Menu.Draw(gameTime, spriteBatch, videoTexture);
-
-            DrawScore();
 
             base.Draw(gameTime);
         }
 
         public void DrawScore()
         {
-            spriteBatch.Begin();
-            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(25, 25), Color.Orange);
-            spriteBatch.End();
+                spriteBatch.Begin();
+                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(80, 350), new Color(232, 156, 54));
+                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1230, 350), new Color(179, 194, 219));
+                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 650), new Color(179, 219, 189));
+                //spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(80, 380), new Color(232, 156, 54));
+                spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(5, 5), new Color(150, 150, 150));
+                spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 40), new Color(222, 222, 222));
+                spriteBatch.End();
         }
     }
 }
