@@ -26,17 +26,22 @@ namespace blastrs
         }
         bool KeyPressed;
         Player[] Player;
+
+        Animation MainToControls;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
-        public void Initialize(Player p1, Player p2, Player p3)
+        public void Initialize(Game1 game, Player p1, Player p2, Player p3)
         {
             // TODO: Add your initialization code here
             Player = new Player[3];
             Player[0] = p1;
             Player[1] = p2;
             Player[2] = p3;
+
+            MainToControls = new Animation(game);
+            MainToControls.LoadAnimationData("MainToControls", game.Content);
 
             base.Initialize();
         }
@@ -126,7 +131,7 @@ namespace blastrs
             #endregion GameControls
             if (KeyPressed)
             {
-                KeyPressed = false;
+                
                 if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
@@ -137,7 +142,7 @@ namespace blastrs
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
                 {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Enter))
+                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
                     {
                         menu.CurrentScreen = blastrs.Menu.Card.InGame;
                         menu.Initialize(game, spriteBatch, content);
@@ -145,12 +150,24 @@ namespace blastrs
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
                 {
+                    //if (MainToControls.IsPlaying == false)
+                    //{
+                    //    MainToControls.Play();
+                    //}
+                    //if (MainToControls.IsPlaying == true)
+                    //{
+                    //    MainToControls.Draw(spriteBatch, gameTime);
+                    //}
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
                     {
-                        menu.CurrentScreen = blastrs.Menu.Card.Controls;
-                        menu.Initialize(game, spriteBatch, content);
+                        //if (MainToControls.CurrentFrame == MainToControls.EndFrame) //MAIN MENU SCREEN TO CONTROLSSCREEN
+                        //{
+                            menu.CurrentScreen = blastrs.Menu.Card.Controls;
+                            menu.Initialize(game, spriteBatch, content);
+                        //}
                     }
                 }
+                KeyPressed = false;
             }
             else
             {

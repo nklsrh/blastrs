@@ -132,6 +132,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MainToControls\anim.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>anim</Name>
+    </None>
     <None Include="Test Animation\anim.dat">
       <Name>anim</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -140,6 +144,20 @@
   <ItemGroup>
     <Compile Include="Test Animation\Image1.png">
       <Name>Image1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainToControls\Image1.png">
+      <Name>Image1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="yellowPlayer.png">
+      <Name>yellowPlayer</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

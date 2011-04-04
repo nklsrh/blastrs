@@ -18,12 +18,15 @@ namespace blastrs
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        public Animation testanim;
+        //public Animation testanim;
+        public Animation Animation;
 
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
-        public Player[] Player = new Player[3];
+        public Player[] Player;
+        public int NumberOfPlayers;
+
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
@@ -47,14 +50,18 @@ namespace blastrs
 
         protected override void Initialize()
         {
-            testanim = new Animation(this);
+            //testanim = new Animation(this);
+            Animation = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
             graphics.ApplyChanges();
 
+            NumberOfPlayers = 4;
+            Player = new Player[NumberOfPlayers];
+
             // TODO: Add your initialization logic here
-            for (int r = 0; r < 3; r++)
+            for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Player[r] = new Player(this);
                 Player[r].Position = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
@@ -69,7 +76,7 @@ namespace blastrs
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW
 
             Input = new Input(this);
-            Input.Initialize(Player[0], Player[1], Player[2]);
+            Input.Initialize(this, Player[0], Player[1], Player[2]);
 
             for (int r = 0; r < 10; r++)
             {
@@ -83,7 +90,6 @@ namespace blastrs
             }
 
             randomsssss = new Random(917329);
-
             CountDownTime = new TimeSpan(0, 3, 0);
 
             base.Initialize();
@@ -92,7 +98,8 @@ namespace blastrs
 
         protected override void LoadContent()
         {
-            testanim.LoadAnimationData("Test Animation", Content);
+            //testanim.LoadAnimationData("Test Animation", Content);
+
 
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -108,6 +115,10 @@ namespace blastrs
             Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
             Player[2].StarImage = Content.Load<Texture2D>("star");
             Player[2].Shadow = Content.Load<Texture2D>("shadow");
+
+            Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
+            Player[3].StarImage = Content.Load<Texture2D>("star");
+            Player[3].Shadow = Content.Load<Texture2D>("shadow");
 
             for (int r = 0; r < 3; r++)
             {
@@ -145,7 +156,7 @@ namespace blastrs
 
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < NumberOfPlayers; r++)
                 {
                     Player[r].Update(gameTime);
                     Stadium.CheckCollisionWithPlayer(Player[r], gameTime);
@@ -192,6 +203,7 @@ namespace blastrs
             // TODO: Add your update logic here
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content);
+
             base.Update(gameTime);
         }
 
@@ -204,7 +216,7 @@ namespace blastrs
             {
                 Stadium.Draw(gameTime, spriteBatch);
 
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < NumberOfPlayers; r++)
                 {
                     Player[r].Draw(gameTime, spriteBatch);
                 }
@@ -221,30 +233,20 @@ namespace blastrs
 
                 DrawScore();
             }
-
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
             Menu.Draw(gameTime, spriteBatch, videoTexture);
-
-            if (testanim.IsPlaying == false)
-            {
-                testanim.Play();
-            }
-            if (testanim.IsPlaying == true)
-            {
-                testanim.Draw(spriteBatch, gameTime);
-            }
-
+        
             base.Draw(gameTime);
         }
 
         public void DrawScore()
         {
                 spriteBatch.Begin();
-                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(80, 350), new Color(232, 156, 54));
-                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1230, 350), new Color(179, 194, 219));
-                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 650), new Color(179, 219, 189));
-                //spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(80, 380), new Color(232, 156, 54));
+                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 500), new Color(232, 156, 54));
+                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 500), new Color(179, 194, 219));
+                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 600), new Color(179, 219, 189));
+                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 600), new Color(243, 237, 217));
                 spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(5, 5), new Color(150, 150, 150));
                 spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 40), new Color(222, 222, 222));
                 spriteBatch.End();
