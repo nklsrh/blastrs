@@ -45,6 +45,9 @@ namespace blastrs
         public List<List<Vector2>> Pivot_Data = new List<List<Vector2>>();
         public List<List<Int32>> Pivot_KeyFrame = new List<List<Int32>>();
 
+        public List<List<float>> Rotation_Data = new List<List<float>>();
+        public List<List<Int32>> Rotation_KeyFrame = new List<List<Int32>>();
+
         public Int32 EndFrame;
 
         public Int32 CurrentFrame;
@@ -55,13 +58,15 @@ namespace blastrs
         public List<Vector2> Pivot = new List<Vector2>();
         public List<float> Opacity = new List<float>();
         public List<Vector2> Scale = new List<Vector2>();
+        public List<float> Rotation = new List<float>();
 
         public enum DataType
         {
             Position,
             Scale,
             Opacity,
-            Pivot
+            Pivot,
+            Rotation
         }
 
         /// <summary>
@@ -98,10 +103,14 @@ namespace blastrs
                     Pivot_Data.Add(new List<Vector2>());
                     Pivot_KeyFrame.Add(new List<Int32>());
 
+                    Rotation_Data.Add(new List<float>());
+                    Rotation_KeyFrame.Add(new List<Int32>());
+
                     Position.Add(Vector2.Zero);
                     Opacity.Add(1);
                     Scale.Add(Vector2.One);
                     Pivot.Add(Vector2.Zero);
+                    Rotation.Add(0);
 
                     index += 1;
                 }
@@ -120,6 +129,10 @@ namespace blastrs
                 else if (line == "BEGIN " + DataType.Pivot.ToString())
                 {
                     dataType = DataType.Pivot;
+                }
+                else if (line == "BEGIN " + DataType.Rotation.ToString())
+                {
+                    dataType = DataType.Rotation;
                 }
                 else if (line.StartsWith("<"))
                 {
@@ -185,6 +198,22 @@ namespace blastrs
                             Pivot_KeyFrame[index].Add(Pivot_KeyFrame[index][0]);
                             Pivot_KeyFrame[index][0] = 0;
                             Pivot_Data[index].Add(Pivot_Data[index][0]);
+                        }
+                    }
+                    else if (dataType == DataType.Rotation)
+                    {
+                        Rotation_KeyFrame[index].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
+                        Rotation_Data[index].Add((float)Convert.ToDouble(line.Split(' ').Last()));
+
+                        if (Rotation_KeyFrame[index][Rotation_KeyFrame[index].Count - 1] > EndFrame)
+                        {
+                            EndFrame = Rotation_KeyFrame[index][Rotation_KeyFrame[index].Count - 1];
+                        }
+                        if (Rotation_KeyFrame[index][0] != 0)
+                        {
+                            Rotation_KeyFrame[index].Add(Rotation_KeyFrame[index][0]);
+                            Rotation_KeyFrame[index][0] = 0;
+                            Rotation_Data[index].Add(Rotation_Data[index][0]);
                         }
                     }
                 }
@@ -256,6 +285,22 @@ namespace blastrs
                     Pivot_Data[i].Add(new Vector2(0, 0));
                     Pivot_Data[i].Add(new Vector2(0,0));
                 }
+
+                try
+                {
+                    if (Rotation_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Rotation_KeyFrame[i].Add(EndFrame);
+                        Rotation_Data[i].Add(Rotation_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Rotation_KeyFrame[i].Add(0);
+                    Rotation_KeyFrame[i].Add(EndFrame);
+                    Rotation_Data[i].Add(0);
+                    Rotation_Data[i].Add(0);
+                }
             }
         }
 
@@ -304,9 +349,17 @@ namespace blastrs
                         break;
                     }
                 }
+                for (int j = 0; j < Rotation_KeyFrame[i].Count; j++)
+                {
+                    if (Rotation_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Rotation[i] = MathHelper.Lerp(Rotation_Data[i][j - 1], Rotation_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Rotation_KeyFrame[i][j - 1])) / Convert.ToDouble(Rotation_KeyFrame[i][j] - Rotation_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
 
                 spriteBatch.Begin();
-                spriteBatch.Draw(Images[i], Position[i], null, new Color(1, 1, 1, Opacity[i]), 0, Pivot[i], Scale[i], SpriteEffects.None, 1);
+                spriteBatch.Draw(Images[i], Position[i], null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                 spriteBatch.End();
             }
 
