@@ -18,7 +18,7 @@ namespace blastrs
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        //public Animation testanim;
+        public Animation SideSwipers;
         public Animation Animation;
 
         public GraphicsDeviceManager graphics;
@@ -50,7 +50,7 @@ namespace blastrs
 
         protected override void Initialize()
         {
-            //testanim = new Animation(this);
+            SideSwipers = new Animation(this);
             Animation = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
@@ -98,7 +98,7 @@ namespace blastrs
 
         protected override void LoadContent()
         {
-            //testanim.LoadAnimationData("Test Animation", Content);
+            SideSwipers.LoadAnimationData("SideSwipes", Content);
 
 
 
@@ -236,6 +236,15 @@ namespace blastrs
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
             Menu.Draw(gameTime, spriteBatch, videoTexture);
+
+            if (SideSwipers.IsPlaying == false)
+            {
+                SideSwipers.Play();
+            }
+            if (SideSwipers.IsPlaying == true)
+            {
+                SideSwipers.Draw(spriteBatch, gameTime);
+            }
         
             base.Draw(gameTime);
         }

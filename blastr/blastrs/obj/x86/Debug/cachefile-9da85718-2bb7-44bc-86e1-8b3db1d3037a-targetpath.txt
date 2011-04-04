@@ -10,10 +10,10 @@ Content\MainMenu.xnb
 Content\Controls.xnb
 Content\PlayerInformation.xnb
 Content\bombot2.xnb
-Content\Test Animation\Image1.xnb
-Content\font.xnb
-Content\BoldFont.xnb
 Content\MainToControls\Image1.xnb
 Content\yellowPlayer.xnb
+Content\font.xnb
+Content\BoldFont.xnb
+Content\SideSwipes\SideSwiper.xnb
 Content\MainToControls\anim.dat
-Content\Test Animation\anim.dat
+Content\SideSwipes\anim.dat
