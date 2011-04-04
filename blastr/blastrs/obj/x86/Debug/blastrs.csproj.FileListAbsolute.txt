@@ -118,7 +118,6 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x8
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\bin\x86\Debug\Content\yellowPlayer.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\BoldFont.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\bombot.xnb
-E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainToControls\Image1.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\shadow.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\bombot2.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\font.xnb
@@ -141,3 +140,4 @@ E:\iFest\Blastr_Revision5\obj\x86\Debug\blastrs.exe
 E:\iFest\Blastr_Revision5\obj\x86\Debug\blastrs.pdb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb
 E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\SideSwipes\anim.dat
+E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainToControls\Controls.xnb

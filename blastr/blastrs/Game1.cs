@@ -19,7 +19,7 @@ namespace blastrs
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         public Animation SideSwipers;
-        public Animation Animation;
+        public Animation MenuToControls;
 
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
@@ -51,7 +51,7 @@ namespace blastrs
         protected override void Initialize()
         {
             SideSwipers = new Animation(this);
-            Animation = new Animation(this);
+            MenuToControls = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
@@ -99,7 +99,7 @@ namespace blastrs
         protected override void LoadContent()
         {
             SideSwipers.LoadAnimationData("SideSwipes", Content);
-
+            MenuToControls.LoadAnimationData("MainToControls", Content);
 
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -247,6 +247,16 @@ namespace blastrs
                 {
                     SideSwipers.Draw(spriteBatch, gameTime);
                 }
+            }
+
+            if (MenuToControls.IsPlaying == true)
+            {
+                MenuToControls.Draw(spriteBatch, gameTime);
+            }
+            if (MenuToControls.CurrentFrame == MenuToControls.EndFrame)
+            {
+                Menu.CurrentScreen = Menu.Card.Controls;
+                Menu.Initialize(this, spriteBatch, Content);
             }
         
             base.Draw(gameTime);

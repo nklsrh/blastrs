@@ -162,8 +162,9 @@ namespace blastrs
                     {
                         //if (MainToControls.CurrentFrame == MainToControls.EndFrame) //MAIN MENU SCREEN TO CONTROLSSCREEN
                         //{
-                            menu.CurrentScreen = blastrs.Menu.Card.Controls;
-                            menu.Initialize(game, spriteBatch, content);
+                        game.MenuToControls.Play();
+                            //menu.CurrentScreen = blastrs.Menu.Card.Controls;
+                            //menu.Initialize(game, spriteBatch, content);
                         //}
                     }
                 }

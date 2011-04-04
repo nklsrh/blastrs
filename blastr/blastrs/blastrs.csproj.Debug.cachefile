@@ -1,6 +1,5 @@
 Content\BoldFont.xnb
 Content\bombot.xnb
-Content\MainToControls\Image1.xnb
 Content\shadow.xnb
 Content\bluePlayer.xnb
 Content\redPlayer.xnb
@@ -11,6 +10,7 @@ Content\yellowPlayer.xnb
 Content\font.xnb
 Content\star.xnb
 Content\PlayerInformation.xnb
+Content\MainToControls\Controls.xnb
 Content\MainMenu.xnb
 Content\Controls.xnb
 Content\SideSwipes\anim.dat

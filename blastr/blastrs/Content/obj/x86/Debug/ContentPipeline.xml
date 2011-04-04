@@ -110,15 +110,6 @@
       <Time>2011-04-04T22:43:47.0027081+10:00</Time>
     </Item>
     <Item>
-      <Source>MainToControls\Image1.png</Source>
-      <Name>MainToControls\Image1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainToControls\Image1.xnb</Output>
-      <Time>2011-04-04T22:43:46.9217035+10:00</Time>
-    </Item>
-    <Item>
       <Source>yellowPlayer.png</Source>
       <Name>yellowPlayer</Name>
       <Importer>TextureImporter</Importer>
@@ -153,6 +144,15 @@
       <Options>None</Options>
       <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb</Output>
       <Time>2011-04-04T22:45:34.0838328+10:00</Time>
+    </Item>
+    <Item>
+      <Source>MainToControls\Controls.png</Source>
+      <Name>MainToControls\Controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\iFest\Blastr_Revision5\bin\x86\Debug\Content\MainToControls\Controls.xnb</Output>
+      <Time>2011-04-04T23:16:42.5919552+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

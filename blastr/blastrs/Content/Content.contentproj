@@ -142,13 +142,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainToControls\Image1.png">
-      <Name>Image1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="yellowPlayer.png">
       <Name>yellowPlayer</Name>
       <Importer>TextureImporter</Importer>
@@ -158,6 +151,13 @@
   <ItemGroup>
     <Compile Include="SideSwipes\SideSwiper.png">
       <Name>SideSwiper</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainToControls\Controls.png">
+      <Name>Controls</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
