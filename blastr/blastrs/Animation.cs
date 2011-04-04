@@ -374,7 +374,61 @@ namespace blastrs
 
         public void Draw(Vector2 parent, SpriteBatch spriteBatch)
         {
+            for (int i = 0; i < Images.Count; i++)
+            {
+                for (int j = 0; j < Position_KeyFrame[i].Count; j++)
+                {
+                    if (Position_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Position[i] = Vector2.Lerp(Position_Data[i][j - 1], Position_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Position_KeyFrame[i][j - 1])) / Convert.ToDouble(Position_KeyFrame[i][j] - Position_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Scale_KeyFrame[i].Count; j++)
+                {
+                    if (Scale_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Scale[i] = Vector2.Lerp(Scale_Data[i][j - 1], Scale_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Scale_KeyFrame[i][j - 1])) / Convert.ToDouble(Scale_KeyFrame[i][j] - Scale_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Pivot_KeyFrame[i].Count; j++)
+                {
+                    if (Pivot_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Pivot[i] = Vector2.Lerp(Pivot_Data[i][j - 1], Pivot_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Pivot_KeyFrame[i][j - 1])) / Convert.ToDouble(Pivot_KeyFrame[i][j] - Pivot_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Opacity_KeyFrame[i].Count; j++)
+                {
+                    if (Opacity_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Opacity[i] = MathHelper.Lerp(Opacity_Data[i][j - 1], Opacity_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Opacity_KeyFrame[i][j - 1])) / Convert.ToDouble(Opacity_KeyFrame[i][j] - Opacity_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
+                for (int j = 0; j < Rotation_KeyFrame[i].Count; j++)
+                {
+                    if (Rotation_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Rotation[i] = MathHelper.Lerp(Rotation_Data[i][j - 1], Rotation_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Rotation_KeyFrame[i][j - 1])) / Convert.ToDouble(Rotation_KeyFrame[i][j] - Rotation_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
 
+                spriteBatch.Begin();
+                spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                spriteBatch.End();
+            }
+
+            CurrentFrame += 1;
+
+            if (CurrentFrame > EndFrame)
+            {
+                IsPlaying = false;
+                CurrentFrame = 0;
+            }
         }
 
         public void Play()

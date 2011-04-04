@@ -241,9 +241,12 @@ namespace blastrs
             {
                 SideSwipers.Play();
             }
-            if (SideSwipers.IsPlaying == true)
+            if (Menu.CurrentScreen == Menu.Card.MainMenu)
             {
-                SideSwipers.Draw(spriteBatch, gameTime);
+                if (SideSwipers.IsPlaying == true)
+                {
+                    SideSwipers.Draw(spriteBatch, gameTime);
+                }
             }
         
             base.Draw(gameTime);
