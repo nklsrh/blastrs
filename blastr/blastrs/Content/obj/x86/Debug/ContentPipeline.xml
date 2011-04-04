@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\arena.xnb</Output>
-      <Time>2011-04-04T18:32:55.1679687+10:00</Time>
+      <Time>2011-04-04T20:49:25.8076171+10:00</Time>
     </Item>
     <Item>
       <Source>arenaCollisionMap.png</Source>
@@ -80,7 +80,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2011-04-01T19:05:02.3544921+11:00</Time>
+      <Time>2011-04-04T20:57:29.8867187+10:00</Time>
     </Item>
     <Item>
       <Source>MainMenu.png</Source>
@@ -117,6 +117,15 @@
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\bombot2.xnb</Output>
       <Time>2011-04-03T15:18:02.0429688+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BoldFont.spritefont</Source>
+      <Name>BoldFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\svn\bin\x86\Debug\Content\BoldFont.xnb</Output>
+      <Time>2011-04-04T21:11:23.6630859+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
