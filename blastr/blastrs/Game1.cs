@@ -32,7 +32,7 @@ namespace blastrs
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
-        Bot[] Bot = new Bot[3];
+        public Bot[] Bot = new Bot[2];
         public SpriteFont Font, BoldFont;
         public Menu Menu;
         public TimeSpan CountDownTime;
@@ -72,7 +72,7 @@ namespace blastrs
             {
                 Blast[r] = new Blast(this);
             }
-            for (int r = 0; r < 3; r++)
+            for (int r = 0; r < 2; r++)
             {
                 Bot[r] = new Bot(this);
             }
@@ -92,7 +92,7 @@ namespace blastrs
             {
                 Player[r].Position = Position;
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
-                Player[r].Speed = Vector2.Zero;
+                Player[r].Speed = new Vector2(0.01f,0.01f);
                 Player[r].SpeedPower = 0.4f;
                 Player[r].Score = 1000;
                 Player[r].Blasting = false;
@@ -107,7 +107,7 @@ namespace blastrs
                     Position.X += 500;
                 }
             }
-            for (int r = 0; r < 3; r++)
+            for (int r = 0; r < 2; r++)
             {
                 Bot[r].Initialize(this);
                 Bot[r].LoadBlastAnimation("BotBlast_Animation", Content, this);
@@ -147,10 +147,11 @@ namespace blastrs
             Player[3].StarImage = Content.Load<Texture2D>("star");
             Player[3].Shadow = Content.Load<Texture2D>("shadow");
 
-            for (int r = 0; r < 3; r++)
+            for (int r = 0; r < 2; r++)
             {
                 Bot[r].Sprite = Content.Load<Texture2D>("bombot2");
                 Bot[r].Shadow = Content.Load<Texture2D>("shadow");
+                Bot[r].BotIndex = r;
             }  
             
             Stadium.Sprite = Content.Load<Texture2D>("arena");
@@ -195,7 +196,7 @@ namespace blastrs
                     }
                 }
 
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < 2; r++)
                 {
                     if (Bot[r].Dropped)
                     {
@@ -256,7 +257,7 @@ namespace blastrs
                     Player[r].Draw(gameTime, spriteBatch);
                 }
 
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < 2; r++)
                 {
                     Bot[r].Draw(gameTime, spriteBatch);
                 }

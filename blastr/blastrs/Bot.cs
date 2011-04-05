@@ -37,7 +37,7 @@ namespace blastrs
         public bool Blasted;
         public Texture2D Shadow;
         public Random randomsssss;
-
+        public int BotIndex;
         public BotBlast botBlast;
 
         public void Initialize(Game1 game)
@@ -77,8 +77,14 @@ namespace blastrs
                 }
             }
 
-            Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower); //WTF HAX?
+                if (BotIndex == 1)
+                {
+                    Target = 3 - game.Bot[0].Target; //other bombot chases the opposite color; if blue then yellow
+                }
 
+                Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower);
+
+            
             //Speed.X = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.X - Position.X));
             //Speed.Y = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.Y - Position.Y));
 
@@ -96,19 +102,10 @@ namespace blastrs
                 if (!Blasted)
                 {
                     botBlast.Detonate(targets, Position);
-                    //blast.Position = Position;
-                    //blast.Direction = Vector2.Multiply(Speed, 100f);
-                    //blast.blastTime = new TimeSpan(0, 0, 1);
-                    //blast.Power = 1000;
-                    //blast.Ready = false;
-                 
+                    Blasted = true;
                 }
-                Blasted = true;
-                
-
-                if (BlastTimer <= -(new TimeSpan(0, 0, 2)))
+                if (BlastTimer <= -(new TimeSpan(0, 0, 0)))
                 {
-                    Dropped = false;
                     Initialize(game);
                 }
             }
@@ -116,7 +113,7 @@ namespace blastrs
             base.Update(gameTime);
         }
 
-        public void Drop(GameTime gameTime, Vector2 pos) //MUST FIX THE WIDTH AND HEIGHT THINGY IT WAS USING UP TOO MUCH CPU IVE SET IT TO DEFAULT 1366 by 768
+        public void Drop(GameTime gameTime, Vector2 pos)
         {
             Position.X += (pos.X - Position.X) / 20f;
             Position.Y += (pos.Y - Position.Y) / 20f;
