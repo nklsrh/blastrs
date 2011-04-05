@@ -144,7 +144,7 @@ namespace blastrs
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
                     {
                         game.MenuToControls.Play();
-                        game.ChannelLogoAnim.Play();
+                        //game.ChannelLogoAnim.Play();
                     }
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)

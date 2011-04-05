@@ -278,17 +278,17 @@ namespace blastrs
 
         public void PlayAnimations(GameTime gameTime)
         {
-            if (SideSwipers.IsPlaying == false)
-            {
-                SideSwipers.Play();
-            }
-            if (Menu.CurrentScreen == Menu.Card.MainMenu)
-            {
-                if (SideSwipers.IsPlaying == true)
-                {
-                    SideSwipers.Draw(spriteBatch);
-                }
-            }
+            //if (SideSwipers.IsPlaying == false)
+            //{
+            //    SideSwipers.Play();
+            //}
+            //if (Menu.CurrentScreen == Menu.Card.MainMenu)
+            //{
+            //    if (SideSwipers.IsPlaying == true)
+            //    {
+            //        SideSwipers.Draw(spriteBatch);
+            //    }
+            //}
 
             if (MenuToControls.IsPlaying == true)
             {

@@ -101,9 +101,10 @@ namespace blastrs
                     //blast.blastTime = new TimeSpan(0, 0, 1);
                     //blast.Power = 1000;
                     //blast.Ready = false;
+                 
                 }
-
                 Blasted = true;
+                
 
                 if (BlastTimer <= -(new TimeSpan(0, 0, 2)))
                 {
@@ -117,8 +118,9 @@ namespace blastrs
 
         public void Drop(GameTime gameTime, Vector2 pos) //MUST FIX THE WIDTH AND HEIGHT THINGY IT WAS USING UP TOO MUCH CPU IVE SET IT TO DEFAULT 1366 by 768
         {
-            Position.Y += (768 / 2 - Position.Y) / 20f;
-            if (Position.Y >= 768 / 2 - 4)
+            Position.X += (pos.X - Position.X) / 20f;
+            Position.Y += (pos.Y - Position.Y) / 20f;
+            if (Position.Y >= pos.Y - 4)
             {
                 Dropped = true;
                 Position = pos; 
