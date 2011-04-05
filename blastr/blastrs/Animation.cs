@@ -313,7 +313,7 @@ namespace blastrs
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch)
         {
             for (int i = 0; i < Images.Count; i++)
             {
@@ -417,9 +417,16 @@ namespace blastrs
                     }
                 }
 
-                spriteBatch.Begin();
-                spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
-                spriteBatch.End();
+                try
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                    spriteBatch.End();
+                }
+                catch (Exception e)
+                {
+                    spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                }
             }
 
             CurrentFrame += 1;

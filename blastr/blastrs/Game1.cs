@@ -80,25 +80,37 @@ namespace blastrs
             Input = new Input(this);
             NewGame();  
             
-
+            Stadium.Initialize(graphics);
             base.Initialize();
         }
 
         public void NewGame()
         {
+            Vector2 Position = new Vector2(420, 120);
             // TODO: Add your initialization logic here
             for (int r = 0; r < NumberOfPlayers; r++)
             {
-                Player[r].Position = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
+                Player[r].Position = Position;
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = Vector2.Zero;
                 Player[r].SpeedPower = 0.4f;
-                Player[r].Score = 100;
+                Player[r].Score = 1000;
                 Player[r].Blasting = false;
+
+                if (Position.X == 920)
+                {
+                    Position.X = 420;
+                    Position.Y = 650;
+                }
+                else
+                {
+                    Position.X += 500;
+                }
             }
             for (int r = 0; r < 3; r++)
             {
                 Bot[r].Initialize(this);
+                Bot[r].LoadBlastAnimation("BotBlast_Animation", Content, this);
             }
             for (int r = 0; r < 10; r++)
             {
@@ -187,7 +199,7 @@ namespace blastrs
                 {
                     if (Bot[r].Dropped)
                     {
-                        Bot[r].Update(gameTime, this, Player, Blast[r+3]);
+                        Bot[r].Update(gameTime, this, Player);//, Blast[r+3]);
 
                         try
                         {
@@ -274,13 +286,13 @@ namespace blastrs
             {
                 if (SideSwipers.IsPlaying == true)
                 {
-                    SideSwipers.Draw(spriteBatch, gameTime);
+                    SideSwipers.Draw(spriteBatch);
                 }
             }
 
             if (MenuToControls.IsPlaying == true)
             {
-                MenuToControls.Draw(spriteBatch, gameTime);
+                MenuToControls.Draw(spriteBatch);
             }
             if (MenuToControls.CurrentFrame == MenuToControls.EndFrame)
             {
@@ -290,7 +302,7 @@ namespace blastrs
 
             if (ControlsToChars.IsPlaying == true)
             {
-                ControlsToChars.Draw(spriteBatch, gameTime);
+                ControlsToChars.Draw(spriteBatch);
             }
             if (ControlsToChars.CurrentFrame == ControlsToChars.EndFrame)
             {
@@ -300,7 +312,7 @@ namespace blastrs
 
             if (ChannelLogoAnim.IsPlaying == true)
             {
-                ChannelLogoAnim.Draw(spriteBatch, gameTime);
+                ChannelLogoAnim.Draw(spriteBatch);
             }
             if (ChannelLogoAnim.CurrentFrame == ChannelLogoAnim.EndFrame)
             {

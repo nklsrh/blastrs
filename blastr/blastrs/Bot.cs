@@ -38,10 +38,11 @@ namespace blastrs
         public Texture2D Shadow;
         public Random randomsssss;
 
+        public BotBlast botBlast;
+
         public void Initialize(Game1 game)
         {
             // TODO: Add your initialization code here
-
             BlastTimer = new TimeSpan(0, 0, 2);
             Scale = 1f;
             TintColor = Color.White;
@@ -56,8 +57,15 @@ namespace blastrs
             base.Initialize();
         }
 
+        public void LoadBlastAnimation(string directory, ContentManager content, Game1 game)
+        {
+            botBlast = new BotBlast(game); ;
+            botBlast.Initialize();
+            botBlast.LoadAnimation(directory, content);
+        }
 
-        public void Update(GameTime gameTime, Game1 game, Player[] targets, Blast blast)
+
+        public void Update(GameTime gameTime, Game1 game, Player[] targets)//, Blast blast)
         {
             Target = 0;
 
@@ -69,7 +77,7 @@ namespace blastrs
                 }
             }
 
-            Position = Vector2.SmoothStep(Position, targets[Target].Position, 0.05f); //WTF HAX?
+            Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower); //WTF HAX?
 
             //Speed.X = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.X - Position.X));
             //Speed.Y = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.Y - Position.Y));
@@ -87,11 +95,12 @@ namespace blastrs
             {
                 if (!Blasted)
                 {
-                    blast.Position = Position;
-                    blast.Direction = Vector2.Multiply(Speed, 100f);
-                    blast.blastTime = new TimeSpan(0, 0, 1);
-                    blast.Power = 1000;
-                    blast.Ready = false;
+                    botBlast.Detonate(targets, Position);
+                    //blast.Position = Position;
+                    //blast.Direction = Vector2.Multiply(Speed, 100f);
+                    //blast.blastTime = new TimeSpan(0, 0, 1);
+                    //blast.Power = 1000;
+                    //blast.Ready = false;
                 }
 
                 Blasted = true;
@@ -121,6 +130,7 @@ namespace blastrs
             sb.Begin();
             sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y - 10), null, Color.Black, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale/1.12f, SpriteEffects.None, 1f);
             sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
+            botBlast.Draw(sb);
             sb.End();
         }
     }
