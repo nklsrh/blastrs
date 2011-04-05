@@ -16,5 +16,7 @@ Content\font.xnb
 Content\BoldFont.xnb
 Content\SideSwipes\SideSwiper.xnb
 Content\ControlsToChars\PlayerInformation.xnb
+Content\ChannelLogo\channel2logo.xnb
+Content\ChannelLogo\anim.dat
 Content\ControlsToChars\anim.dat
 Content\MainToControls\anim.dat

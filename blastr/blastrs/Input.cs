@@ -131,14 +131,15 @@ namespace blastrs
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
                     {
                         game.ControlsToChars.Play();
+
                     }
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
                     {
-                        menu.CurrentScreen = blastrs.Menu.Card.InGame;
-                        menu.Initialize(game, spriteBatch, content);
+                        game.ChannelLogoAnim.Play();
+
                     }
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
@@ -146,6 +147,7 @@ namespace blastrs
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
                     {
                         game.MenuToControls.Play();
+                        game.ChannelLogoAnim.Play();
                     }
                 }
                 KeyPressed = false;

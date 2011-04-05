@@ -21,6 +21,7 @@ namespace blastrs
         public Animation SideSwipers;
         public Animation MenuToControls;
         public Animation ControlsToChars;
+        public Animation ChannelLogoAnim;
 
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
@@ -54,6 +55,7 @@ namespace blastrs
             SideSwipers = new Animation(this);
             MenuToControls = new Animation(this);
             ControlsToChars = new Animation(this);
+            ChannelLogoAnim = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
@@ -103,6 +105,7 @@ namespace blastrs
             SideSwipers.LoadAnimationData("SideSwipes", Content);
             MenuToControls.LoadAnimationData("MainToControls", Content);
             ControlsToChars.LoadAnimationData("ControlsToChars", Content);
+            ChannelLogoAnim.LoadAnimationData("ChannelLogo", Content);
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -269,6 +272,19 @@ namespace blastrs
             {
                 Menu.CurrentScreen = Menu.Card.PlayerInformation;
                 Menu.Initialize(this, spriteBatch, Content);
+            }
+
+            if (ChannelLogoAnim.IsPlaying == true)
+            {
+                ChannelLogoAnim.Draw(spriteBatch, gameTime);
+            }
+            if (ChannelLogoAnim.CurrentFrame == ChannelLogoAnim.EndFrame)
+            {
+                if (Menu.CurrentScreen == Menu.Card.PlayerInformation)
+                {
+                    Menu.CurrentScreen = blastrs.Menu.Card.InGame;
+                    Menu.Initialize(this, spriteBatch, Content);
+                }
             }
 
             base.Draw(gameTime);
