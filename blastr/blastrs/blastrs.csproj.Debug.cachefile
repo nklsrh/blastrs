@@ -1,3 +1,6 @@
+Content\BomBot\anim.dat
+Content\BotBlast_Animation\anim.dat
+Content\ChannelLogo\anim.dat
 Content\PlayerInformation.xnb
 Content\bombot2.xnb
 Content\ChannelLogo\channel2logo.xnb
@@ -7,6 +10,7 @@ Content\ControlsToChars\PlayerInformation.xnb
 Content\bombot.xnb
 Content\bluePlayer.xnb
 Content\arena.xnb
+Content\BomBot\bombot2.xnb
 Content\BoldFont.xnb
 Content\yellowPlayer.xnb
 Content\redPlayer.xnb
@@ -15,6 +19,7 @@ Content\shadow.xnb
 Content\BotBlast_Animation\BotBlast.xnb
 Content\BotBlast_Animation\Explosion.xnb
 Content\Scoreboard.xnb
+Content\BomBot\BombBeep.xnb
 Content\SideSwipes\SideSwiper.xnb
 Content\Controls.xnb
 Content\font.xnb
@@ -23,5 +28,3 @@ Content\MainToControls\Controls.xnb
 Content\SideSwipes\anim.dat
 Content\star.xnb
 Content\ControlsToChars\anim.dat
-Content\BotBlast_Animation\anim.dat
-Content\ChannelLogo\anim.dat

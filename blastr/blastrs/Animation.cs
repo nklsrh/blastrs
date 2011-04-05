@@ -50,6 +50,9 @@ namespace blastrs
         public List<List<float>> Rotation_Data = new List<List<float>>();
         public List<List<Int32>> Rotation_KeyFrame = new List<List<Int32>>();
 
+        public List<List<Vector3>> Tint_Data = new List<List<Vector3>>();
+        public List<List<Int32>> Tint_KeyFrame = new List<List<Int32>>();
+
         public List<List<Int32>> Sound_PlayStamps = new List<List<Int32>>();
 
         public Int32 EndFrame;
@@ -57,12 +60,14 @@ namespace blastrs
         public Int32 CurrentFrame;
         public Int32 PlayCount;
         public Boolean IsPlaying;
+        public Boolean IsPaused;
 
         public List<Vector2> Position = new List<Vector2>();
         public List<Vector2> Pivot = new List<Vector2>();
         public List<float> Opacity = new List<float>();
         public List<Vector2> Scale = new List<Vector2>();
         public List<float> Rotation = new List<float>();
+        public List<Vector3> Tint = new List<Vector3>();
         public List<Boolean> Audio_IsPlaying = new List<Boolean>();
 
         public enum DataType
@@ -72,6 +77,7 @@ namespace blastrs
             Opacity,
             Pivot,
             Rotation,
+            Tint,
             Audio_PlayStamps
         }
 
@@ -113,10 +119,14 @@ namespace blastrs
                     Rotation_Data.Add(new List<float>());
                     Rotation_KeyFrame.Add(new List<Int32>());
 
+                    Tint_Data.Add(new List<Vector3>());
+                    Tint_KeyFrame.Add(new List<Int32>());
+
                     Position.Add(Vector2.Zero);
                     Opacity.Add(1);
                     Scale.Add(Vector2.One);
                     Pivot.Add(Vector2.Zero);
+                    Tint.Add(new Vector3(1, 1, 1));
                     Rotation.Add(0);
 
                     index += 1;
@@ -148,6 +158,10 @@ namespace blastrs
                 else if (line == "BEGIN " + DataType.Rotation.ToString())
                 {
                     dataType = DataType.Rotation;
+                }
+                else if (line == "BEGIN " + DataType.Tint.ToString())
+                {
+                    dataType = DataType.Tint;
                 }
                 else if (line == "BEGIN " + DataType.Audio_PlayStamps.ToString())
                 {
@@ -235,10 +249,26 @@ namespace blastrs
                             Rotation_Data[index].Add(Rotation_Data[index][0]);
                         }
                     }
+                    else if (dataType == DataType.Tint)
+                    {
+                        Tint_KeyFrame[index].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
+                        Tint_Data[index].Add(new Vector3((float)Convert.ToDouble((line.Split(' ').Last().Split(',').First()))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',').First().Split(',').First()))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',').Last()))/255));
+
+                        if (Tint_KeyFrame[index][Tint_KeyFrame[index].Count - 1] > EndFrame)
+                        {
+                            EndFrame = Tint_KeyFrame[index][Tint_KeyFrame[index].Count - 1];
+                        }
+                        if (Tint_KeyFrame[index][0] != 0)
+                        {
+                            Tint_KeyFrame[index].Add(Tint_KeyFrame[index][0]);
+                            Tint_KeyFrame[index][0] = 0;
+                            Tint_Data[index].Add(Tint_Data[index][0]);
+                        }
+                    }
                     else if (dataType == DataType.Audio_PlayStamps)
                     {
                         Sound_PlayStamps[index_Audio].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
-                        
+
                         if (Sound_PlayStamps[index_Audio][Sound_PlayStamps[index_Audio].Count - 1] > EndFrame)
                         {
                             EndFrame = Sound_PlayStamps[index_Audio][Sound_PlayStamps[index_Audio].Count - 1];
@@ -329,6 +359,21 @@ namespace blastrs
                     Rotation_Data[i].Add(0);
                     Rotation_Data[i].Add(0);
                 }
+                try
+                {
+                    if (Tint_KeyFrame[i].Last() != EndFrame)
+                    {
+                        Tint_KeyFrame[i].Add(EndFrame);
+                        Tint_Data[i].Add(Tint_Data[i].Last());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Tint_KeyFrame[i].Add(0);
+                    Tint_KeyFrame[i].Add(EndFrame);
+                    Tint_Data[i].Add(new Vector3(1,1,1));
+                    Tint_Data[i].Add(new Vector3(1,1,1));
+                }
             }
         }
 
@@ -387,16 +432,24 @@ namespace blastrs
                         break;
                     }
                 }
+                for (int j = 0; j < Tint_KeyFrame[i].Count; j++)
+                {
+                    if (Tint_KeyFrame[i][j] > CurrentFrame)
+                    {
+                        Tint[i] = Vector3.Lerp(Tint_Data[i][j - 1], Tint_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Tint_KeyFrame[i][j - 1])) / Convert.ToDouble(Tint_KeyFrame[i][j] - Tint_KeyFrame[i][j - 1])));
+                        break;
+                    }
+                }
 
                 try
                 {
                     spriteBatch.Begin();
-                    spriteBatch.Draw(Images[i], Position[i], null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                    spriteBatch.Draw(Images[i], Position[i], null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                     spriteBatch.End();
                 }
                 catch (Exception e)
                 {
-                    spriteBatch.Draw(Images[i], Position[i], null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                    spriteBatch.Draw(Images[i], Position[i], null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                 }
             }
 
@@ -413,8 +466,10 @@ namespace blastrs
                     }
                 }
             }
-
-            CurrentFrame += 1;
+            if (IsPaused == false)
+            {
+                CurrentFrame += 1;
+            }
         }
 
             if (CurrentFrame > EndFrame)
@@ -470,16 +525,24 @@ namespace blastrs
                             break;
                         }
                     }
+                    for (int j = 0; j < Tint_KeyFrame[i].Count; j++)
+                    {
+                        if (Tint_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Tint[i] = Vector3.Lerp(Tint_Data[i][j - 1], Tint_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Tint_KeyFrame[i][j - 1])) / Convert.ToDouble(Tint_KeyFrame[i][j] - Tint_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
 
                     try
                     {
                         spriteBatch.Begin();
-                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                         spriteBatch.End();
                     }
                     catch (Exception e)
                     {
-                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(1, 1, 1, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                     }
                 }
 
@@ -497,7 +560,10 @@ namespace blastrs
                     }
                 }
 
-                CurrentFrame += 1;
+                if (IsPaused == false)
+                {
+                    CurrentFrame += 1;
+                }
             }
 
             if (CurrentFrame > EndFrame)

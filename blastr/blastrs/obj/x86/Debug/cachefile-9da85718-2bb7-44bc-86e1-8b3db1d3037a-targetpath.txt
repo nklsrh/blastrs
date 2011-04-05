@@ -20,6 +20,9 @@ Content\BotBlast_Animation\BotBlast.xnb
 Content\font.xnb
 Content\BoldFont.xnb
 Content\BotBlast_Animation\Explosion.xnb
+Content\BomBot\bombot2.xnb
+Content\BomBot\BombBeep.xnb
+Content\BomBot\anim.dat
 Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat
 Content\ControlsToChars\anim.dat

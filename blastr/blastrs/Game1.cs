@@ -149,7 +149,7 @@ namespace blastrs
 
             for (int r = 0; r < 2; r++)
             {
-                Bot[r].Sprite = Content.Load<Texture2D>("bombot2");
+                Bot[r].LoadBotAnimation("BomBot", Content, this); //Content.Load<Texture2D>("bombot2");
                 Bot[r].Shadow = Content.Load<Texture2D>("shadow");
                 Bot[r].BotIndex = r;
             }  

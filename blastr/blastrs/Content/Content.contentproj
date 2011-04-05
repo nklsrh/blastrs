@@ -125,10 +125,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BomBot\anim.dat">
+    <None Include="BomBot\anim.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>anim</Name>
-    </Compile>
+    </None>
     <None Include="BotBlast_Animation\anim.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>anim</Name>

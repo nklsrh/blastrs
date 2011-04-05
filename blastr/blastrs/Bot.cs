@@ -29,7 +29,8 @@ namespace blastrs
         public Vector2 Speed;
         public float SpeedPower;
         public int Target;
-        public Texture2D Sprite;
+        public Animation Sprite;
+        //public Texture2D Sprite;
         public float Scale;
         public TimeSpan BlastTimer;
         public Color TintColor;
@@ -57,9 +58,15 @@ namespace blastrs
             base.Initialize();
         }
 
+        public void LoadBotAnimation(string directory, ContentManager content, Game1 game)
+        {
+            Sprite = new Animation(game);
+            Sprite.LoadAnimationData(directory, content);
+        }
+
         public void LoadBlastAnimation(string directory, ContentManager content, Game1 game)
         {
-            botBlast = new BotBlast(game); ;
+            botBlast = new BotBlast(game);
             botBlast.Initialize();
             botBlast.LoadAnimation(directory, content);
         }
@@ -67,6 +74,11 @@ namespace blastrs
 
         public void Update(GameTime gameTime, Game1 game, Player[] targets)//, Blast blast)
         {
+            if (Sprite.IsPlaying == false)
+            {
+                Sprite.Play();
+            }
+
             Target = 0;
 
             for (int r = 0; r < targets.Length; r++)
@@ -128,8 +140,12 @@ namespace blastrs
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y - 10), null, Color.Black, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale/1.12f, SpriteEffects.None, 1f);
-            sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
+            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y - 10), null, Color.Black, 0f, new Vector2(22, 23), Scale/1.12f, SpriteEffects.None, 1f);
+            if (Sprite.IsPlaying == false)
+            {
+                sb.Draw(Sprite.Images[0], Position, null, Color.White, 0f, new Vector2(Sprite.Images[0].Width / 2, Sprite.Images[0].Height / 2), 1f, SpriteEffects.None, 1f);
+            }
+            Sprite.Draw(Position, sb);
             botBlast.Draw(sb);
             sb.End();
         }
