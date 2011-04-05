@@ -43,7 +43,7 @@ namespace blastrs
         public void Initialize(Game1 game)
         {
             // TODO: Add your initialization code here
-            BlastTimer = new TimeSpan(0, 0, 2);
+            BlastTimer = new TimeSpan(0, 0, 5);
             Scale = 1f;
             TintColor = Color.White;
             randomsssss = new Random(123123);

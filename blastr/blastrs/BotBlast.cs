@@ -63,12 +63,16 @@ namespace blastrs
         {
             if (isDetonating == true)
             {
+                if (BlastAnimation.IsPlaying == false)
+                {
+                    BlastAnimation.Play();
+                }
                 BlastAnimation.Draw(Position, spriteBatch);
             }
-            if (BlastAnimation.CurrentFrame >= BlastAnimation.EndFrame)
+            if (BlastAnimation.IsPlaying == false)
             {
                 isDetonating = false;
-                BlastAnimation.CurrentFrame = 0;
+                //BlastAnimation.CurrentFrame = 0;
             }
         }
     }

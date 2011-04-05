@@ -238,6 +238,11 @@ namespace blastrs
                     else if (dataType == DataType.Audio_PlayStamps)
                     {
                         Sound_PlayStamps[index_Audio].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
+                        
+                        if (Sound_PlayStamps[index_Audio][Sound_PlayStamps[index_Audio].Count - 1] > EndFrame)
+                        {
+                            EndFrame = Sound_PlayStamps[index_Audio][Sound_PlayStamps[index_Audio].Count - 1];
+                        }
                     }
                 }
             }
@@ -403,7 +408,7 @@ namespace blastrs
                     {
                         if (Sound_PlayStamps[i][j] == CurrentFrame)
                         {
-                            Sounds[i].Play();
+                            Sounds[i].CreateInstance().Play();
                         }
                     }
                 }
@@ -421,6 +426,8 @@ namespace blastrs
 
         public void Draw(Vector2 parent, SpriteBatch spriteBatch)
         {
+            if (IsPlaying == true)
+            {
                 for (int i = 0; i < Images.Count; i++)
                 {
                     for (int j = 0; j < Position_KeyFrame[i].Count; j++)
@@ -484,13 +491,14 @@ namespace blastrs
                         {
                             if (Sound_PlayStamps[i][j] == CurrentFrame)
                             {
-                                Sounds[i].Play();
+                                Sounds[i].CreateInstance().Play();
                             }
                         }
                     }
                 }
 
                 CurrentFrame += 1;
+            }
 
             if (CurrentFrame > EndFrame)
             {
@@ -501,10 +509,10 @@ namespace blastrs
 
         public void Play()
         {
-            if (IsPlaying == false)
-            {
+            //if (IsPlaying == false)
+            //{
                 IsPlaying = true;
-            }
+            //}
         }
     }
 }
