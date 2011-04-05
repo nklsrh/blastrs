@@ -1,0 +1,17 @@
+﻿##BotBlast
+	
+//the opacity of the image
+BEGIN Opacity
+<0> 0
+<2> 1
+<10> 0
+END Opacity
+
+BEGIN Scale
+<0> 0.1,0.1
+<10> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 200,200
+END Pivot
