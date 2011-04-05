@@ -125,8 +125,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="BotBlast_Animation\anim.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>anim</Name>
+    </None>
     <None Include="ChannelLogo\anim.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>anim</Name>
     </None>
     <None Include="ControlsToChars\anim.dat">
@@ -139,6 +143,7 @@
     </None>
     <None Include="SideSwipes\anim.dat">
       <Name>anim</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +193,20 @@
       <Name>PlayerInformation</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BotBlast_Animation\BotBlast.png">
+      <Name>BotBlast</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BotBlast_Animation\Explosion.wav">
+      <Name>Explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

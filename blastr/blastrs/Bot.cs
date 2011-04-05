@@ -106,6 +106,7 @@ namespace blastrs
                 }
                 if (BlastTimer <= -(new TimeSpan(0, 0, 0)))
                 {
+                    Blasted = false;
                     Initialize(game);
                 }
             }

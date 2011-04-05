@@ -13,11 +13,15 @@ Content\yellowPlayer.xnb
 Content\MainToControls\Controls.xnb
 Content\SideSwipes\SideSwiper.xnb
 Content\ControlsToChars\PlayerInformation.xnb
+Content\Scoreboard.xnb
 Content\ChannelLogo\channel2logo.xnb
 Content\PlayerInformation.xnb
-Content\Scoreboard.xnb
+Content\BotBlast_Animation\BotBlast.xnb
 Content\font.xnb
 Content\BoldFont.xnb
+Content\BotBlast_Animation\Explosion.xnb
+Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat
 Content\ControlsToChars\anim.dat
 Content\MainToControls\anim.dat
+Content\SideSwipes\anim.dat
