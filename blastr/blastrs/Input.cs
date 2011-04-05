@@ -151,7 +151,6 @@ namespace blastrs
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
                     {
-                        game.MenuToControls.Play();
                         game.ChannelLogoAnim.Play();
                     }
                 }

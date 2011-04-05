@@ -43,6 +43,10 @@ namespace blastrs
             {
                 Screen = content.Load<Texture2D>(CurrentScreen.ToString());
             }
+            else
+            {
+                game.NewGame();
+            }
          
             base.Initialize();
         }

@@ -59,8 +59,16 @@ namespace blastrs
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
+            //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
 
+            NewGame();
+
+            base.Initialize();
+        }
+
+        public void NewGame()
+        {
             NumberOfPlayers = 4;
             Player = new Player[NumberOfPlayers];
 
@@ -72,7 +80,7 @@ namespace blastrs
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = Vector2.Zero;
                 Player[r].SpeedPower = 0.4f;
-                Player[r].Score = 1000;
+                Player[r].Score = 100;
                 Player[r].Blasting = false;
             }
 
@@ -95,10 +103,7 @@ namespace blastrs
 
             randomsssss = new Random(917329);
             CountDownTime = new TimeSpan(0, 0, 30);
-
-            base.Initialize();
         }
-
 
         protected override void LoadContent()
         {
@@ -145,6 +150,7 @@ namespace blastrs
             //video = Content.Load<Video>("smallIntro2");
             //player = new VideoPlayer();
 
+            
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
             Menu.CurrentScreen = Menu.Card.MainMenu;
@@ -195,6 +201,7 @@ namespace blastrs
                 if (CountDownTime <= TimeSpan.Zero)
                 {
                     Menu.CurrentScreen = Menu.Card.Scoreboard;
+                    Menu.Initialize(this, spriteBatch, Content);
                 }
             }
             
@@ -246,9 +253,14 @@ namespace blastrs
             }
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
-            
 
-#region AnimationSlides
+            PlayAnimations();
+
+            base.Draw(gameTime);
+        }
+
+        public void PlayAnimations()
+        {
             if (SideSwipers.IsPlaying == false)
             {
                 SideSwipers.Play();
@@ -287,39 +299,56 @@ namespace blastrs
             }
             if (ChannelLogoAnim.CurrentFrame == ChannelLogoAnim.EndFrame)
             {
-                if (Menu.CurrentScreen == Menu.Card.PlayerInformation)
+                if (Menu.CurrentScreen == Menu.Card.PlayerInformation || Menu.CurrentScreen == Menu.Card.Scoreboard)
                 {
                     Menu.CurrentScreen = blastrs.Menu.Card.InGame;
                     Menu.Initialize(this, spriteBatch, Content);
                 }
             }
-#endregion AnimationSlides 
-
-            base.Draw(gameTime);
         }
 
         public void DrawScore()
         {
                 spriteBatch.Begin();
-                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 500), new Color(232, 156, 54));
-                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 500), new Color(179, 194, 219));
-                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 600), new Color(179, 219, 189));
-                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 600), new Color(243, 237, 217));
-                spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(5, 5), new Color(150, 150, 150));
-                spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 40), new Color(222, 222, 222));
+                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
+                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
+                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
+                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
+                spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(10, 5), new Color(150, 150, 150));
+                spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 60), new Color(222, 222, 222));
                 spriteBatch.End();
         }
         public void DrawScoreboard()
         {
-            spriteBatch.Begin();
-            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 500), new Color(232, 156, 54));
-            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 500), new Color(179, 194, 219));
-            spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 600), new Color(179, 219, 189));
-            spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 600), new Color(243, 237, 217));
             for (int r = 0; r < NumberOfPlayers; r++)
             {
-
+                if (Player[r].Score < 0)
+                {
+                    Player[r].Score = 0;
+                }
             }
+            spriteBatch.Begin();
+            spriteBatch.Draw(Menu.Screen, Vector2.Zero, Color.White);
+            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(875, 110), new Color(232, 156, 54));
+            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(875, 195), new Color(179, 194, 219));
+            spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(875, 275), new Color(179, 219, 189));
+            spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 375), new Color(243, 237, 217));
+            //DRAW THE WINNER"S NAME HERE 
+            //CHECK THE WINNER
+            //OK?
+            //OK
+            //DRAW THE WINNER"S NAME HERE 
+            //CHECK THE WINNER
+            //OK?
+            //OK
+            //DRAW THE WINNER"S NAME HERE 
+            //CHECK THE WINNER
+            //OK?
+            //OK
+            //DRAW THE WINNER"S NAME HERE 
+            //CHECK THE WINNER
+            //OK?
+            //OK
             spriteBatch.End();
         }
     }
