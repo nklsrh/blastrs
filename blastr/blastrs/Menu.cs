@@ -65,13 +65,13 @@ namespace blastrs
                         sb.End();
                     }
                 }
-                else {
+                else
+                {
                     sb.Draw(Screen, Vector2.Zero, Color.White);
-
                     if (CurrentScreen == Card.Scoreboard)
                     {
                         game.DrawScoreboard();
-                    }
+                    }     
                 }
             }
             sb.End();

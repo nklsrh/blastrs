@@ -51,7 +51,7 @@ namespace blastrs
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public override void Update(Game1 game, GameTime gameTime)
+        public void Update(Game1 game, GameTime gameTime)
         {
             // TODO: Add your update code here
             ClampSpeed();
@@ -63,7 +63,7 @@ namespace blastrs
 
             if (Score <= 0)
             {
-                game.Menu = Menu.Card.Scoreboard;
+                game.Menu.CurrentScreen = Menu.Card.Scoreboard;
             }
 
             base.Update(gameTime);

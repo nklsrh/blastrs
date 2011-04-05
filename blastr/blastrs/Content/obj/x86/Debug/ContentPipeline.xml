@@ -172,6 +172,15 @@
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\ChannelLogo\channel2logo.xnb</Output>
       <Time>2011-04-05T09:41:39.5400391+10:00</Time>
     </Item>
+    <Item>
+      <Source>Scoreboard.png</Source>
+      <Name>Scoreboard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\Scoreboard.xnb</Output>
+      <Time>2011-04-05T11:54:43.3398437+10:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

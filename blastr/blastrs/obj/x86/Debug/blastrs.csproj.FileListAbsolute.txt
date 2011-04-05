@@ -169,3 +169,4 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\ControlsToChars\anim.dat
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\ChannelLogo\channel2logo.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\ChannelLogo\anim.dat
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\Scoreboard.xnb

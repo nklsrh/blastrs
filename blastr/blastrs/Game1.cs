@@ -204,7 +204,7 @@ namespace blastrs
             //    }
             //}
 
-            //Window.Title = Bot[0].BlastTimer.ToString();
+            //Window.Title = Menu.CurrentScreen.ToString();
             // TODO: Add your update logic here
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content);
@@ -216,6 +216,8 @@ namespace blastrs
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+
+            Menu.Draw(this, gameTime, spriteBatch, videoTexture);
 
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
@@ -240,7 +242,7 @@ namespace blastrs
             }
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
-            Menu.Draw(gameTime, spriteBatch, videoTexture);
+            
 
 #region AnimationSlides
             if (SideSwipers.IsPlaying == false)
