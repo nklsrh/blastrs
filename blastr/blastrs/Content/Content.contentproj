@@ -170,13 +170,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelLogo\channel2logo.png">
-      <Name>channel2logo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="PlayerInformation.png">
       <Name>PlayerInformation</Name>
       <Importer>TextureImporter</Importer>
@@ -186,6 +179,13 @@
   <ItemGroup>
     <Compile Include="Scoreboard.png">
       <Name>Scoreboard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelLogo\channel2logo.png">
+      <Name>channel2logo</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

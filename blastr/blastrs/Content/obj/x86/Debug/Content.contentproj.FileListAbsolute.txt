@@ -6,3 +6,4 @@ E:\iFest\Blastr_Revision4\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp\blastrs\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 E:\iFest\Blastr_Revision5\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\iFest\Blastr_Revision7\Content\obj\x86\Debug\ResolveAssemblyReference.cache

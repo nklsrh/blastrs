@@ -1,0 +1,20 @@
+﻿##channel2logo
+	
+//the opacity of the image
+BEGIN Opacity
+<0> 1
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+<20> 8,8
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 1366, 40
+<20> 1000,0
+END Position
