@@ -30,7 +30,7 @@ namespace blastrs
         public Circle Area;
         public Texture2D Sprite;
         public bool Ready;
-        public TimeSpan blastTime = new TimeSpan(0,0,1);
+        public TimeSpan blastTime = new TimeSpan(0,0,5  );
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
@@ -68,7 +68,7 @@ namespace blastrs
                 if (blastTime <= TimeSpan.Zero)
                 {
                     Ready = true;
-                    blastTime = new TimeSpan(0, 0, 3);
+                    blastTime = new TimeSpan(0, 0, 5);
                 }
             }
 
@@ -79,7 +79,7 @@ namespace blastrs
             sb.Begin();
             if (!Ready)
             {
-                sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power / 100, SpriteEffects.None, 0f);
+                sb.Draw(Sprite, Position, null, Color.White, Position.X, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power / 100, SpriteEffects.None, 0f);
             }
             sb.End();
         }

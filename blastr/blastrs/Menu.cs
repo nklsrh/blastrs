@@ -51,7 +51,7 @@ namespace blastrs
         {
             base.Update(gameTime);
         }
-        public void Draw(GameTime gameTime, SpriteBatch sb, Texture2D videoTexture)
+        public void Draw(Game1 game, GameTime gameTime, SpriteBatch sb, Texture2D videoTexture)
         {
             sb.Begin();
             if (CurrentScreen != Card.InGame)
@@ -65,7 +65,14 @@ namespace blastrs
                         sb.End();
                     }
                 }
-                else { sb.Draw(Screen, Vector2.Zero, Color.White); }
+                else {
+                    sb.Draw(Screen, Vector2.Zero, Color.White);
+
+                    if (CurrentScreen == Card.Scoreboard)
+                    {
+                        game.DrawScoreboard();
+                    }
+                }
             }
             sb.End();
         }

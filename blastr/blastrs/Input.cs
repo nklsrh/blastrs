@@ -131,7 +131,6 @@ namespace blastrs
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
                     {
                         game.ControlsToChars.Play();
-
                     }
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
@@ -139,12 +138,19 @@ namespace blastrs
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
                     {
                         game.ChannelLogoAnim.Play();
-
                     }
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
+                    {
+                        game.MenuToControls.Play();
+                        game.ChannelLogoAnim.Play();
+                    }
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                {
+                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
                     {
                         game.MenuToControls.Play();
                         game.ChannelLogoAnim.Play();
@@ -171,6 +177,13 @@ namespace blastrs
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
+                    {
+                        KeyPressed = true;
+                    }
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                {
+                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Enter))
                     {
                         KeyPressed = true;
                     }

@@ -34,8 +34,8 @@ namespace blastrs
         Blast[] Blast = new Blast[10];
         Bot[] Bot = new Bot[3];
         public SpriteFont Font, BoldFont;
-        Menu Menu;
-        TimeSpan CountDownTime;
+        public Menu Menu;
+        public TimeSpan CountDownTime;
 
         public Random randomsssss;
 
@@ -94,7 +94,7 @@ namespace blastrs
             }
 
             randomsssss = new Random(917329);
-            CountDownTime = new TimeSpan(0, 3, 0);
+            CountDownTime = new TimeSpan(0, 2, 0);
 
             base.Initialize();
         }
@@ -242,6 +242,7 @@ namespace blastrs
             //     videoTexture = player.GetTexture();
             Menu.Draw(gameTime, spriteBatch, videoTexture);
 
+#region AnimationSlides
             if (SideSwipers.IsPlaying == false)
             {
                 SideSwipers.Play();
@@ -286,6 +287,7 @@ namespace blastrs
                     Menu.Initialize(this, spriteBatch, Content);
                 }
             }
+#endregion AnimationSlides 
 
             base.Draw(gameTime);
         }
@@ -300,6 +302,19 @@ namespace blastrs
                 spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(5, 5), new Color(150, 150, 150));
                 spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 40), new Color(222, 222, 222));
                 spriteBatch.End();
+        }
+        public void DrawScoreboard()
+        {
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 500), new Color(232, 156, 54));
+            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 500), new Color(179, 194, 219));
+            spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 600), new Color(179, 219, 189));
+            spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 600), new Color(243, 237, 217));
+            for (int r = 0; r < NumberOfPlayers; r++)
+            {
+
+            }
+            spriteBatch.End();
         }
     }
 }
