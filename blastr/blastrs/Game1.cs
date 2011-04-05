@@ -62,20 +62,33 @@ namespace blastrs
             //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
 
-            NewGame();
+            NumberOfPlayers = 4;
+            Player = new Player[NumberOfPlayers];
+            for (int r = 0; r < NumberOfPlayers; r++)
+            {
+                Player[r] = new Player(this);
+            }
+            for (int r = 0; r < 10; r++)
+            {
+                Blast[r] = new Blast(this);
+            }
+            for (int r = 0; r < 3; r++)
+            {
+                Bot[r] = new Bot(this);
+            }
+            Stadium = new Stadium(this);
+            Input = new Input(this);
+            NewGame();  
+            
 
             base.Initialize();
         }
 
         public void NewGame()
         {
-            NumberOfPlayers = 4;
-            Player = new Player[NumberOfPlayers];
-
             // TODO: Add your initialization logic here
             for (int r = 0; r < NumberOfPlayers; r++)
             {
-                Player[r] = new Player(this);
                 Player[r].Position = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = Vector2.Zero;
@@ -83,24 +96,16 @@ namespace blastrs
                 Player[r].Score = 100;
                 Player[r].Blasting = false;
             }
-
-            Stadium = new Stadium(this);
-            Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW
-
-            Input = new Input(this);
-            Input.Initialize(this, Player[0], Player[1], Player[2]);
-
-            for (int r = 0; r < 10; r++)
-            {
-                Blast[r] = new Blast(this);
-            }
-
             for (int r = 0; r < 3; r++)
             {
-                Bot[r] = new Bot(this);
                 Bot[r].Initialize(this);
             }
-
+            for (int r = 0; r < 10; r++)
+            {
+                Blast[r].Initialize();
+            }
+            Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
+            Input.Initialize(this, Player[0], Player[1], Player[2]);
             randomsssss = new Random(917329);
             CountDownTime = new TimeSpan(0, 0, 30);
         }
@@ -254,12 +259,12 @@ namespace blastrs
             // if (player.State != MediaState.Stopped)
             //     videoTexture = player.GetTexture();
 
-            PlayAnimations();
+            PlayAnimations(gameTime);
 
             base.Draw(gameTime);
         }
 
-        public void PlayAnimations()
+        public void PlayAnimations(GameTime gameTime)
         {
             if (SideSwipers.IsPlaying == false)
             {
