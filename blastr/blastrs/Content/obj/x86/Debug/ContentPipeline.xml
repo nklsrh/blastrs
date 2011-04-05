@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\star.xnb</Output>
-      <Time>2011-04-05T11:39:20.9697266+10:00</Time>
+      <Time>2011-04-06T08:52:56.4121093+10:00</Time>
     </Item>
     <Item>
       <Source>arena.png</Source>
@@ -180,6 +180,42 @@
       <Options>None</Options>
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BoldFont.xnb</Output>
       <Time>2011-04-05T14:24:29.3671875+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BotBlast_Animation\BotBlast.png</Source>
+      <Name>BotBlast_Animation\BotBlast</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb</Output>
+      <Time>2011-04-06T08:52:56.4121093+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BomBot\bombot2.png</Source>
+      <Name>BomBot\bombot2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BomBot\bombot2.xnb</Output>
+      <Time>2011-04-06T08:52:55.1933593+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BotBlast_Animation\Explosion.wav</Source>
+      <Name>BotBlast_Animation\Explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BotBlast_Animation\Explosion.xnb</Output>
+      <Time>2011-04-06T08:52:56.3496093+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BomBot\BombBeep.wav</Source>
+      <Name>BomBot\BombBeep</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BomBot\BombBeep.xnb</Output>
+      <Time>2011-04-06T08:52:55.0683593+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -44,12 +44,19 @@ namespace blastrs
         public void Initialize(Game1 game)
         {
             // TODO: Add your initialization code here
-            BlastTimer = new TimeSpan(0, 0, 5);
+            if (BotIndex == 0)
+            {
+                BlastTimer = new TimeSpan(0, 0, 5);
+            }
+            if (BotIndex == 1)
+            {
+                BlastTimer = new TimeSpan(0, 0, 7);
+            }
             Scale = 1f;
             TintColor = Color.White;
             randomsssss = new Random(123123);
-            Position.X = randomsssss.Next(game.graphics.PreferredBackBufferWidth / 2 - 200, game.graphics.PreferredBackBufferWidth / 2 + 200);
-            Position.Y = 0;
+            Position.X = game.graphics.PreferredBackBufferWidth / 2;
+            Position.Y = game.graphics.PreferredBackBufferHeight / 2;
             Dropped = false;
             SpeedPower = 0.1f;
 
@@ -116,7 +123,7 @@ namespace blastrs
                     botBlast.Detonate(targets, Position);
                     Blasted = true;
                 }
-                if (BlastTimer <= -(new TimeSpan(0, 0, 0)))
+                if (BlastTimer <= TimeSpan.Zero)
                 {
                     Blasted = false;
                     Initialize(game);

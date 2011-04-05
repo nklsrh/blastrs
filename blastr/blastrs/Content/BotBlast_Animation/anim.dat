@@ -19,5 +19,5 @@ END Pivot
 <<_Audio: Explosion
 
 BEGIN Audio_PlayStamps
-<0>
+<10>
 END Audio_PlayStamps
