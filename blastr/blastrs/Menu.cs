@@ -53,28 +53,29 @@ namespace blastrs
         }
         public void Draw(Game1 game, GameTime gameTime, SpriteBatch sb, Texture2D videoTexture)
         {
-            sb.Begin();
-            if (CurrentScreen != Card.InGame)
+            if (CurrentScreen == Card.InGame)
             {
-                if (CurrentScreen == Card.Intro)
+
+            }
+            if (CurrentScreen == Card.Intro)
+            {
+                if (videoTexture != null)
                 {
-                    if (videoTexture != null)
-                    {
-                        sb.Begin();
-                        sb.Draw(videoTexture, new Rectangle(sb.GraphicsDevice.Viewport.X, sb.GraphicsDevice.Viewport.Y, sb.GraphicsDevice.Viewport.Width, sb.GraphicsDevice.Viewport.Height), Color.White);
-                        sb.End();
-                    }
-                }
-                else
-                {
-                    sb.Draw(Screen, Vector2.Zero, Color.White);
-                    if (CurrentScreen == Card.Scoreboard)
-                    {
-                        game.DrawScoreboard();
-                    }     
+                    sb.Begin();
+                    sb.Draw(videoTexture, new Rectangle(sb.GraphicsDevice.Viewport.X, sb.GraphicsDevice.Viewport.Y, sb.GraphicsDevice.Viewport.Width, sb.GraphicsDevice.Viewport.Height), Color.White);
+                    sb.End();
                 }
             }
-            sb.End();
+            if (CurrentScreen == Card.PlayerInformation || CurrentScreen == Card.MainMenu || CurrentScreen == Card.Controls)
+            {
+                sb.Begin();
+                sb.Draw(Screen, Vector2.Zero, Color.White);
+                sb.End();
+            }
+            if (CurrentScreen == Card.Scoreboard)
+            {
+                game.DrawScoreboard();
+            }
         }
     }
 }

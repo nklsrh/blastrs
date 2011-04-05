@@ -61,10 +61,10 @@ namespace blastrs
             //Scale = Position.Y / 300;
             Scale = 1;
 
-            if (Score <= 0)
-            {
-                game.Menu.CurrentScreen = Menu.Card.Scoreboard;
-            }
+            //if (Score <= 0)
+            //{
+            //    game.Menu.CurrentScreen = Menu.Card.Scoreboard;
+            //}
 
             base.Update(gameTime);
         }

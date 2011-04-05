@@ -94,7 +94,7 @@ namespace blastrs
             }
 
             randomsssss = new Random(917329);
-            CountDownTime = new TimeSpan(0, 2, 0);
+            CountDownTime = new TimeSpan(0, 0, 30);
 
             base.Initialize();
         }
@@ -192,6 +192,10 @@ namespace blastrs
                 }
 
                 CountDownTime -= gameTime.ElapsedGameTime;
+                if (CountDownTime <= TimeSpan.Zero)
+                {
+                    Menu.CurrentScreen = Menu.Card.Scoreboard;
+                }
             }
             
 
