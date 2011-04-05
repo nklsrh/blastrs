@@ -125,7 +125,6 @@ namespace blastrs
             #endregion GameControls
             if (KeyPressed)
             {
-                
                 if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
                 {
                     if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))

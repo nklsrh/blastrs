@@ -163,7 +163,7 @@ namespace blastrs
             {
                 for (int r = 0; r < NumberOfPlayers; r++)
                 {
-                    Player[r].Update(gameTime);
+                    Player[r].Update(this, gameTime);
                     Stadium.CheckCollisionWithPlayer(Player[r], gameTime);
 
                     for (int b = 0; b < 10; b++)
@@ -187,7 +187,7 @@ namespace blastrs
                     else
                     {
                         randomsssss = new Random(123123);
-                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(500, 800), randomsssss.Next(200, 600)));
+                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(550, 800), randomsssss.Next(200, 600)));
                     }
                 }
 
