@@ -79,7 +79,7 @@ namespace blastrs
             sb.Begin();
             if (!Ready)
             {
-                sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power / 50, SpriteEffects.None, 0f);
+                sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power / 100, SpriteEffects.None, 0f);
             }
             sb.End();
         }
