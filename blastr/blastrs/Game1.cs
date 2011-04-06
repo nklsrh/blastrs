@@ -81,7 +81,7 @@ namespace blastrs
             {
                 Blast[r] = new Blast(this);
             }
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Bot[r] = new Bot(this);
             }
@@ -116,9 +116,9 @@ namespace blastrs
                     Position.X += 500;
                 }
             }
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfPlayers; r++)
             {
-                Bot[r].Initialize(this);
+                Bot[r].Initialize(this, r);
                 Bot[r].LoadBlastAnimation("BotBlast_Animation", Content, this);
             }
             for (int r = 0; r < 10; r++)
@@ -177,11 +177,11 @@ namespace blastrs
             }
             catch (Exception e) { }
 
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Bot[r].LoadBotAnimation("BomBot", Content, this); //Content.Load<Texture2D>("bombot2");
                 Bot[r].Shadow = Content.Load<Texture2D>("shadow");
-                Bot[r].BotIndex = r;
+                //Bot[r].BotIndex = r;
             }  
             
             Stadium.Sprite = Content.Load<Texture2D>("arena");
@@ -226,9 +226,9 @@ namespace blastrs
                     }
                 }
 
-                for (int r = 0; r < 2; r++)
+                for (int r = 0; r < NumberOfPlayers; r++)
                 {
-                    if (Bot[r].Dropped)
+                    if (Bot[r].Dropped == true)
                     {
                         Bot[r].Update(gameTime, this, Player);//, Blast[r+3]);
 
@@ -241,7 +241,7 @@ namespace blastrs
                     else
                     {
                         randomsssss = new Random(123123);
-                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(550, 800), randomsssss.Next(200, 600)));
+                        Bot[r].Drop(gameTime);
                     }
                 }
 
@@ -402,11 +402,18 @@ namespace blastrs
             try
             {
                 spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(875, 285), new Color(179, 219, 189));
-                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 379), new Color(243, 237, 217));
             }
             catch
             {
                 spriteBatch.DrawString(Font, "DNP", new Vector2(875, 285), new Color(179, 219, 189));
+            }
+
+            try
+            {;
+                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 379), new Color(243, 237, 217));
+            }
+            catch
+            {
                 spriteBatch.DrawString(Font, "DNP", new Vector2(875, 379), new Color(243, 237, 217));
             }
             //DRAW THE WINNER"S NAME HERE 

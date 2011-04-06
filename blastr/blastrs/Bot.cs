@@ -41,22 +41,16 @@ namespace blastrs
         public int BotIndex;
         public BotBlast botBlast;
 
-        public void Initialize(Game1 game)
+        public void Initialize(Game1 game, int index)
         {
             // TODO: Add your initialization code here
-            if (BotIndex == 0)
-            {
-                BlastTimer = new TimeSpan(0, 0, 5);
-            }
-            if (BotIndex == 1)
-            {
-                BlastTimer = new TimeSpan(0, 0, 5);
-            }
+            BotIndex = index;
+            BlastTimer = new TimeSpan(0, 0, 6);
             Scale = 1f;
             TintColor = Color.White;
-            randomsssss = new Random(123123);
+            randomsssss = new Random();
             Position.X = (float)(randomsssss.NextDouble() * game.graphics.PreferredBackBufferWidth);
-            Position.Y = 0;
+            Position.Y = 500;
             Dropped = false;
             SpeedPower = 0.1f;
 
@@ -81,10 +75,7 @@ namespace blastrs
 
         public void Update(GameTime gameTime, Game1 game, Player[] targets)//, Blast blast)
         {
-            if (Sprite.IsPlaying == false)
-            {
-                Sprite.Play();
-            }
+
 
             Target = 0;
 
@@ -95,11 +86,6 @@ namespace blastrs
                     Target = r;
                 }
             }
-
-                if (BotIndex == 1)
-                {
-                    //Target = 3 - game.Bot[0].Target; //other bombot chases the opposite color; if blue then yellow
-                }
 
                 Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower);
 
@@ -114,7 +100,7 @@ namespace blastrs
 
             BlastTimer -= gameTime.ElapsedGameTime;
 
-            try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); } catch { }
+            try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); } catch (Exception e) { }
 
             if (BlastTimer <= TimeSpan.Zero)
             {
@@ -126,28 +112,32 @@ namespace blastrs
                 if (BlastTimer <= TimeSpan.Zero)
                 {
                     Blasted = false;
-                    Initialize(game);
+                    Initialize(game, BotIndex);
                 }
             }
 
             base.Update(gameTime);
         }
 
-        public void Drop(GameTime gameTime, Vector2 pos)
+        public void Drop(GameTime gameTime)
         {
-            Position.X += (pos.X - Position.X) / 20f;
-            Position.Y += (pos.Y - Position.Y) / 20f;
-            if (Position.Y >= pos.Y - 4)
+            //Position.X += (pos.X - Position.X) / 20f;
+            //Position.Y += (pos.Y - Position.Y) / 20f;
+
+            if (Sprite.IsPlaying == false)
             {
-                Dropped = true;
-                Position = pos; 
+                Sprite.Play();
             }
+
+                Blasted = false;
+                Dropped = true;
+                //Position = pos; 
         }
 
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y - 10), null, Color.Black, 0f, new Vector2(22, 23), Scale/1.12f, SpriteEffects.None, 1f);
+            sb.Draw(Shadow, new Vector2(Position.X - 20 + Sprite.Position[0].X, Position.Y - 10 + Sprite.Position[0].Y), null, Color.Black, 0f, new Vector2(22, 23), Scale/1.12f, SpriteEffects.None, 1f);
             if (Sprite.IsPlaying == false)
             {
                 sb.Draw(Sprite.Images[0], Position, null, Color.White, 0f, new Vector2(Sprite.Images[0].Width / 2, Sprite.Images[0].Height / 2), 1f, SpriteEffects.None, 1f);

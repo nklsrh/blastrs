@@ -80,7 +80,7 @@ namespace blastrs
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
             {
-                Bot.Initialize(game);
+                Bot.Initialize(game, Bot.BotIndex);
             }
         }
 
