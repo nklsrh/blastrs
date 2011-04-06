@@ -269,7 +269,7 @@ namespace blastrs
                     else
                     {
                         randomsssss = new Random(123123);
-                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(550, 800), randomsssss.Next(200, 600)));
+                        Bot[r].Drop(gameTime, new Vector2(500 + 300 * r, 500)); //new Vector2(randomsssss.Next(550, 800), randomsssss.Next(200, 600)));
                     }
                 }
 
