@@ -7,7 +7,6 @@ END Opacity
 
 BEGIN Scale
 <0> 1,1
-<20> 5,5
 END Scale
 
 BEGIN Pivot
@@ -15,6 +14,8 @@ BEGIN Pivot
 END Pivot
 
 BEGIN Position
-<0> -1366, 40
-<20> 800,0
+<0> 0,0
+<10> 683, 0
+<15> 683, 0
+<30> 1366, 0
 END Position
