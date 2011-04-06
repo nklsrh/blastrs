@@ -347,10 +347,10 @@ namespace blastrs
             }
             spriteBatch.Begin();
             spriteBatch.Draw(Menu.Screen, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(875, 110), new Color(232, 156, 54));
-            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(875, 195), new Color(179, 194, 219));
-            spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(875, 275), new Color(179, 219, 189));
-            spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 375), new Color(243, 237, 217));
+            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(875, 108), new Color(232, 156, 54));
+            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(875, 197), new Color(179, 194, 219));
+            spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(875, 285), new Color(179, 219, 189));
+            spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 379), new Color(243, 237, 217));
             //DRAW THE WINNER"S NAME HERE 
             //CHECK THE WINNER
             //OK?

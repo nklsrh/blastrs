@@ -27,7 +27,6 @@ BEGIN Tint
 END Tint
 
 <<_Audio: BombBeep
-
 BEGIN Audio_PlayStamps
 <60>
 <120>
@@ -41,6 +40,8 @@ BEGIN Audio_PlayStamps
 <285>
 <290>
 <295>
+<296>
+<297>
 <298>
 <299>
 <300>

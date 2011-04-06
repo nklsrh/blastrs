@@ -55,8 +55,8 @@ namespace blastrs
             Scale = 1f;
             TintColor = Color.White;
             randomsssss = new Random(123123);
-            Position.X = game.graphics.PreferredBackBufferWidth / 2;
-            Position.Y = game.graphics.PreferredBackBufferHeight / 2;
+            Position.X = (float)(randomsssss.NextDouble() * game.graphics.PreferredBackBufferWidth);
+            Position.Y = 0;
             Dropped = false;
             SpeedPower = 0.1f;
 
