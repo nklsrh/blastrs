@@ -33,7 +33,7 @@ namespace blastrs
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
-        public Bot[] Bot;
+        public Bot[] Bot = new Bot[2];
         public SpriteFont Font, BoldFont;
         public Menu Menu;
         public TimeSpan CountDownTime;
@@ -98,7 +98,7 @@ namespace blastrs
             }
 
             Player = new Player[NumberOfPlayers];
-            Bot = new Bot[NumberOfPlayers];
+            Bot = new Bot[2];
 
             for (int r = 0; r < NumberOfPlayers; r++)
             {
@@ -108,7 +108,7 @@ namespace blastrs
             {
                 Blast[r] = new Blast(this);
             }
-            for (int r = 0; r < NumberOfPlayers; r++)
+            for (int r = 0; r < 2; r++)
             {
                 Bot[r] = new Bot(this);
             }
@@ -143,9 +143,9 @@ namespace blastrs
                     Position.X += 500;
                 }
             }
-            for (int r = 0; r < NumberOfPlayers; r++)
+            for (int r = 0; r < 2; r++)
             {
-                Bot[r].Initialize(this, r);
+                Bot[r].Initialize(this);
                 Bot[r].LoadBlastAnimation("BotBlast_Animation", Content, this);
             }
             for (int r = 0; r < 10; r++)
@@ -205,11 +205,11 @@ namespace blastrs
             }
             catch (Exception e) { }
 
-            for (int r = 0; r < NumberOfPlayers; r++)
+            for (int r = 0; r < 2; r++)
             {
                 Bot[r].LoadBotAnimation("BomBot", Content, this); //Content.Load<Texture2D>("bombot2");
                 Bot[r].Shadow = Content.Load<Texture2D>("shadow");
-                //Bot[r].BotIndex = r;
+                Bot[r].BotIndex = r;
             }  
             
             Stadium.Sprite = Content.Load<Texture2D>("arena");
@@ -254,7 +254,7 @@ namespace blastrs
                     }
                 }
 
-                for (int r = 0; r < NumberOfPlayers; r++)
+                for (int r = 0; r < 2; r++)
                 {
                     if (Bot[r].Dropped == true)
                     {
@@ -268,8 +268,8 @@ namespace blastrs
                     }
                     else
                     {
-                        randomsssss = new Random();
-                        Bot[r].Drop(gameTime);
+                        randomsssss = new Random(123123);
+                        Bot[r].Drop(gameTime, new Vector2(randomsssss.Next(550, 800), randomsssss.Next(200, 600)));
                     }
                 }
 
