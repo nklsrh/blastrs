@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
-
+using Microsoft.DirectX.DirectInput;
 namespace blastrs
 {
     /// <summary>
@@ -43,12 +43,35 @@ namespace blastrs
         //VideoPlayer player;
         Texture2D videoTexture;
 
+        public Device device;
+        public bool loaded = false;
+
+        public Vector2 psLeftThumbStick;
+        public Vector2 psRightThumbStick;
+        public Vector2 LeftThumbStick;
+        public Vector2 RightThumbStick;
+        public bool HasLeft;
+        public bool HasRight;
+        const float center = 32767.5f;
+
+        public GamePadConfig conf;
+        public User[] localUsers;
+        public IUserInterface users;
+        public User u1;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            new UserControl(this);
         }
 
+        void SetupDirectInputGamepad(Guid gamepadInstanceGuid)
+        {
+            device = new Device(gamepadInstanceGuid);
+            device.SetDataFormat(DeviceDataFormat.Joystick);
+            device.Acquire();
+        }
 
         protected override void Initialize()
         {
@@ -200,6 +223,7 @@ namespace blastrs
             //video = Content.Load<Video>("smallIntro2");
             //player = new VideoPlayer();
 
+            users = (IUserInterface)Services.GetService(typeof(IUserInterface));
             
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
@@ -213,7 +237,6 @@ namespace blastrs
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
 
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
@@ -273,6 +296,47 @@ namespace blastrs
             base.Update(gameTime);
         }
 
+        void UpdateDualShocks(GameTime gameTime)
+        {
+            JoystickState deviceState = device.CurrentJoystickState;
+
+            // save previous state
+            psLeftThumbStick = LeftThumbStick;
+            psRightThumbStick = RightThumbStick;
+
+            // empty current state
+            LeftThumbStick = Vector2.Zero;
+            RightThumbStick = Vector2.Zero;
+
+            // get raw data
+            LeftThumbStick = new Vector2((deviceState.X - center) / center, (deviceState.Y - center) / center);
+
+            // switxh X and Y, some controlers are messed up..
+            if (conf.rotateLeftThumbStick)
+                LeftThumbStick = new Vector2((deviceState.Y - center) / center, (deviceState.X - center) / center);
+
+            // invert y axis
+            if (conf.invertLeftThumbStick)
+                LeftThumbStick.Y = LeftThumbStick.Y * (-1f);
+            // ajust sensitivity
+            // needs improvement -> we should recalculate percentage of overall allowed movement..
+            if (Math.Abs(LeftThumbStick.Y) < conf.sensitivityLeftThumbStick)
+                LeftThumbStick.Y = 0;
+            if (Math.Abs(LeftThumbStick.X) < conf.sensitivityLeftThumbStick)
+                LeftThumbStick.X = 0;
+
+
+            RightThumbStick = new Vector2((deviceState.Z - center) / center, (deviceState.Rz - center) / center);
+            if (conf.rotateRightThumbStick)
+                RightThumbStick = new Vector2((deviceState.Rz - center) / center, (deviceState.Z - center) / center);
+            if (conf.invertRightThumbStick)
+                RightThumbStick.Y = RightThumbStick.Y * (-1f);
+            if (Math.Abs(RightThumbStick.Y) < conf.sensitivityRightThumbStick)
+                RightThumbStick.Y = 0;
+            if (Math.Abs(RightThumbStick.X) < conf.sensitivityRightThumbStick)
+                RightThumbStick.X = 0;
+
+        }
 
         protected override void Draw(GameTime gameTime)
         {

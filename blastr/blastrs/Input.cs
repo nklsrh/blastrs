@@ -28,6 +28,7 @@ namespace blastrs
 
         GamePadState[] previousGamePadState, currentGamePadState;
         KeyboardState previousKeyboardState, currentKeyboardState;
+        bool isDualShockAPressed;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
@@ -44,6 +45,7 @@ namespace blastrs
                 currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
             }
             previousKeyboardState = Keyboard.GetState(PlayerIndex.One);
+            isDualShockAPressed = false;
             base.Initialize();
         }
 
@@ -53,6 +55,33 @@ namespace blastrs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player[] player)
         {
+            game.u1 = game.users.GetUser(1);
+            if(!game.u1.PressedA() && isDualShockAPressed)
+            {
+                if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+                {
+                    game.ControlsToChars.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+                {
+                    game.MenuToControls.Play();
+                    //game.ChannelLogoAnim.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
+                isDualShockAPressed = false;
+            }
+            if (game.u1.PressedA())
+            {
+                isDualShockAPressed = true;
+            }
+
             currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
             if (currentKeyboardState.IsKeyDown(Keys.A) && previousKeyboardState.IsKeyUp(Keys.A))
             {
@@ -104,6 +133,42 @@ namespace blastrs
             #region GameControls
             if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
             {
+                
+                if (game.u1.GetLeftStick().X > 0)
+                {
+                    player[1].Speed.X += player[1].SpeedPower;
+                }
+                if (game.u1.GetLeftStick().X < 0)
+                {
+                    player[1].Speed.X -= player[1].SpeedPower;
+                }
+                if (game.u1.GetLeftStick().Y > 0)
+                {
+                    player[1].Speed.Y -= player[1].SpeedPower;
+                }
+                if (game.u1.GetLeftStick().Y < 0)
+                {
+                    player[1].Speed.Y += player[1].SpeedPower;
+                }
+                if (game.u1.PressedRightTrigger())
+                {
+                    if (!player[1].Blasting)
+                    {
+                        blast[1].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                        blast[1].Direction = player[1].Speed;
+                        player[1].Speed = Vector2.Multiply(blast[1].Direction, -0.8f);
+                        player[1].Blasting = true;
+                    }
+                }
+                else
+                {
+                    if (blast[1].Ready)
+                    {
+                        player[1].Blasting = false;
+                        blast[1].Ready = false;
+                    }
+                }
+
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
                 {
                     player[0].Speed.X += player[0].SpeedPower;
@@ -130,7 +195,7 @@ namespace blastrs
                         player[0].Blasting = true;
                     }
                 }
-                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.LeftShift))
+                else
                 {
                     if (blast[0].Ready)
                     {
@@ -166,7 +231,7 @@ namespace blastrs
                         player[1].Blasting = true;
                     }
                 }
-                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.RightShift))
+                else
                 {
                     if (blast[1].Ready)
                     {
