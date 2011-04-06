@@ -252,7 +252,7 @@ namespace blastrs
                     else if (dataType == DataType.Tint)
                     {
                         Tint_KeyFrame[index].Add(Convert.ToInt32(line.Split('>').First().Split('<').Last()));
-                        Tint_Data[index].Add(new Vector3((float)Convert.ToDouble((line.Split(' ').Last().Split(',').First()))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',').First().Split(',').First()))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',').Last()))/255));
+                        Tint_Data[index].Add(new Vector3((float)Convert.ToDouble((line.Split(' ').Last().Split(',').First()))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',')[1]))/255, (float)Convert.ToDouble((line.Split(' ').Last().Split(',').Last()))/255));
 
                         if (Tint_KeyFrame[index][Tint_KeyFrame[index].Count - 1] > EndFrame)
                         {

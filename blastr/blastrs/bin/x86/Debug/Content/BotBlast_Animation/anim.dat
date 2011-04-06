@@ -16,6 +16,10 @@ BEGIN Pivot
 <0> 200,200
 END Pivot
 
+BEGIN Tint
+<0> 0,0,255
+END Tint
+
 <<_Audio: Explosion
 
 BEGIN Audio_PlayStamps

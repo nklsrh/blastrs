@@ -50,7 +50,7 @@ namespace blastrs
             }
             if (BotIndex == 1)
             {
-                BlastTimer = new TimeSpan(0, 0, 7);
+                BlastTimer = new TimeSpan(0, 0, 5);
             }
             Scale = 1f;
             TintColor = Color.White;
