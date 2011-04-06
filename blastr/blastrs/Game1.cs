@@ -119,7 +119,7 @@ namespace blastrs
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
             Input.Initialize(this, Player[0], Player[1], Player[2]);
             randomsssss = new Random(917329);
-            CountDownTime = new TimeSpan(0, 0, 30);
+            CountDownTime = new TimeSpan(0, 2, 0);
         }
 
         protected override void LoadContent()
