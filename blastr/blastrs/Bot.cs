@@ -108,6 +108,7 @@ namespace blastrs
                 {
                     botBlast.Detonate(targets, Position);
                     Blasted = true;
+                    Dropped = false;
                 }
                 if (BlastTimer <= TimeSpan.Zero)
                 {

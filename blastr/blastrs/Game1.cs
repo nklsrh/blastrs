@@ -32,7 +32,7 @@ namespace blastrs
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
-        public Bot[] Bot = new Bot[2];
+        public Bot[] Bot;
         public SpriteFont Font, BoldFont;
         public Menu Menu;
         public TimeSpan CountDownTime;
@@ -73,6 +73,8 @@ namespace blastrs
             }
 
             Player = new Player[NumberOfPlayers];
+            Bot = new Bot[NumberOfPlayers];
+
             for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Player[r] = new Player(this);
@@ -127,7 +129,7 @@ namespace blastrs
             }
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
             Input.Initialize(this, Player);
-            randomsssss = new Random(917329);
+            randomsssss = new Random();
             CountDownTime = new TimeSpan(0, 2, 0);
         }
 
@@ -240,7 +242,7 @@ namespace blastrs
                     }
                     else
                     {
-                        randomsssss = new Random(123123);
+                        randomsssss = new Random();
                         Bot[r].Drop(gameTime);
                     }
                 }
