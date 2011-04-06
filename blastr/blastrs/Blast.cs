@@ -40,7 +40,7 @@ namespace blastrs
             // TODO: Add your initialization code here
             Area = new Circle();
             Ready = true;
-            Power = 200;
+            Power = 400;
             Radius = 150;
 
             base.Initialize();
@@ -68,6 +68,7 @@ namespace blastrs
                 if (blastTime <= TimeSpan.Zero)
                 {
                     Ready = true;
+                    Player.Blasting = false;
                     blastTime = new TimeSpan(0, 0, 5);
                 }
             }

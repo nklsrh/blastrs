@@ -25,9 +25,15 @@ Content\font.xnb
 Content\BoldFont.xnb
 Content\BotBlast_Animation\Explosion.xnb
 Content\BomBot\BombBeep.xnb
+Content\CountDown\countDown.xnb
+Content\CountDown\0.xnb
+Content\CountDown\1.xnb
+Content\CountDown\2.xnb
+Content\CountDown\3.xnb
 Content\BomBot\anim.dat
 Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat
 Content\ControlsToChars\anim.dat
+Content\CountDown\anim.dat
 Content\MainToControls\anim.dat
 Content\SideSwipes\anim.dat

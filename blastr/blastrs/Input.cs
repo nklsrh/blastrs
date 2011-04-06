@@ -28,7 +28,7 @@ namespace blastrs
 
         GamePadState[] previousGamePadState, currentGamePadState;
         KeyboardState previousKeyboardState, currentKeyboardState;
-        bool isDualShockAPressed;
+        bool isDualShockPressed;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
@@ -45,7 +45,7 @@ namespace blastrs
                 currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
             }
             previousKeyboardState = Keyboard.GetState(PlayerIndex.One);
-            isDualShockAPressed = false;
+            isDualShockPressed = false;
             base.Initialize();
         }
 
@@ -55,33 +55,38 @@ namespace blastrs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player[] player)
         {
+            //------------------------------------------------------DUALSHOCK3
             game.u1 = game.users.GetUser(1);
-            if(!game.u1.PressedA() && isDualShockAPressed)
+            if (!game.u1.PressedA() && isDualShockPressed)
             {
                 if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
                 {
                     game.ControlsToChars.Play();
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                {
-                    game.ChannelLogoAnim.Play();
                 }
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
                 {
                     game.MenuToControls.Play();
                     //game.ChannelLogoAnim.Play();
                 }
+                isDualShockPressed = false;
+            }
+            if (game.u1.PressedA())
+            {
+                isDualShockPressed = true;
+            }
+            if (game.u1.PressedStart())
+            {
                 if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
                 {
                     game.ChannelLogoAnim.Play();
                 }
-                isDualShockAPressed = false;
-            }
-            if (game.u1.PressedA())
-            {
-                isDualShockAPressed = true;
+                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
             }
 
+            //------------------------------------------------------KEYBOARD
             currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
             if (currentKeyboardState.IsKeyDown(Keys.A) && previousKeyboardState.IsKeyUp(Keys.A))
             {
@@ -89,51 +94,55 @@ namespace blastrs
                 {
                     game.ControlsToChars.Play();
                 }
-                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                {
-                    game.ChannelLogoAnim.Play();
-                }
                 if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
                 {
                     game.MenuToControls.Play();
                     //game.ChannelLogoAnim.Play();
                 }
+            }
+            if (currentKeyboardState.IsKeyDown(Keys.Enter) && previousKeyboardState.IsKeyUp(Keys.Enter))
+            {
                 if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
                 {
                     game.ChannelLogoAnim.Play();
                 }
             }
 
-            for (int i = 0; i < player.Length; i++) //OOOH ITS PLAYER.LENGTH, I USED .RANK BUT IT FAILED
-            {
-                currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
-                if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
-                {
-                    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-                    {
-                        game.ControlsToChars.Play();
-                    }
-                    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                    {
-                        game.ChannelLogoAnim.Play();
-                    }
-                    if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-                    {
-                        game.MenuToControls.Play();
-                        //game.ChannelLogoAnim.Play();
-                    }
-                    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-                    {
-                        game.ChannelLogoAnim.Play();
-                    }
-                }
-            }
+            //------------------------------------------------------XBOX360
+            //for (int i = 0; i < player.Length; i++) 
+            //{
+            //    currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
+            //    if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
+            //    {
+            //        if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+            //        {
+            //            game.ControlsToChars.Play();
+            //        }
+            //        if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+            //        {
+            //            game.ChannelLogoAnim.Play();
+            //        }
+            //        if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+            //        {
+            //            game.MenuToControls.Play();
+            //            //game.ChannelLogoAnim.Play();
+            //        }
+            //        if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+            //        {
+            //            game.ChannelLogoAnim.Play();
+            //        }
+            //    }
+            //}
 
-            // TODO: Add your update code here
+            
             #region GameControls
             if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
             {
-                
+                //------------------------------------------------------DUALSHOCK3
                 if (game.u1.GetLeftStick().X > 0)
                 {
                     player[1].Speed.X += player[1].SpeedPower;
@@ -150,7 +159,8 @@ namespace blastrs
                 {
                     player[1].Speed.Y += player[1].SpeedPower;
                 }
-                if (game.u1.PressedRightTrigger())
+
+                if (!game.u1.PressedRightBumper())
                 {
                     if (!player[1].Blasting)
                     {
@@ -169,6 +179,8 @@ namespace blastrs
                     }
                 }
 
+
+                //------------------------------------------------------KEGBOARD
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
                 {
                     player[0].Speed.X += player[0].SpeedPower;
@@ -195,7 +207,7 @@ namespace blastrs
                         player[0].Blasting = true;
                     }
                 }
-                else
+                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.LeftShift))
                 {
                     if (blast[0].Ready)
                     {
@@ -204,7 +216,7 @@ namespace blastrs
                     }
                 }
 
-
+                //------------------------------------------------------KEGBOARD2
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
                 {
                     player[1].Speed.X += player[1].SpeedPower;
@@ -231,7 +243,7 @@ namespace blastrs
                         player[1].Blasting = true;
                     }
                 }
-                else
+                if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.RightShift))
                 {
                     if (blast[1].Ready)
                     {
@@ -239,51 +251,51 @@ namespace blastrs
                         blast[1].Ready = false;
                     }
                 }
+                //------------------------------------------------------XBOX360
+                //for (int i = 0; i < player.Length; i++) 
+                //{
+                //    if (currentGamePadState[i].ThumbSticks.Left.X > 0)
+                //    {
+                //        player[i].Speed.X += player[i].SpeedPower;
+                //    }
+                //    if (currentGamePadState[i].ThumbSticks.Left.X < 0)
+                //    {
+                //        player[i].Speed.X -= player[i].SpeedPower;
+                //    }
+                //    if (currentGamePadState[i].ThumbSticks.Left.Y > 0)
+                //    {
+                //        player[i].Speed.Y -= player[i].SpeedPower;
+                //    }
+                //    if (currentGamePadState[i].ThumbSticks.Left.Y < 0)
+                //    {
+                //        player[i].Speed.Y += player[i].SpeedPower;
+                //    }
 
-                for (int i = 0; i < player.Length; i++) //OOOH ITS player.LENGTH, I USED .RANK BUT IT FAILED
-                {
-                    if (currentGamePadState[i].ThumbSticks.Left.X > 0)
-                    {
-                        player[i].Speed.X += player[i].SpeedPower;
-                    }
-                    if (currentGamePadState[i].ThumbSticks.Left.X < 0)
-                    {
-                        player[i].Speed.X -= player[i].SpeedPower;
-                    }
-                    if (currentGamePadState[i].ThumbSticks.Left.Y > 0)
-                    {
-                        player[i].Speed.Y -= player[i].SpeedPower;
-                    }
-                    if (currentGamePadState[i].ThumbSticks.Left.Y < 0)
-                    {
-                        player[i].Speed.Y += player[i].SpeedPower;
-                    }
-
-                    if (currentGamePadState[i].Triggers.Right < 0.5)
-                    {
-                        if (!player[i].Blasting)
-                        {
-                            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
-                            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
-                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
-                            player[i].Blasting = true;
-                        }
-                    }
-                    if (currentGamePadState[i].Triggers.Right > 0.5)
-                    {
-                        if (blast[i].Ready)
-                        {
-                            player[i].Blasting = false;
-                            blast[i].Ready = false;
-                        }
-                    }
-                }
+                //    if (currentGamePadState[i].Triggers.Right < 0.5)
+                //    {
+                //        if (!player[i].Blasting)
+                //        {
+                //            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                //            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
+                //            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
+                //            player[i].Blasting = true;
+                //        }
+                //    }
+                //    if (currentGamePadState[i].Triggers.Right > 0.5)
+                //    {
+                //        if (blast[i].Ready)
+                //        {
+                //            player[i].Blasting = false;
+                //            blast[i].Ready = false;
+                //        }
+                //    }
+                //}
 
             }
             #endregion GameControls
 
             previousKeyboardState = currentKeyboardState;
-            for (int i = 0; i < player.Length; i++) //OOOH ITS PLAYER.LENGTH, I USED .RANK BUT IT FAILED
+            for (int i = 0; i < player.Length; i++) 
             {
                 previousGamePadState[i] = currentGamePadState[i];
             }

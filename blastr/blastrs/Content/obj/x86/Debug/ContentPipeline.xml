@@ -244,6 +244,51 @@
       <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\BomBot\BombBeep.xnb</Output>
       <Time>2011-04-06T16:30:57.1855468+10:00</Time>
     </Item>
+    <Item>
+      <Source>CountDown\countDown.png</Source>
+      <Name>CountDown\countDown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\countDown.xnb</Output>
+      <Time>2011-04-06T19:40:32.5615234+10:00</Time>
+    </Item>
+    <Item>
+      <Source>CountDown\0.png</Source>
+      <Name>CountDown\0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\0.xnb</Output>
+      <Time>2011-04-06T19:44:14.2792968+10:00</Time>
+    </Item>
+    <Item>
+      <Source>CountDown\1.png</Source>
+      <Name>CountDown\1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\1.xnb</Output>
+      <Time>2011-04-06T19:44:14.2861328+10:00</Time>
+    </Item>
+    <Item>
+      <Source>CountDown\2.png</Source>
+      <Name>CountDown\2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\2.xnb</Output>
+      <Time>2011-04-06T19:44:14.2939453+10:00</Time>
+    </Item>
+    <Item>
+      <Source>CountDown\3.png</Source>
+      <Name>CountDown\3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\3.xnb</Output>
+      <Time>2011-04-06T19:44:14.2988281+10:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -22,6 +22,7 @@ namespace blastrs
         public Animation MenuToControls;
         public Animation ControlsToChars;
         public Animation ChannelLogoAnim;
+        public Animation CountDown;
 
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
@@ -79,6 +80,7 @@ namespace blastrs
             MenuToControls = new Animation(this);
             ControlsToChars = new Animation(this);
             ChannelLogoAnim = new Animation(this);
+            CountDown = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
@@ -162,6 +164,7 @@ namespace blastrs
             MenuToControls.LoadAnimationData("MainToControls", Content);
             ControlsToChars.LoadAnimationData("ControlsToChars", Content);
             ChannelLogoAnim.LoadAnimationData("ChannelLogo", Content);
+            CountDown.LoadAnimationData("CountDown", Content);
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -288,14 +291,12 @@ namespace blastrs
             //    }
             //}
 
-            //Window.Title = Menu.CurrentScreen.ToString();
-            // TODO: Add your update logic here
+            //Window.Title = users.GetUser().ToString();
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player);
 
             base.Update(gameTime);
         }
-
         void UpdateDualShocks(GameTime gameTime)
         {
             JoystickState deviceState = device.CurrentJoystickState;
@@ -337,7 +338,6 @@ namespace blastrs
                 RightThumbStick.X = 0;
 
         }
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -372,21 +372,8 @@ namespace blastrs
 
             base.Draw(gameTime);
         }
-
         public void PlayAnimations(GameTime gameTime)
         {
-            //if (SideSwipers.IsPlaying == false)
-            //{
-            //    SideSwipers.Play();
-            //}
-            //if (Menu.CurrentScreen == Menu.Card.MainMenu)
-            //{
-            //    if (SideSwipers.IsPlaying == true)
-            //    {
-            //        SideSwipers.Draw(spriteBatch);
-            //    }
-            //}
-
             if (MenuToControls.IsPlaying == true)
             {
                 MenuToControls.Draw(spriteBatch);
@@ -415,12 +402,23 @@ namespace blastrs
             {
                 if (Menu.CurrentScreen == Menu.Card.PlayerInformation || Menu.CurrentScreen == Menu.Card.Scoreboard)
                 {
+                    CountDown.Play();
+                }
+            }
+
+            if (CountDown.IsPlaying)
+            {
+                CountDown.Draw(spriteBatch);
+            }
+            if (CountDown.CurrentFrame == CountDown.EndFrame)
+            {
+                if (Menu.CurrentScreen == Menu.Card.PlayerInformation || Menu.CurrentScreen == Menu.Card.Scoreboard)
+                {
                     Menu.CurrentScreen = blastrs.Menu.Card.InGame;
                     Menu.Initialize(this, spriteBatch, Content);
                 }
             }
         }
-
         public void DrawScore()
         {
                 spriteBatch.Begin();
