@@ -214,3 +214,5 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BomBot\anim.dat
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug\Content\BotBlast_Animation\anim.dat
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\MainMenu.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\Controls.xnb

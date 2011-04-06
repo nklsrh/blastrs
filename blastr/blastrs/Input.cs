@@ -25,18 +25,18 @@ namespace blastrs
             // TODO: Construct any child components here
         }
         bool KeyPressed;
-        Player[] Player;
+        //Player[] Player;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
-        public void Initialize(Game1 game, Player p1, Player p2, Player p3)
+        public void Initialize(Game1 game)
         {
             // TODO: Add your initialization code here
-            Player = new Player[3];
-            Player[0] = p1;
-            Player[1] = p2;
-            Player[2] = p3;
+            //Player = new Player[3];
+            //Player[0] = p1;
+            //Player[1] = p2;
+            //Player[2] = p3;
             base.Initialize();
         }
 
@@ -44,7 +44,7 @@ namespace blastrs
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content)
+        public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player[] player)
         {
             // TODO: Add your update code here
             #region GameControls
@@ -52,35 +52,35 @@ namespace blastrs
             {
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
                 {
-                    Player[0].Speed.X += Player[0].SpeedPower;
+                    player[0].Speed.X += player[0].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
                 {
-                    Player[0].Speed.X -= Player[0].SpeedPower;
+                    player[0].Speed.X -= player[0].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.W))
                 {
-                    Player[0].Speed.Y -= Player[0].SpeedPower;
+                    player[0].Speed.Y -= player[0].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
                 {
-                    Player[0].Speed.Y += Player[0].SpeedPower;
+                    player[0].Speed.Y += player[0].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.LeftShift))
                 {
-                    if (!Player[0].Blasting)
+                    if (!player[0].Blasting)
                     {
-                        blast[0].Position = Player[0].Position + Vector2.Multiply(Player[0].Speed, 1.5f);
-                        blast[0].Direction = Player[0].Speed;
-                        Player[0].Speed = Vector2.Multiply(blast[0].Direction, -0.8f);
-                        Player[0].Blasting = true;
+                        blast[0].Position = player[0].Position + Vector2.Multiply(player[0].Speed, 1.5f);
+                        blast[0].Direction = player[0].Speed;
+                        player[0].Speed = Vector2.Multiply(blast[0].Direction, -0.8f);
+                        player[0].Blasting = true;
                     }
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.LeftShift))
                 {
                     if (blast[0].Ready)
                     {
-                        Player[0].Blasting = false;
+                        player[0].Blasting = false;
                         blast[0].Ready = false;
                     }
                 }
@@ -88,73 +88,73 @@ namespace blastrs
 
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
                 {
-                    Player[1].Speed.X += Player[1].SpeedPower;
+                    player[1].Speed.X += player[1].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Left))
                 {
-                    Player[1].Speed.X -= Player[1].SpeedPower;
+                    player[1].Speed.X -= player[1].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Up))
                 {
-                    Player[1].Speed.Y -= Player[1].SpeedPower;
+                    player[1].Speed.Y -= player[1].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Down))
                 {
-                    Player[1].Speed.Y += Player[1].SpeedPower;
+                    player[1].Speed.Y += player[1].SpeedPower;
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.RightShift))
                 {
-                    if (!Player[1].Blasting)
+                    if (!player[1].Blasting)
                     {
-                        blast[1].Position = Player[1].Position + Vector2.Multiply(Player[1].Speed, 1.5f);
-                        blast[1].Direction = Vector2.Multiply(Player[1].Speed, 5f);
-                        Player[1].Speed = Vector2.Multiply(blast[1].Direction, -0.8f);
-                        Player[1].Blasting = true;
+                        blast[1].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                        blast[1].Direction = Vector2.Multiply(player[1].Speed, 5f);
+                        player[1].Speed = Vector2.Multiply(blast[1].Direction, -0.8f);
+                        player[1].Blasting = true;
                     }
                 }
                 if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.RightShift))
                 {
                     if (blast[1].Ready)
                     {
-                        Player[1].Blasting = false;
+                        player[1].Blasting = false;
                         blast[1].Ready = false;
                     }
                 }
 
-                for (int i = 0; i < Player.Length; i++)
+                for (int i = 0; i < player.Length; i++)
                 {
                     if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X > 0)
                     {
-                        Player[i].Speed.X += Player[i].SpeedPower;
+                        player[i].Speed.X += player[i].SpeedPower;
                     }
                     if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X < 0)
                     {
-                        Player[i].Speed.X -= Player[i].SpeedPower;
+                        player[i].Speed.X -= player[i].SpeedPower;
                     }
                     if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y > 0)
                     {
-                        Player[i].Speed.Y -= Player[i].SpeedPower;
+                        player[i].Speed.Y -= player[i].SpeedPower;
                     }
                     if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y < 0)
                     {
-                        Player[i].Speed.Y += Player[i].SpeedPower;
+                        player[i].Speed.Y += player[i].SpeedPower;
                     }
 
                     if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right < 0.5)
                     {
-                        if (!Player[i].Blasting)
+                        if (!player[i].Blasting)
                         {
-                            blast[i].Position = Player[1].Position + Vector2.Multiply(Player[1].Speed, 1.5f);
-                            blast[i].Direction = Vector2.Multiply(Player[i].Speed, 5f);
-                            Player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
-                            Player[i].Blasting = true;
+                            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
+                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
+                            player[i].Blasting = true;
                         }
                     }
                     if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right > 0.5)
                     {
                         if (blast[i].Ready)
                         {
-                            Player[i].Blasting = false;
+                            player[i].Blasting = false;
                             blast[i].Ready = false;
                         }
                     }

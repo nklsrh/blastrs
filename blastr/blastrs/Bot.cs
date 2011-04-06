@@ -98,7 +98,7 @@ namespace blastrs
 
                 if (BotIndex == 1)
                 {
-                    Target = 3 - game.Bot[0].Target; //other bombot chases the opposite color; if blue then yellow
+                    //Target = 3 - game.Bot[0].Target; //other bombot chases the opposite color; if blue then yellow
                 }
 
                 Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower);

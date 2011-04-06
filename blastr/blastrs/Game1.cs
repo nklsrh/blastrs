@@ -62,7 +62,16 @@ namespace blastrs
             //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
 
-            NumberOfPlayers = 4;
+            NumberOfPlayers = 2;
+
+            for (int i = 2; i < 4; i++)
+            {
+                if (GamePad.GetCapabilities((PlayerIndex)(i)).IsConnected == true)
+                {
+                    NumberOfPlayers += 1;
+                }
+            }
+
             Player = new Player[NumberOfPlayers];
             for (int r = 0; r < NumberOfPlayers; r++)
             {
@@ -117,7 +126,7 @@ namespace blastrs
                 Blast[r].Initialize();
             }
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
-            Input.Initialize(this, Player[0], Player[1], Player[2]);
+            Input.Initialize(this);
             randomsssss = new Random(917329);
             CountDownTime = new TimeSpan(0, 2, 0);
         }
@@ -131,21 +140,42 @@ namespace blastrs
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
-            Player[0].StarImage = Content.Load<Texture2D>("star");
-            Player[0].Shadow = Content.Load<Texture2D>("shadow");
+            try
+            {
 
-            Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
-            Player[1].StarImage = Content.Load<Texture2D>("star");
-            Player[1].Shadow = Content.Load<Texture2D>("shadow");
+                Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
+                Player[0].StarImage = Content.Load<Texture2D>("star");
+                Player[0].Shadow = Content.Load<Texture2D>("shadow");
+            }
+            catch (Exception e)
+            {
+            }
 
-            Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
-            Player[2].StarImage = Content.Load<Texture2D>("star");
-            Player[2].Shadow = Content.Load<Texture2D>("shadow");
+            try
+            {
+                Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
+                Player[1].StarImage = Content.Load<Texture2D>("star");
+                Player[1].Shadow = Content.Load<Texture2D>("shadow");
+            }
+            catch (Exception e)
+            {
+            }
 
-            Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
-            Player[3].StarImage = Content.Load<Texture2D>("star");
-            Player[3].Shadow = Content.Load<Texture2D>("shadow");
+            try
+            {
+                Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
+                Player[2].StarImage = Content.Load<Texture2D>("star");
+                Player[2].Shadow = Content.Load<Texture2D>("shadow");
+            }
+            catch (Exception e) { }
+
+            try
+            {
+                Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
+                Player[3].StarImage = Content.Load<Texture2D>("star");
+                Player[3].Shadow = Content.Load<Texture2D>("shadow");
+            }
+            catch (Exception e) { }
 
             for (int r = 0; r < 2; r++)
             {
@@ -236,7 +266,7 @@ namespace blastrs
             //Window.Title = Menu.CurrentScreen.ToString();
             // TODO: Add your update logic here
 
-            Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content);
+            Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player);
 
             base.Update(gameTime);
         }
@@ -328,11 +358,31 @@ namespace blastrs
         public void DrawScore()
         {
                 spriteBatch.Begin();
-                spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
-                spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
-                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
-                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
-                spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(10, 5), new Color(150, 150, 150));
+                try
+                {
+                    spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
+                }
+                catch (Exception e) { }
+                try
+                {
+                    spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
+                }
+                catch (Exception e) { }
+                try
+                {
+                    spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
+                }
+                catch (Exception e) { }
+                try
+                {
+                    spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
+                }
+                catch (Exception e) { }
+                try
+                {
+                    spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(10, 5), new Color(150, 150, 150));
+                }
+                catch (Exception e) { }
                 spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 60), new Color(222, 222, 222));
                 spriteBatch.End();
         }
