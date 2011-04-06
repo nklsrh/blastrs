@@ -121,6 +121,45 @@ namespace blastrs
                     }
                 }
 
+                for (int i = 0; i < Player.Length; i++)
+                {
+                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X > 0)
+                    {
+                        Player[i].Speed.X += Player[i].SpeedPower;
+                    }
+                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X < 0)
+                    {
+                        Player[i].Speed.X -= Player[i].SpeedPower;
+                    }
+                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y > 0)
+                    {
+                        Player[i].Speed.Y -= Player[i].SpeedPower;
+                    }
+                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y < 0)
+                    {
+                        Player[i].Speed.Y += Player[i].SpeedPower;
+                    }
+
+                    if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right < 0.5)
+                    {
+                        if (!Player[i].Blasting)
+                        {
+                            blast[i].Position = Player[1].Position + Vector2.Multiply(Player[1].Speed, 1.5f);
+                            blast[i].Direction = Vector2.Multiply(Player[i].Speed, 5f);
+                            Player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
+                            Player[i].Blasting = true;
+                        }
+                    }
+                    if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right > 0.5)
+                    {
+                        if (blast[i].Ready)
+                        {
+                            Player[i].Blasting = false;
+                            blast[i].Ready = false;
+                        }
+                    }
+                }
+
             }
             #endregion GameControls
             if (KeyPressed)
