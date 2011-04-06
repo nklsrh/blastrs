@@ -25,18 +25,25 @@ namespace blastrs
             // TODO: Construct any child components here
         }
         bool KeyPressed;
-        //Player[] Player;
+
+        GamePadState[] previousGamePadState, currentGamePadState;
+        KeyboardState previousKeyboardState, currentKeyboardState;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
-        public void Initialize(Game1 game)
+        public void Initialize(Game1 game, Player[] player)
         {
             // TODO: Add your initialization code here
-            //Player = new Player[3];
-            //Player[0] = p1;
-            //Player[1] = p2;
-            //Player[2] = p3;
+            previousGamePadState = new GamePadState[4];
+            currentGamePadState = new GamePadState[4];
+
+            for (int i = 0; i < player.Length; i++) //RESET PREVIOUS GAME STATES
+            {
+                previousGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
+                currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
+            }
+            previousKeyboardState = Keyboard.GetState(PlayerIndex.One);
             base.Initialize();
         }
 
@@ -46,6 +53,53 @@ namespace blastrs
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player[] player)
         {
+            currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
+            if (currentKeyboardState.IsKeyDown(Keys.A) && previousKeyboardState.IsKeyUp(Keys.A))
+            {
+                if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+                {
+                    game.ControlsToChars.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+                {
+                    game.MenuToControls.Play();
+                    //game.ChannelLogoAnim.Play();
+                }
+                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                {
+                    game.ChannelLogoAnim.Play();
+                }
+            }
+
+            for (int i = 0; i < player.Length; i++) //OOOH ITS PLAYER.LENGTH, I USED .RANK BUT IT FAILED
+            {
+                currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
+                if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
+                {
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+                    {
+                        game.ControlsToChars.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                    {
+                        game.ChannelLogoAnim.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+                    {
+                        game.MenuToControls.Play();
+                        //game.ChannelLogoAnim.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                    {
+                        game.ChannelLogoAnim.Play();
+                    }
+                }
+            }
+
             // TODO: Add your update code here
             #region GameControls
             if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
@@ -121,26 +175,26 @@ namespace blastrs
                     }
                 }
 
-                for (int i = 0; i < player.Length; i++)
+                for (int i = 0; i < player.Length; i++) //OOOH ITS player.LENGTH, I USED .RANK BUT IT FAILED
                 {
-                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X > 0)
+                    if (currentGamePadState[i].ThumbSticks.Left.X > 0)
                     {
                         player[i].Speed.X += player[i].SpeedPower;
                     }
-                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.X < 0)
+                    if (currentGamePadState[i].ThumbSticks.Left.X < 0)
                     {
                         player[i].Speed.X -= player[i].SpeedPower;
                     }
-                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y > 0)
+                    if (currentGamePadState[i].ThumbSticks.Left.Y > 0)
                     {
                         player[i].Speed.Y -= player[i].SpeedPower;
                     }
-                    if (GamePad.GetState((PlayerIndex)(i)).ThumbSticks.Left.Y < 0)
+                    if (currentGamePadState[i].ThumbSticks.Left.Y < 0)
                     {
                         player[i].Speed.Y += player[i].SpeedPower;
                     }
 
-                    if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right < 0.5)
+                    if (currentGamePadState[i].Triggers.Right < 0.5)
                     {
                         if (!player[i].Blasting)
                         {
@@ -150,7 +204,7 @@ namespace blastrs
                             player[i].Blasting = true;
                         }
                     }
-                    if (GamePad.GetState((PlayerIndex)(i)).Triggers.Right > 0.5)
+                    if (currentGamePadState[i].Triggers.Right > 0.5)
                     {
                         if (blast[i].Ready)
                         {
@@ -162,69 +216,11 @@ namespace blastrs
 
             }
             #endregion GameControls
-            if (KeyPressed)
+
+            previousKeyboardState = currentKeyboardState;
+            for (int i = 0; i < player.Length; i++) //OOOH ITS PLAYER.LENGTH, I USED .RANK BUT IT FAILED
             {
-                if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
-                    {
-                        game.ControlsToChars.Play();
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
-                    {
-                        game.ChannelLogoAnim.Play();
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.A))
-                    {
-                        game.MenuToControls.Play();
-                        //game.ChannelLogoAnim.Play();
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.Enter))
-                    {
-                        game.ChannelLogoAnim.Play();
-                    }
-                }
-                KeyPressed = false;
-            }
-            else
-            {
-                 if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
-                    {
-                        KeyPressed = true;
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Enter))
-                    {
-                        KeyPressed = true;
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
-                    {
-                        KeyPressed = true;
-                    }
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-                {
-                    if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Enter))
-                    {
-                        KeyPressed = true;
-                    }
-                }
+                previousGamePadState[i] = currentGamePadState[i];
             }
             
 
