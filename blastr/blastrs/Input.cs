@@ -113,30 +113,30 @@ namespace blastrs
             }
 
             //------------------------------------------------------XBOX360
-            //for (int i = 0; i < player.Length; i++) 
-            //{
-            //    currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
-            //    if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
-            //    {
-            //        if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-            //        {
-            //            game.ControlsToChars.Play();
-            //        }
-            //        if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-            //        {
-            //            game.ChannelLogoAnim.Play();
-            //        }
-            //        if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-            //        {
-            //            game.MenuToControls.Play();
-            //            //game.ChannelLogoAnim.Play();
-            //        }
-            //        if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-            //        {
-            //            game.ChannelLogoAnim.Play();
-            //        }
-            //    }
-            //}
+            for (int i = 0; i < player.Length; i++)
+            {
+                currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
+                if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
+                {
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+                    {
+                        game.ControlsToChars.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                    {
+                        game.ChannelLogoAnim.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+                    {
+                        game.MenuToControls.Play();
+                        //game.ChannelLogoAnim.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                    {
+                        game.ChannelLogoAnim.Play();
+                    }
+                }
+            }
 
             
             #region GameControls
@@ -252,44 +252,44 @@ namespace blastrs
                     }
                 }
                 //------------------------------------------------------XBOX360
-                //for (int i = 0; i < player.Length; i++) 
-                //{
-                //    if (currentGamePadState[i].ThumbSticks.Left.X > 0)
-                //    {
-                //        player[i].Speed.X += player[i].SpeedPower;
-                //    }
-                //    if (currentGamePadState[i].ThumbSticks.Left.X < 0)
-                //    {
-                //        player[i].Speed.X -= player[i].SpeedPower;
-                //    }
-                //    if (currentGamePadState[i].ThumbSticks.Left.Y > 0)
-                //    {
-                //        player[i].Speed.Y -= player[i].SpeedPower;
-                //    }
-                //    if (currentGamePadState[i].ThumbSticks.Left.Y < 0)
-                //    {
-                //        player[i].Speed.Y += player[i].SpeedPower;
-                //    }
+                for (int i = 0; i < player.Length; i++)
+                {
+                    if (currentGamePadState[i].ThumbSticks.Left.X > 0)
+                    {
+                        player[i].Speed.X += player[i].SpeedPower;
+                    }
+                    if (currentGamePadState[i].ThumbSticks.Left.X < 0)
+                    {
+                        player[i].Speed.X -= player[i].SpeedPower;
+                    }
+                    if (currentGamePadState[i].ThumbSticks.Left.Y > 0)
+                    {
+                        player[i].Speed.Y -= player[i].SpeedPower;
+                    }
+                    if (currentGamePadState[i].ThumbSticks.Left.Y < 0)
+                    {
+                        player[i].Speed.Y += player[i].SpeedPower;
+                    }
 
-                //    if (currentGamePadState[i].Triggers.Right < 0.5)
-                //    {
-                //        if (!player[i].Blasting)
-                //        {
-                //            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
-                //            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
-                //            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
-                //            player[i].Blasting = true;
-                //        }
-                //    }
-                //    if (currentGamePadState[i].Triggers.Right > 0.5)
-                //    {
-                //        if (blast[i].Ready)
-                //        {
-                //            player[i].Blasting = false;
-                //            blast[i].Ready = false;
-                //        }
-                //    }
-                //}
+                    if (currentGamePadState[i].Triggers.Right < 0.5)
+                    {
+                        if (!player[i].Blasting)
+                        {
+                            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
+                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
+                            player[i].Blasting = true;
+                        }
+                    }
+                    if (currentGamePadState[i].Triggers.Right > 0.5)
+                    {
+                        if (blast[i].Ready)
+                        {
+                            player[i].Blasting = false;
+                            blast[i].Ready = false;
+                        }
+                    }
+                }
 
             }
             #endregion GameControls

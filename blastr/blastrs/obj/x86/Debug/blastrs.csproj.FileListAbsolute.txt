@@ -261,3 +261,9 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\1.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\2.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\bin\x86\Debug\Content\CountDown\3.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\3.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\0.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\1.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\2.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\countDown.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\anim.dat
