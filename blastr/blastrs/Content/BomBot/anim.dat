@@ -40,7 +40,6 @@ BEGIN Opacity
 END Opacity
 
 <<_Audio: BombBeep
-
 BEGIN Audio_PlayStamps
 <60>
 <120>
