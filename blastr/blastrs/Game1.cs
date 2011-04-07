@@ -133,12 +133,9 @@ namespace blastrs
             // TODO: Add your initialization logic here
             for (int r = 0; r < NumberOfPlayers; r++)
             {
+                Player[r].Initialize();
                 Player[r].Position = Position;
-                Player[r].Speed = new Vector2(0.01f,0.01f);
-                Player[r].SpeedPower = 0.4f;
-                Player[r].Score = 50;
-                Player[r].Blasting = false;
-
+                
                 if (Position.X == 920)
                 {
                     Position.X = 420;
@@ -252,7 +249,7 @@ namespace blastrs
             
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
-            Menu.CurrentScreen = Menu.Card.MainMenu;
+            Menu.CurrentScreen = Menu.Card.InGame;
             Menu.Initialize(this, spriteBatch, Content);
             // TODO: use this.Content to load your game content here
         }
@@ -456,25 +453,25 @@ namespace blastrs
                 try
                 {
                     spriteBatch.Draw(ScoreBar[0], new Rectangle(42, (int)(622.5f - ((float)(Player[0].Score / 1000f) * 379f)), 85, (int)(((float)(Player[0].Score / 1000f) * 379f))), Color.White);
-                    spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
+                    //spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
                 }
                 catch (Exception e) { }
                 try
                 {
                     spriteBatch.Draw(ScoreBar[1], new Rectangle(165, (int)(622.5f - ((float)(Player[1].Score / 1000f) * 379f)), 85, (int)(((float)(Player[1].Score / 1000f) * 379f))), Color.White);
-                    spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
+                    //spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
                 } 
                 catch (Exception e) { }
                 try
                 {
                     spriteBatch.Draw(ScoreBar[2], new Rectangle(1087, (int)(622.5f - ((float)(Player[2].Score / 1000f) * 379f)), 85, (int)(((float)(Player[2].Score / 1000f) * 379f))), Color.White);
-                    spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
+                    //spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
                 }
                 catch (Exception e) { }
                 try
                 {
                     spriteBatch.Draw(ScoreBar[3], new Rectangle(1223, (int)(622.5f - ((float)(Player[3].Score / 1000f) * 379f)), 85, (int)(((float)(Player[3].Score / 1000f) * 379f))), Color.White);
-                    spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
+                    //spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
                 }
                 catch (Exception e) { }
 

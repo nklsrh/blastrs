@@ -41,6 +41,11 @@ namespace blastrs
         {
             // TODO: Add your initialization code here
             TintColour = Color.White;
+            Blasting = false;
+            Score = 50;
+            SpeedPower = 0.4f;
+            Speed = new Vector2(0.01f, 0.01f);
+
             base.Initialize();
         }
 
