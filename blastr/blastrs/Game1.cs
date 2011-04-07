@@ -60,6 +60,8 @@ namespace blastrs
         public IUserInterface users;
         public User u1;
 
+        public int[] myint;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -98,7 +100,6 @@ namespace blastrs
             }
 
             Player = new Player[NumberOfPlayers];
-            Bot = new Bot[2];
 
             for (int r = 0; r < NumberOfPlayers; r++)
             {
@@ -154,7 +155,7 @@ namespace blastrs
             }
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
             Input.Initialize(this, Player);
-            randomsssss = new Random();
+            randomsssss = new Random(917329);
             CountDownTime = new TimeSpan(0, 2, 0);
         }
 
@@ -237,6 +238,11 @@ namespace blastrs
 
         protected override void Update(GameTime gameTime)
         {
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    myint = new Int32[1000];
+            //}
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -256,7 +262,7 @@ namespace blastrs
 
                 for (int r = 0; r < 2; r++)
                 {
-                    if (Bot[r].Dropped == true)
+                    if (Bot[r].Dropped)
                     {
                         Bot[r].Update(gameTime, this, Player);//, Blast[r+3]);
 
