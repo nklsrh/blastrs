@@ -40,8 +40,8 @@ namespace blastrs
             // TODO: Add your initialization code here
             Area = new Circle();
             Ready = true;
-            Power = 400;
-            Radius = 150;
+            Power = 200;
+            Radius = 50;
 
             base.Initialize();
         }
