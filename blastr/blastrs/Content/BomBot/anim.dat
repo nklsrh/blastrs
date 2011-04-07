@@ -27,10 +27,7 @@ END Tint
 ##bombot2_detonation
 
 BEGIN Position
-<0> 0,-700
-<30> 0,-350
-<45> 0,-200
-<60> 0,0
+<0> 0,0
 END Position
 
 BEGIN Pivot
@@ -43,6 +40,7 @@ BEGIN Opacity
 END Opacity
 
 <<_Audio: BombBeep
+
 BEGIN Audio_PlayStamps
 <60>
 <120>
