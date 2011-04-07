@@ -32,7 +32,7 @@ namespace blastrs
         public void Initialize()
         {
             Radius = 150;
-            Power = 100;
+            Power = 400;
             Area = new Circle(Position, Radius);
         }
 
