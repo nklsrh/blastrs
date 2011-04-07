@@ -62,12 +62,26 @@ namespace blastrs
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
             {
-                
-                Player.Position = new Vector2(1366/2, 768/2);
+                if (Player.Speed.X < 0)
+                {
+                    Player.Position.X = 960;
+                }
+                else
+                {
+                    Player.Position.X = 420;
+                }
+                if (Player.Speed.Y < 0)
+                {
+                    Player.Position.Y = 650;
+                }
+                else
+                {
+                    Player.Position.Y = 120;
+                }
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
-                Player.Score -= gameTime.ElapsedGameTime.Milliseconds / 10;
+                Player.Score += gameTime.ElapsedGameTime.Milliseconds / 10;
             }
             
             Player.TintColour = bgColor;
