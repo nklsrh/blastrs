@@ -109,11 +109,13 @@ namespace blastrs
 
             try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); } catch { }
 
-            if (BlastTimer <= TimeSpan.Zero)
+            if (Sprite.CurrentFrame == 299)
             {
                 if (!Blasted)
                 {
-                    //botBlast.Detonate(targets, Position);
+                    botBlast.Detonate(targets, Position);
+                    Sprite.CurrentFrame = 0;
+                    Sprite.IsPlaying = false;
                     Blasted = true;
                 }
                 if (BlastTimer <= TimeSpan.Zero)
