@@ -198,13 +198,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelLogo\channel2logo.png">
-      <Name>channel2logo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="PlayerInformation.png">
       <Name>PlayerInformation</Name>
       <Importer>TextureImporter</Importer>
@@ -256,13 +249,6 @@
   <ItemGroup>
     <Compile Include="ControlsToChars\Controls.png">
       <Name>Controls</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="CountDown\countDown.png">
-      <Name>countDown</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -335,6 +321,44 @@
   <ItemGroup>
     <Compile Include="CharsToControls\PlayerInformation.png">
       <Name>PlayerInformation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="redBar.png">
+      <Name>redBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="blueBar.png">
+      <Name>blueBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="greenBar.png">
+      <Name>greenBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="yellowBar.png">
+      <Name>yellowBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelLogo\Loading.png">
+      <Name>Loading</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CountDown\CountDownBackground.png">
+      <Name>CountDownBackground</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
