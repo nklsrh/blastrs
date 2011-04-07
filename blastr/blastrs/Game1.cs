@@ -31,6 +31,7 @@ namespace blastrs
 
         public Player[] Player;
         public int NumberOfPlayers;
+        Texture2D[] ScoreBar = new Texture2D[4];
 
         Stadium Stadium;
         Input Input;
@@ -133,10 +134,9 @@ namespace blastrs
             for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Player[r].Position = Position;
-                Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = new Vector2(0.01f,0.01f);
                 Player[r].SpeedPower = 0.4f;
-                Player[r].Score = 0;
+                Player[r].Score = 50;
                 Player[r].Blasting = false;
 
                 if (Position.X == 920)
@@ -161,7 +161,7 @@ namespace blastrs
             Stadium.CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2); //STILL CAMERA FOR NOW         
             Input.Initialize(this, Player);
             randomsssss = new Random(917329);
-            CountDownTime = new TimeSpan(0, 2, 0);
+            CountDownTime = new TimeSpan(0, 1, 0);
         }
 
         protected override void LoadContent()
@@ -178,7 +178,6 @@ namespace blastrs
 
             try
             {
-
                 Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
                 Player[0].StarImage = Content.Load<Texture2D>("star");
                 Player[0].Shadow = Content.Load<Texture2D>("shadow");
@@ -213,6 +212,11 @@ namespace blastrs
             }
             catch (Exception e) { }
 
+            ScoreBar[0] = Content.Load<Texture2D>("redBar");
+            ScoreBar[1] = Content.Load<Texture2D>("blueBar");
+            ScoreBar[2] = Content.Load<Texture2D>("greenBar");
+            ScoreBar[3] = Content.Load<Texture2D>("yellowBar");
+
             for (int r = 0; r < 2; r++)
             {
                 Bot[r].LoadBotAnimation("BomBot", Content, this); //Content.Load<Texture2D>("bombot2");
@@ -231,6 +235,8 @@ namespace blastrs
 
             Font = Content.Load<SpriteFont>("font");
             BoldFont = Content.Load<SpriteFont>("BoldFont");
+
+            ChannelLogoAnim.Play();
 
             Song = new Song[4];
             for (int i = 0; i < 4; i++)
@@ -312,7 +318,7 @@ namespace blastrs
             //    }
             //}
 
-            Window.Title = MediaPlayer.Queue.ActiveSong.Name.ToString();
+            //Window.Title = MediaPlayer.Queue.ActiveSong.Name.ToString();
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player);
 
@@ -449,78 +455,64 @@ namespace blastrs
                 spriteBatch.Begin();
                 try
                 {
+                    spriteBatch.Draw(ScoreBar[0], new Rectangle(42, (int)(622.5f - ((float)(Player[0].Score / 1000f) * 379f)), 85, (int)(((float)(Player[0].Score / 1000f) * 379f))), Color.White);
                     spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(160, 460), new Color(232, 156, 54));
                 }
                 catch (Exception e) { }
                 try
                 {
+                    spriteBatch.Draw(ScoreBar[1], new Rectangle(165, (int)(622.5f - ((float)(Player[1].Score / 1000f) * 379f)), 85, (int)(((float)(Player[1].Score / 1000f) * 379f))), Color.White);
                     spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(1130, 460), new Color(179, 194, 219));
-                }
+                } 
                 catch (Exception e) { }
                 try
                 {
+                    spriteBatch.Draw(ScoreBar[2], new Rectangle(1087, (int)(622.5f - ((float)(Player[2].Score / 1000f) * 379f)), 85, (int)(((float)(Player[2].Score / 1000f) * 379f))), Color.White);
                     spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(80, 560), new Color(179, 219, 189));
                 }
                 catch (Exception e) { }
                 try
                 {
+                    spriteBatch.Draw(ScoreBar[3], new Rectangle(1223, (int)(622.5f - ((float)(Player[3].Score / 1000f) * 379f)), 85, (int)(((float)(Player[3].Score / 1000f) * 379f))), Color.White);
                     spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(1200, 560), new Color(243, 237, 217));
                 }
                 catch (Exception e) { }
-                try
-                {
-                    spriteBatch.DrawString(Font, CountDownTime.Minutes.ToString() + " minute", new Vector2(10, 5), new Color(150, 150, 150));
-                }
-                catch (Exception e) { }
-                spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 60), new Color(222, 222, 222));
+
+                spriteBatch.DrawString(Font, "seconds", new Vector2(40, 140), new Color(150, 150, 150));
+                spriteBatch.DrawString(BoldFont, CountDownTime.Seconds.ToString(), new Vector2(40, 0), new Color(222, 222, 222));
                 spriteBatch.End();
         }
         public void DrawScoreboard()
         {
             for (int r = 0; r < NumberOfPlayers; r++)
             {
-                if (Player[r].Score < 0)
+                if (Player[r].Score > 1000)
                 {
-                    Player[r].Score = 0;
+                    Player[r].Score = 1000;
                 }
             }
             spriteBatch.Begin();
             spriteBatch.Draw(Menu.Screen, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(Font, Player[0].Score.ToString(), new Vector2(875, 108), new Color(232, 156, 54));
-            spriteBatch.DrawString(Font, Player[1].Score.ToString(), new Vector2(875, 197), new Color(179, 194, 219));
             try
             {
-                spriteBatch.DrawString(Font, Player[2].Score.ToString(), new Vector2(875, 285), new Color(179, 219, 189));
+                spriteBatch.Draw(ScoreBar[0], new Rectangle(442, (int)(554f - ((float)(Player[0].Score / 1000f) * 324f)), 85, (int)(((float)(Player[0].Score / 1000f) * 324f))), Color.White);
             }
-            catch
-            {
-                spriteBatch.DrawString(Font, "DNP", new Vector2(875, 285), new Color(179, 219, 189));
-            }
-
+            catch (Exception e) { }
             try
-            {;
-                spriteBatch.DrawString(Font, Player[3].Score.ToString(), new Vector2(875, 379), new Color(243, 237, 217));
-            }
-            catch
             {
-                spriteBatch.DrawString(Font, "DNP", new Vector2(875, 379), new Color(243, 237, 217));
+                spriteBatch.Draw(ScoreBar[1], new Rectangle(570, (int)(554f - ((float)(Player[1].Score / 1000f) * 324f)), 85, (int)(((float)(Player[1].Score / 1000f) * 324f))), Color.White);   
             }
-            //DRAW THE WINNER"S NAME HERE 
-            //CHECK THE WINNER
-            //OK?
-            //OK
-            //DRAW THE WINNER"S NAME HERE 
-            //CHECK THE WINNER
-            //OK?
-            //OK
-            //DRAW THE WINNER"S NAME HERE 
-            //CHECK THE WINNER
-            //OK?
-            //OK
-            //DRAW THE WINNER"S NAME HERE 
-            //CHECK THE WINNER
-            //OK?
-            //OK
+            catch (Exception e) { }
+            try
+            {
+                spriteBatch.Draw(ScoreBar[2], new Rectangle(724, (int)(554f - ((float)(Player[2].Score / 1000f) * 324f)), 85, (int)(((float)(Player[2].Score / 1000f) * 324f))), Color.White);   
+            }
+            catch (Exception e) { }
+            try
+            {
+                spriteBatch.Draw(ScoreBar[3], new Rectangle(860, (int)(554f - ((float)(Player[3].Score / 1000f) * 324f)), 85, (int)(((float)(Player[3].Score / 1000f) * 324f))), Color.White);
+            }
+            catch (Exception e) { }
             spriteBatch.End();
         }
     }

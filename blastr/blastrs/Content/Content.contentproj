@@ -364,7 +364,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Audio\Commentary\" />
     <Folder Include="Video\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

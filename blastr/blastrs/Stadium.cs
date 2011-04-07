@@ -78,10 +78,22 @@ namespace blastrs
                 {
                     Player.Position.Y = 120;
                 }
+                Player.Score -= 100;
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
                 Player.Score += gameTime.ElapsedGameTime.Milliseconds / 10;
+            }
+            else
+            {
+                if (Player.Score > 0)
+                {
+                    Player.Score -= gameTime.ElapsedGameTime.Milliseconds / 15;
+                }
+                else
+                {
+                    Player.Score = 0;
+                }
             }
             
             Player.TintColour = bgColor;

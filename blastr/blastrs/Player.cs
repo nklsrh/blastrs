@@ -25,10 +25,8 @@ namespace blastrs
             // TODO: Construct any child components here
         }
         public Vector2 Position;
-        public Vector2 CameraPosition;
         public Vector2 Speed;
         public Texture2D Sprite;
-        public float Scale;
         public float SpeedPower;
         public int Score;
         public Color TintColour;
@@ -43,7 +41,6 @@ namespace blastrs
         {
             // TODO: Add your initialization code here
             TintColour = Color.White;
-            
             base.Initialize();
         }
 
@@ -55,11 +52,7 @@ namespace blastrs
         {
             // TODO: Add your update code here
             ClampSpeed();
-            
             Position += Speed;
-            CameraPosition = Position;
-            //Scale = Position.Y / 300;
-            Scale = 1;
 
             if (Score >= 1000)
             {
@@ -93,12 +86,8 @@ namespace blastrs
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Begin();
-            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y), null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
-            sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
-            if (Blasting)
-            {   
-                //sb.Draw(StarImage, Position, null, TintColour, (float)(gameTime.ElapsedGameTime.Milliseconds / 1000f), new Vector2(Sprite.Width / 2, Sprite.Height / 2), Scale, SpriteEffects.None, 1f);
-            }
+            sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y), null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
+            sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
             sb.End();
         }
     }

@@ -1,8 +1,9 @@
-﻿##channel2logo
+﻿##Loading
 	
 //the opacity of the image
 BEGIN Opacity
-<0> 1
+<0> 0
+<30> 1
 END Opacity
 
 BEGIN Scale
@@ -15,7 +16,4 @@ END Pivot
 
 BEGIN Position
 <0> 0,0
-<10> 683, 0
-<15> 683, 0
-<30> 1366, 0
 END Position

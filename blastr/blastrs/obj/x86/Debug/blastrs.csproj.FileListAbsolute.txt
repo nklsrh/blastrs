@@ -285,14 +285,12 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Scoreboard.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ChannelLogo\channel2logo.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\PlayerInformation.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BomBot\bombot2.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\MainToControls\MainMenu.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToChars\Controls.xnb
-C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\countDown.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\0.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\1.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\2.xnb
@@ -326,3 +324,9 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToMain\anim.dat
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CharsToControls\anim.dat
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\redBar.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\blueBar.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\greenBar.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\yellowBar.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ChannelLogo\Loading.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb
