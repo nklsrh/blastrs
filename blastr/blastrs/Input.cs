@@ -136,6 +136,21 @@ namespace blastrs
                         game.ChannelLogoAnim.Play();
                     }
                 }
+                if (currentGamePadState[i].Buttons.B == ButtonState.Pressed && previousGamePadState[i].Buttons.B == ButtonState.Released)
+                {
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+                    {
+                        game.ControlsToMain.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+                    {
+                        game.CharsToControls.Play();
+                    }
+                    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+                    {
+                        game.ControlsToMain.Play();
+                    }
+                }
             }
 
             

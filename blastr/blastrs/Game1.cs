@@ -23,6 +23,8 @@ namespace blastrs
         public Animation ControlsToChars;
         public Animation ChannelLogoAnim;
         public Animation CountDown;
+        public Animation ControlsToMain;
+        public Animation CharsToControls;
 
         public GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
@@ -43,6 +45,7 @@ namespace blastrs
         //Video video;
         //VideoPlayer player;
         Texture2D videoTexture;
+        Song[] Song;
 
         public Device device;
         public bool loaded = false;
@@ -83,6 +86,8 @@ namespace blastrs
             ControlsToChars = new Animation(this);
             ChannelLogoAnim = new Animation(this);
             CountDown = new Animation(this);
+            ControlsToMain = new Animation(this);
+            CharsToControls = new Animation(this);
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
@@ -131,7 +136,7 @@ namespace blastrs
                 Player[r].CameraPosition = new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
                 Player[r].Speed = new Vector2(0.01f,0.01f);
                 Player[r].SpeedPower = 0.4f;
-                Player[r].Score = 1000;
+                Player[r].Score = 0;
                 Player[r].Blasting = false;
 
                 if (Position.X == 920)
@@ -166,6 +171,8 @@ namespace blastrs
             ControlsToChars.LoadAnimationData("ControlsToChars", Content);
             ChannelLogoAnim.LoadAnimationData("ChannelLogo", Content);
             CountDown.LoadAnimationData("CountDown", Content);
+            ControlsToMain.LoadAnimationData("ControlsToMain", Content);
+            CharsToControls.LoadAnimationData("CharsToControls", Content);
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -224,6 +231,14 @@ namespace blastrs
 
             Font = Content.Load<SpriteFont>("font");
             BoldFont = Content.Load<SpriteFont>("BoldFont");
+
+            Song = new Song[4];
+            for (int i = 0; i < 4; i++)
+            {
+                Song[i] = Content.Load<Song>("Audio\\Music\\" + i);
+            }
+            MediaPlayer.Stop();
+            MediaPlayer.Play(Song[1]);
             //video = Content.Load<Video>("smallIntro2");
             //player = new VideoPlayer();
 
@@ -297,53 +312,13 @@ namespace blastrs
             //    }
             //}
 
-            //Window.Title = users.GetUser().ToString();
+            Window.Title = MediaPlayer.Queue.ActiveSong.Name.ToString();
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player);
 
             base.Update(gameTime);
         }
-        void UpdateDualShocks(GameTime gameTime)
-        {
-            JoystickState deviceState = device.CurrentJoystickState;
-
-            // save previous state
-            psLeftThumbStick = LeftThumbStick;
-            psRightThumbStick = RightThumbStick;
-
-            // empty current state
-            LeftThumbStick = Vector2.Zero;
-            RightThumbStick = Vector2.Zero;
-
-            // get raw data
-            LeftThumbStick = new Vector2((deviceState.X - center) / center, (deviceState.Y - center) / center);
-
-            // switxh X and Y, some controlers are messed up..
-            if (conf.rotateLeftThumbStick)
-                LeftThumbStick = new Vector2((deviceState.Y - center) / center, (deviceState.X - center) / center);
-
-            // invert y axis
-            if (conf.invertLeftThumbStick)
-                LeftThumbStick.Y = LeftThumbStick.Y * (-1f);
-            // ajust sensitivity
-            // needs improvement -> we should recalculate percentage of overall allowed movement..
-            if (Math.Abs(LeftThumbStick.Y) < conf.sensitivityLeftThumbStick)
-                LeftThumbStick.Y = 0;
-            if (Math.Abs(LeftThumbStick.X) < conf.sensitivityLeftThumbStick)
-                LeftThumbStick.X = 0;
-
-
-            RightThumbStick = new Vector2((deviceState.Z - center) / center, (deviceState.Rz - center) / center);
-            if (conf.rotateRightThumbStick)
-                RightThumbStick = new Vector2((deviceState.Rz - center) / center, (deviceState.Z - center) / center);
-            if (conf.invertRightThumbStick)
-                RightThumbStick.Y = RightThumbStick.Y * (-1f);
-            if (Math.Abs(RightThumbStick.Y) < conf.sensitivityRightThumbStick)
-                RightThumbStick.Y = 0;
-            if (Math.Abs(RightThumbStick.X) < conf.sensitivityRightThumbStick)
-                RightThumbStick.X = 0;
-
-        }
+      
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -390,6 +365,16 @@ namespace blastrs
                 Menu.Initialize(this, spriteBatch, Content);
             }
 
+            if (ControlsToMain.IsPlaying == true)
+            {
+                ControlsToMain.Draw(spriteBatch);
+            }
+            if (ControlsToMain.CurrentFrame == ControlsToMain.EndFrame)
+            {
+                Menu.CurrentScreen = Menu.Card.MainMenu;
+                Menu.Initialize(this, spriteBatch, Content);
+            }
+
             if (ControlsToChars.IsPlaying == true)
             {
                 ControlsToChars.Draw(spriteBatch);
@@ -397,6 +382,16 @@ namespace blastrs
             if (ControlsToChars.CurrentFrame == ControlsToChars.EndFrame)
             {
                 Menu.CurrentScreen = Menu.Card.PlayerInformation;
+                Menu.Initialize(this, spriteBatch, Content);
+            }
+
+            if (CharsToControls.IsPlaying == true)
+            {
+                CharsToControls.Draw(spriteBatch);
+            }
+            if (CharsToControls.CurrentFrame == CharsToControls.EndFrame)
+            {
+                Menu.CurrentScreen = Menu.Card.Controls;
                 Menu.Initialize(this, spriteBatch, Content);
             }
 
@@ -408,6 +403,7 @@ namespace blastrs
             {
                 if (Menu.CurrentScreen == Menu.Card.PlayerInformation || Menu.CurrentScreen == Menu.Card.Scoreboard)
                 {
+                    ShuffleSongs();
                     CountDown.Play();
                 }
             }
@@ -423,6 +419,29 @@ namespace blastrs
                     Menu.CurrentScreen = blastrs.Menu.Card.InGame;
                     Menu.Initialize(this, spriteBatch, Content);
                 }
+            }
+        }
+        public void ShuffleSongs()
+        {
+            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\0")
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(Song[2]);
+            }
+            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\2")
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(Song[1]);
+            }
+            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\3")
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(Song[0]);
+            }
+            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\1")
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(Song[3]);
             }
         }
         public void DrawScore()

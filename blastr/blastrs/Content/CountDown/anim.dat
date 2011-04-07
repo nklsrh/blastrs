@@ -57,7 +57,6 @@ END Position
 BEGIN Opacity
 <150> 0
 <160> 1
-<200> 0
 END Opacity
 
 BEGIN Scale

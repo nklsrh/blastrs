@@ -61,7 +61,7 @@ namespace blastrs
             //Scale = Position.Y / 300;
             Scale = 1;
 
-            if (Score <= 0)
+            if (Score >= 1000)
             {
                 game.Menu.CurrentScreen = Menu.Card.Scoreboard;
                 game.Menu.Initialize(game, game.spriteBatch, game.Content);
