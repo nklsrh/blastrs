@@ -285,11 +285,11 @@ namespace blastrs
                         player[i].Speed.Y += player[i].SpeedPower;
                     }
 
-                    if (currentGamePadState[i].Triggers.Right < 0.8 && currentGamePadState[i].ThumbSticks.Right != Vector2.Zero)
+                    if (currentGamePadState[i].Triggers.Right < 0.3 && currentGamePadState[i].ThumbSticks.Right != Vector2.Zero && !blast[i].Ready)
                     {
                         if (!player[i].Blasting)
                         {
-                            blast[i].Position = player[i].Position;
+                            blast[i].Position = player[i].Position + Vector2.Multiply(player[i].Speed, 1.5f);
 
                             try
                             {
@@ -298,7 +298,7 @@ namespace blastrs
                             }
                             catch { }
 
-                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -10f);
+                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -15f);
                             player[i].Blasting = true;
                         }
                     }
