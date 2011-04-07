@@ -22,6 +22,7 @@ namespace blastrs
             //add any child dependencies here
         }
 
+        #region variables
         /// <summary>
         /// The images we will be animating
         /// </summary>
@@ -69,6 +70,8 @@ namespace blastrs
         public List<float> Rotation = new List<float>();
         public List<Vector3> Tint = new List<Vector3>();
         public List<Boolean> Audio_IsPlaying = new List<Boolean>();
+
+        #endregion
 
         public enum DataType
         {
@@ -377,13 +380,88 @@ namespace blastrs
             }
         }
 
-        /// <summary>
-        /// plays the given animation and draws it with respect to the parent object
-        /// </summary>
-        /// <param name="parent"></param>
-        public void Draw(Player parent, SpriteBatch spriteBatch)
+        public void Update(Vector2 parent)
         {
+            if (IsPlaying == true)
+            {
+                for (int i = 0; i < Images.Count; i++)
+                {
+                    for (int j = 0; j < Position_KeyFrame[i].Count; j++)
+                    {
+                        if (Position_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Position[i] = Vector2.Lerp(Position_Data[i][j - 1], Position_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Position_KeyFrame[i][j - 1])) / Convert.ToDouble(Position_KeyFrame[i][j] - Position_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < Scale_KeyFrame[i].Count; j++)
+                    {
+                        if (Scale_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Scale[i] = Vector2.Lerp(Scale_Data[i][j - 1], Scale_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Scale_KeyFrame[i][j - 1])) / Convert.ToDouble(Scale_KeyFrame[i][j] - Scale_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < Pivot_KeyFrame[i].Count; j++)
+                    {
+                        if (Pivot_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Pivot[i] = Vector2.Lerp(Pivot_Data[i][j - 1], Pivot_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Pivot_KeyFrame[i][j - 1])) / Convert.ToDouble(Pivot_KeyFrame[i][j] - Pivot_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < Opacity_KeyFrame[i].Count; j++)
+                    {
+                        if (Opacity_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Opacity[i] = MathHelper.Lerp(Opacity_Data[i][j - 1], Opacity_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Opacity_KeyFrame[i][j - 1])) / Convert.ToDouble(Opacity_KeyFrame[i][j] - Opacity_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < Rotation_KeyFrame[i].Count; j++)
+                    {
+                        if (Rotation_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Rotation[i] = MathHelper.Lerp(Rotation_Data[i][j - 1], Rotation_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Rotation_KeyFrame[i][j - 1])) / Convert.ToDouble(Rotation_KeyFrame[i][j] - Rotation_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < Tint_KeyFrame[i].Count; j++)
+                    {
+                        if (Tint_KeyFrame[i][j] > CurrentFrame)
+                        {
+                            Tint[i] = Vector3.Lerp(Tint_Data[i][j - 1], Tint_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Tint_KeyFrame[i][j - 1])) / Convert.ToDouble(Tint_KeyFrame[i][j] - Tint_KeyFrame[i][j - 1])));
+                            break;
+                        }
+                    }
 
+                }
+
+                if (Sounds.Count > 0)
+                {
+                    for (int i = 0; i < Sounds.Count; i++)
+                    {
+                        for (int j = 0; j < Sound_PlayStamps[i].Count; j++)
+                        {
+                            if (Sound_PlayStamps[i][j] == CurrentFrame)
+                            {
+                                Sounds[i].CreateInstance().Play();
+                            }
+                        }
+                    }
+                }
+
+                if (IsPaused == false)
+                {
+                    CurrentFrame += 1;
+                }
+            }
+
+            if (CurrentFrame > EndFrame)
+            {
+                IsPlaying = false;
+                CurrentFrame = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -485,55 +563,6 @@ namespace blastrs
             {
                 for (int i = 0; i < Images.Count; i++)
                 {
-                    for (int j = 0; j < Position_KeyFrame[i].Count; j++)
-                    {
-                        if (Position_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Position[i] = Vector2.Lerp(Position_Data[i][j - 1], Position_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Position_KeyFrame[i][j - 1])) / Convert.ToDouble(Position_KeyFrame[i][j] - Position_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < Scale_KeyFrame[i].Count; j++)
-                    {
-                        if (Scale_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Scale[i] = Vector2.Lerp(Scale_Data[i][j - 1], Scale_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Scale_KeyFrame[i][j - 1])) / Convert.ToDouble(Scale_KeyFrame[i][j] - Scale_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < Pivot_KeyFrame[i].Count; j++)
-                    {
-                        if (Pivot_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Pivot[i] = Vector2.Lerp(Pivot_Data[i][j - 1], Pivot_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Pivot_KeyFrame[i][j - 1])) / Convert.ToDouble(Pivot_KeyFrame[i][j] - Pivot_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < Opacity_KeyFrame[i].Count; j++)
-                    {
-                        if (Opacity_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Opacity[i] = MathHelper.Lerp(Opacity_Data[i][j - 1], Opacity_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Opacity_KeyFrame[i][j - 1])) / Convert.ToDouble(Opacity_KeyFrame[i][j] - Opacity_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < Rotation_KeyFrame[i].Count; j++)
-                    {
-                        if (Rotation_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Rotation[i] = MathHelper.Lerp(Rotation_Data[i][j - 1], Rotation_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Rotation_KeyFrame[i][j - 1])) / Convert.ToDouble(Rotation_KeyFrame[i][j] - Rotation_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-                    for (int j = 0; j < Tint_KeyFrame[i].Count; j++)
-                    {
-                        if (Tint_KeyFrame[i][j] > CurrentFrame)
-                        {
-                            Tint[i] = Vector3.Lerp(Tint_Data[i][j - 1], Tint_Data[i][j], (float)(Convert.ToDouble(CurrentFrame - (Tint_KeyFrame[i][j - 1])) / Convert.ToDouble(Tint_KeyFrame[i][j] - Tint_KeyFrame[i][j - 1])));
-                            break;
-                        }
-                    }
-
                     try
                     {
                         spriteBatch.Begin();
@@ -545,31 +574,6 @@ namespace blastrs
                         spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i]), Pivot[i], Scale[i], SpriteEffects.None, 1);
                     }
                 }
-
-                if (Sounds.Count > 0)
-                {
-                    for (int i = 0; i < Sounds.Count; i++)
-                    {
-                        for (int j = 0; j < Sound_PlayStamps[i].Count; j++)
-                        {
-                            if (Sound_PlayStamps[i][j] == CurrentFrame)
-                            {
-                                Sounds[i].CreateInstance().Play();
-                            }
-                        }
-                    }
-                }
-
-                if (IsPaused == false)
-                {
-                    CurrentFrame += 1;
-                }
-            }
-
-            if (CurrentFrame > EndFrame)
-            {
-                IsPlaying = false;
-                CurrentFrame = 0;
             }
         }
 

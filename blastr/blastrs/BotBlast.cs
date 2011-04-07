@@ -76,6 +76,7 @@ namespace blastrs
                 {
                     BlastAnimation.Play();
                 }
+                BlastAnimation.Update(Position);
                 BlastAnimation.Draw(Position, spriteBatch);
             }
             if (BlastAnimation.IsPlaying == false)

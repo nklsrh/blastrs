@@ -124,6 +124,8 @@ namespace blastrs
                 }
             }
 
+            Sprite.Update(Position);
+
             base.Update(gameTime);
         }
 
@@ -146,7 +148,9 @@ namespace blastrs
             {
                 sb.Draw(Sprite.Images[0], Position, null, Color.White, 0f, new Vector2(Sprite.Images[0].Width / 2, Sprite.Images[0].Height / 2), 1f, SpriteEffects.None, 1f);
             }
+                        
             Sprite.Draw(Position, sb);
+            
             botBlast.Draw(sb);
             sb.End();
         }
