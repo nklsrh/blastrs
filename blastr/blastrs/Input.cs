@@ -56,35 +56,35 @@ namespace blastrs
         public void Update(GameTime gameTime, Blast[] blast, SpriteBatch spriteBatch, Menu menu, Game1 game, ContentManager content, Player[] player)
         {
             //------------------------------------------------------DUALSHOCK3
-            game.u1 = game.users.GetUser(1);
-            if (!game.u1.PressedA() && isDualShockPressed)
-            {
-                if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-                {
-                    game.ControlsToChars.Play();
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-                {
-                    game.MenuToControls.Play();
-                    //game.ChannelLogoAnim.Play();
-                }
-                isDualShockPressed = false;
-            }
-            if (game.u1.PressedA())
-            {
-                isDualShockPressed = true;
-            }
-            if (game.u1.PressedStart())
-            {
-                if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-                {
-                    game.ChannelLogoAnim.Play();
-                }
-                if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-                {
-                    game.ChannelLogoAnim.Play();
-                }
-            }
+            //game.u1 = game.users.GetUser(1);
+            //if (!game.u1.PressedA() && isDualShockPressed)
+            //{
+            //    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
+            //    {
+            //        game.ControlsToChars.Play();
+            //    }
+            //    if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
+            //    {
+            //        game.MenuToControls.Play();
+            //        //game.ChannelLogoAnim.Play();
+            //    }
+            //    isDualShockPressed = false;
+            //}
+            //if (game.u1.PressedA())
+            //{
+            //    isDualShockPressed = true;
+            //}
+            //if (game.u1.PressedStart())
+            //{
+            //    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
+            //    {
+            //        game.ChannelLogoAnim.Play();
+            //    }
+            //    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
+            //    {
+            //        game.ChannelLogoAnim.Play();
+            //    }
+            //}
 
             //------------------------------------------------------KEYBOARD
             currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
@@ -143,41 +143,41 @@ namespace blastrs
             if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
             {
                 //------------------------------------------------------DUALSHOCK3
-                if (game.u1.GetLeftStick().X > 0)
-                {
-                    player[1].Speed.X += player[1].SpeedPower;
-                }
-                if (game.u1.GetLeftStick().X < 0)
-                {
-                    player[1].Speed.X -= player[1].SpeedPower;
-                }
-                if (game.u1.GetLeftStick().Y > 0)
-                {
-                    player[1].Speed.Y -= player[1].SpeedPower;
-                }
-                if (game.u1.GetLeftStick().Y < 0)
-                {
-                    player[1].Speed.Y += player[1].SpeedPower;
-                }
+                //if (game.u1.GetLeftStick().X > 0)
+                //{
+                //    player[1].Speed.X += player[1].SpeedPower;
+                //}
+                //if (game.u1.GetLeftStick().X < 0)
+                //{
+                //    player[1].Speed.X -= player[1].SpeedPower;
+                //}
+                //if (game.u1.GetLeftStick().Y > 0)
+                //{
+                //    player[1].Speed.Y -= player[1].SpeedPower;
+                //}
+                //if (game.u1.GetLeftStick().Y < 0)
+                //{
+                //    player[1].Speed.Y += player[1].SpeedPower;
+                //}
 
-                if (!game.u1.PressedRightBumper())
-                {
-                    if (!player[1].Blasting)
-                    {
-                        blast[1].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
-                        blast[1].Direction = player[1].Speed;
-                        player[1].Speed = Vector2.Multiply(blast[1].Direction, -0.8f);
-                        player[1].Blasting = true;
-                    }
-                }
-                else
-                {
-                    if (blast[1].Ready)
-                    {
-                        player[1].Blasting = false;
-                        blast[1].Ready = false;
-                    }
-                }
+                //if (!game.u1.PressedRightBumper())
+                //{
+                //    if (!player[1].Blasting)
+                //    {
+                //        blast[1].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
+                //        blast[1].Direction = player[1].Speed;
+                //        player[1].Speed = Vector2.Multiply(blast[1].Direction, -0.8f);
+                //        player[1].Blasting = true;
+                //    }
+                //}
+                //else
+                //{
+                //    if (blast[1].Ready)
+                //    {
+                //        player[1].Blasting = false;
+                //        blast[1].Ready = false;
+                //    }
+                //}
 
 
                 //------------------------------------------------------KEGBOARD
@@ -275,9 +275,9 @@ namespace blastrs
                     {
                         if (!player[i].Blasting)
                         {
-                            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 1.5f);
-                            blast[i].Direction = Vector2.Multiply(player[i].Speed, 5f);
-                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -0.8f);
+                            blast[i].Position = player[1].Position + Vector2.Multiply(player[1].Speed, 5f);
+                            blast[i].Direction = Vector2.Multiply(player[i].Speed, 15f);
+                            player[i].Speed = Vector2.Multiply(blast[i].Direction, -20f);
                             player[i].Blasting = true;
                         }
                     }

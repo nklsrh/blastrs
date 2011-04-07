@@ -62,6 +62,7 @@ namespace blastrs
 
             if (bgColor == Color.Black) //FALLS OFFFFFFFFFFF
             {
+                
                 Player.Position = new Vector2(1366/2, 768/2);
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
