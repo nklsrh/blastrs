@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\bombot.xnb</Output>
-      <Time>2011-04-07T14:01:15.4746093+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\bombot.xnb</Output>
+      <Time>2011-04-08T19:03:14.8847656+10:00</Time>
     </Item>
     <Item>
       <Source>star.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\star.xnb</Output>
-      <Time>2011-04-07T14:01:15.3886718+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\star.xnb</Output>
+      <Time>2011-04-08T19:03:14.3134765+10:00</Time>
     </Item>
     <Item>
       <Source>arena.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\arena.xnb</Output>
-      <Time>2011-04-07T16:55:32.7109375+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\arena.xnb</Output>
+      <Time>2011-04-08T22:06:27.1337891+10:00</Time>
     </Item>
     <Item>
       <Source>arenaCollisionMap.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\arenaCollisionMap.xnb</Output>
-      <Time>2011-04-07T14:01:15.2246093+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\arenaCollisionMap.xnb</Output>
+      <Time>2011-04-08T19:03:13.875+10:00</Time>
     </Item>
     <Item>
       <Source>bluePlayer.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\bluePlayer.xnb</Output>
-      <Time>2011-04-07T14:01:15.3496093+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\bluePlayer.xnb</Output>
+      <Time>2011-04-08T19:03:14.1513671+10:00</Time>
     </Item>
     <Item>
       <Source>greenPlayer.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\greenPlayer.xnb</Output>
-      <Time>2011-04-07T14:01:15.4433593+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\greenPlayer.xnb</Output>
+      <Time>2011-04-08T19:03:13.9990234+10:00</Time>
     </Item>
     <Item>
       <Source>redPlayer.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\redPlayer.xnb</Output>
-      <Time>2011-04-07T14:01:15.5761718+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\redPlayer.xnb</Output>
+      <Time>2011-04-08T19:03:15.078125+10:00</Time>
     </Item>
     <Item>
       <Source>shadow.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\shadow.xnb</Output>
-      <Time>2011-04-07T14:01:15.5214843+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\shadow.xnb</Output>
+      <Time>2011-04-08T19:03:14.0234375+10:00</Time>
     </Item>
     <Item>
       <Source>MainMenu.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\MainMenu.xnb</Output>
-      <Time>2011-04-07T17:03:43.7900391+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\MainMenu.xnb</Output>
+      <Time>2011-04-08T23:25:49.6015625+10:00</Time>
     </Item>
     <Item>
       <Source>Controls.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Controls.xnb</Output>
-      <Time>2011-04-07T17:03:42.5400391+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Controls.xnb</Output>
+      <Time>2011-04-08T22:42:32.959961+10:00</Time>
     </Item>
     <Item>
       <Source>bombot2.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\bombot2.xnb</Output>
-      <Time>2011-04-07T14:01:15.3261718+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\bombot2.xnb</Output>
+      <Time>2011-04-08T19:03:13.930664+10:00</Time>
     </Item>
     <Item>
       <Source>yellowPlayer.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\yellowPlayer.xnb</Output>
-      <Time>2011-04-07T14:01:15.6074218+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\yellowPlayer.xnb</Output>
+      <Time>2011-04-08T19:03:15.0976562+10:00</Time>
     </Item>
     <Item>
       <Source>MainToControls\Controls.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\MainToControls\Controls.xnb</Output>
-      <Time>2011-04-07T17:04:05.8134766+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\MainToControls\Controls.xnb</Output>
+      <Time>2011-04-08T22:42:36.100586+10:00</Time>
     </Item>
     <Item>
       <Source>SideSwipes\SideSwiper.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb</Output>
-      <Time>2011-04-07T14:00:56.7919921+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb</Output>
+      <Time>2011-04-08T19:02:09.9648437+10:00</Time>
     </Item>
     <Item>
       <Source>ControlsToChars\PlayerInformation.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb</Output>
-      <Time>2011-04-07T17:04:19.234375+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb</Output>
+      <Time>2011-04-08T23:19:47.0556641+10:00</Time>
     </Item>
     <Item>
       <Source>Scoreboard.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Scoreboard.xnb</Output>
-      <Time>2011-04-07T18:27:45.7900391+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Scoreboard.xnb</Output>
+      <Time>2011-04-08T22:06:28.3759766+10:00</Time>
     </Item>
     <Item>
       <Source>PlayerInformation.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\PlayerInformation.xnb</Output>
-      <Time>2011-04-07T17:03:43.9130859+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\PlayerInformation.xnb</Output>
+      <Time>2011-04-08T23:19:40.3369141+10:00</Time>
     </Item>
     <Item>
       <Source>BotBlast_Animation\BotBlast.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb</Output>
-      <Time>2011-04-07T14:01:11.6230468+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb</Output>
+      <Time>2011-04-08T19:02:14.0419921+10:00</Time>
     </Item>
     <Item>
       <Source>BomBot\bombot2.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BomBot\bombot2.xnb</Output>
-      <Time>2011-04-07T14:01:01.7304687+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BomBot\bombot2.xnb</Output>
+      <Time>2011-04-08T19:02:10.1982421+10:00</Time>
     </Item>
     <Item>
       <Source>BomBot\bombot2_detonation.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb</Output>
-      <Time>2011-04-07T14:01:01.9257812+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb</Output>
+      <Time>2011-04-08T19:02:10.2304687+10:00</Time>
     </Item>
     <Item>
       <Source>MainToControls\MainMenu.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\MainToControls\MainMenu.xnb</Output>
-      <Time>2011-04-07T17:05:24.1464844+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\MainToControls\MainMenu.xnb</Output>
+      <Time>2011-04-08T23:25:56.4736328+10:00</Time>
     </Item>
     <Item>
       <Source>ControlsToChars\Controls.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToChars\Controls.xnb</Output>
-      <Time>2011-04-07T17:03:51.9560547+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\ControlsToChars\Controls.xnb</Output>
+      <Time>2011-04-08T22:42:39.366211+10:00</Time>
     </Item>
     <Item>
       <Source>CountDown\0.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\0.xnb</Output>
-      <Time>2011-04-07T18:50:32.7685547+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CountDown\0.xnb</Output>
+      <Time>2011-04-08T19:02:15.243164+10:00</Time>
     </Item>
     <Item>
       <Source>CountDown\1.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\1.xnb</Output>
-      <Time>2011-04-07T18:50:33.2519531+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CountDown\1.xnb</Output>
+      <Time>2011-04-08T19:02:15.2626953+10:00</Time>
     </Item>
     <Item>
       <Source>CountDown\2.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\2.xnb</Output>
-      <Time>2011-04-07T18:50:33.6005859+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CountDown\2.xnb</Output>
+      <Time>2011-04-08T19:02:15.2958984+10:00</Time>
     </Item>
     <Item>
       <Source>CountDown\3.png</Source>
@@ -232,84 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\3.xnb</Output>
-      <Time>2011-04-07T18:50:34.0966797+10:00</Time>
-    </Item>
-    <Item>
-      <Source>font.spritefont</Source>
-      <Name>font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\font.xnb</Output>
-      <Time>2011-04-07T14:01:15.4511718+10:00</Time>
-    </Item>
-    <Item>
-      <Source>BoldFont.spritefont</Source>
-      <Name>BoldFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BoldFont.xnb</Output>
-      <Time>2011-04-07T14:01:15.4589843+10:00</Time>
-    </Item>
-    <Item>
-      <Source>BotBlast_Animation\Explosion.wav</Source>
-      <Name>BotBlast_Animation\Explosion</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BotBlast_Animation\Explosion.xnb</Output>
-      <Time>2011-04-07T14:01:11.5839843+10:00</Time>
-    </Item>
-    <Item>
-      <Source>BomBot\BombBeep.wav</Source>
-      <Name>BomBot\BombBeep</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\BomBot\BombBeep.xnb</Output>
-      <Time>2011-04-07T14:01:01.7011718+10:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\Music\1.mp3</Source>
-      <Name>Audio\Music\1</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\1.xnb</Output>
-      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\1.wma</Extra>
-      <Time>2011-04-07T14:18:13.6083984+10:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\Music\2.mp3</Source>
-      <Name>Audio\Music\2</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\2.xnb</Output>
-      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\2.wma</Extra>
-      <Time>2011-04-07T14:18:14.2109375+10:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\Music\3.mp3</Source>
-      <Name>Audio\Music\3</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\3.xnb</Output>
-      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\3.wma</Extra>
-      <Time>2011-04-07T14:18:14.5488281+10:00</Time>
-    </Item>
-    <Item>
-      <Source>Audio\Music\0.mp3</Source>
-      <Name>Audio\Music\0</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\0.xnb</Output>
-      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\Audio\Music\0.wma</Extra>
-      <Time>2011-04-07T14:18:14.8808593+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CountDown\3.xnb</Output>
+      <Time>2011-04-08T19:02:15.3115234+10:00</Time>
     </Item>
     <Item>
       <Source>ControlsToMain\Controls.png</Source>
@@ -317,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToMain\Controls.xnb</Output>
-      <Time>2011-04-07T17:03:50.3808594+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\ControlsToMain\Controls.xnb</Output>
+      <Time>2011-04-08T22:42:37.584961+10:00</Time>
     </Item>
     <Item>
       <Source>ControlsToMain\MainMenu.png</Source>
@@ -326,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ControlsToMain\MainMenu.xnb</Output>
-      <Time>2011-04-07T17:05:26.7480469+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\ControlsToMain\MainMenu.xnb</Output>
+      <Time>2011-04-08T23:25:53.9189453+10:00</Time>
     </Item>
     <Item>
       <Source>CharsToControls\Controls.png</Source>
@@ -335,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CharsToControls\Controls.xnb</Output>
-      <Time>2011-04-07T16:15:55.2353516+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CharsToControls\Controls.xnb</Output>
+      <Time>2011-04-08T22:42:41.053711+10:00</Time>
     </Item>
     <Item>
       <Source>CharsToControls\PlayerInformation.png</Source>
@@ -344,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb</Output>
-      <Time>2011-04-07T17:04:17.3544922+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb</Output>
+      <Time>2011-04-08T23:19:44.5009766+10:00</Time>
     </Item>
     <Item>
       <Source>redBar.png</Source>
@@ -353,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\redBar.xnb</Output>
-      <Time>2011-04-07T16:57:23.9746094+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\redBar.xnb</Output>
+      <Time>2011-04-08T19:03:14.0673828+10:00</Time>
     </Item>
     <Item>
       <Source>blueBar.png</Source>
@@ -362,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\blueBar.xnb</Output>
-      <Time>2011-04-07T17:43:30.8398437+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\blueBar.xnb</Output>
+      <Time>2011-04-08T19:03:14.3701171+10:00</Time>
     </Item>
     <Item>
       <Source>greenBar.png</Source>
@@ -371,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\greenBar.xnb</Output>
-      <Time>2011-04-07T17:43:30.8476562+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\greenBar.xnb</Output>
+      <Time>2011-04-08T19:03:15.0253906+10:00</Time>
     </Item>
     <Item>
       <Source>yellowBar.png</Source>
@@ -380,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\yellowBar.xnb</Output>
-      <Time>2011-04-07T17:43:30.8564453+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\yellowBar.xnb</Output>
+      <Time>2011-04-08T19:03:13.9042968+10:00</Time>
     </Item>
     <Item>
       <Source>ChannelLogo\Loading.png</Source>
@@ -389,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ChannelLogo\Loading.xnb</Output>
-      <Time>2011-04-07T18:40:42.9902344+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\ChannelLogo\Loading.xnb</Output>
+      <Time>2011-04-09T00:09:47.3369141+10:00</Time>
     </Item>
     <Item>
       <Source>CountDown\CountDownBackground.png</Source>
@@ -398,18 +322,104 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb</Output>
-      <Time>2011-04-07T18:50:34.1035156+10:00</Time>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb</Output>
+      <Time>2011-04-08T22:43:14.569336+10:00</Time>
+    </Item>
+    <Item>
+      <Source>font.spritefont</Source>
+      <Name>font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\font.xnb</Output>
+      <Time>2011-04-08T19:03:14.4560546+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BoldFont.spritefont</Source>
+      <Name>BoldFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BoldFont.xnb</Output>
+      <Time>2011-04-08T19:03:14.4785156+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BotBlast_Animation\Explosion.wav</Source>
+      <Name>BotBlast_Animation\Explosion</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BotBlast_Animation\Explosion.xnb</Output>
+      <Time>2011-04-08T19:02:14.0195312+10:00</Time>
+    </Item>
+    <Item>
+      <Source>BomBot\BombBeep.wav</Source>
+      <Name>BomBot\BombBeep</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\BomBot\BombBeep.xnb</Output>
+      <Time>2011-04-08T19:02:10.1816406+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Music\1.mp3</Source>
+      <Name>Audio\Music\1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\1.xnb</Output>
+      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\1.wma</Extra>
+      <Time>2011-04-08T19:03:02.0908203+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Music\2.mp3</Source>
+      <Name>Audio\Music\2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\2.xnb</Output>
+      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\2.wma</Extra>
+      <Time>2011-04-08T19:03:01.5673828+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Music\3.mp3</Source>
+      <Name>Audio\Music\3</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\3.xnb</Output>
+      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\3.wma</Extra>
+      <Time>2011-04-08T19:03:01.8251953+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Music\0.mp3</Source>
+      <Name>Audio\Music\0</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\0.xnb</Output>
+      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Audio\Music\0.wma</Extra>
+      <Time>2011-04-08T19:03:01.9746093+10:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\Intro.wmv</Source>
+      <Name>Video\Intro</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Video\Intro.xnb</Output>
+      <Extra>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\Video\Intro.wmv</Extra>
+      <Time>2011-04-08T23:26:09.5957031+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp6\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
