@@ -457,6 +457,7 @@ namespace blastrs
                 }
             }
 
+            // if the animation has passed the last frame
             if (CurrentFrame > EndFrame)
             {
                 IsPlaying = false;

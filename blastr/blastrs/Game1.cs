@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
-using Microsoft.DirectX.DirectInput;
+
 namespace blastrs
 {
     /// <summary>
@@ -31,12 +31,13 @@ namespace blastrs
 
         public Player[] Player;
         public int NumberOfPlayers;
+        public int NumberOfBots = 1;
         Texture2D[] ScoreBar = new Texture2D[4];
 
         Stadium Stadium;
         Input Input;
         Blast[] Blast = new Blast[10];
-        public Bot[] Bot = new Bot[2];
+        public Bot[] Bot;
         public SpriteFont Font, BoldFont;
         public Menu Menu;
         public TimeSpan CountDownTime;
@@ -48,8 +49,8 @@ namespace blastrs
         Texture2D videoTexture;
         Song[] Song;
 
-        public Device device;
-        public bool loaded = false;
+        //public Device device;
+       // public bool loaded = false;
 
         public Vector2 psLeftThumbStick;
         public Vector2 psRightThumbStick;
@@ -59,10 +60,10 @@ namespace blastrs
         public bool HasRight;
         const float center = 32767.5f;
 
-        public GamePadConfig conf;
-        public User[] localUsers;
-        public IUserInterface users;
-        public User u1;
+        //public GamePadConfig conf;
+        //public User[] localUsers;
+        //public IUserInterface users;
+        //public User u1;
 
         public int[] myint;
 
@@ -70,15 +71,8 @@ namespace blastrs
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            new UserControl(this);
         }
 
-        void SetupDirectInputGamepad(Guid gamepadInstanceGuid)
-        {
-            device = new Device(gamepadInstanceGuid);
-            device.SetDataFormat(DeviceDataFormat.Joystick);
-            device.Acquire();
-        }
 
         protected override void Initialize()
         {
@@ -92,7 +86,10 @@ namespace blastrs
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
-            //graphics.ToggleFullScreen();
+            if (!graphics.IsFullScreen)
+            {
+                //graphics.ToggleFullScreen();
+            }
             graphics.ApplyChanges();
 
             NumberOfPlayers = 2;
@@ -107,6 +104,8 @@ namespace blastrs
 
             Player = new Player[NumberOfPlayers];
 
+            Bot = new Bot[NumberOfBots];
+
             for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Player[r] = new Player(this);
@@ -115,16 +114,21 @@ namespace blastrs
             {
                 Blast[r] = new Blast(this);
             }
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfBots; r++)
             {
                 Bot[r] = new Bot(this);
             }
             Stadium = new Stadium(this);
             Input = new Input(this);
-            NewGame();  
-            
+            NewGame();
+
             Stadium.Initialize(graphics);
             base.Initialize();
+        }
+
+        public void GameInitialize()
+        {
+            Initialize();
         }
 
         public void NewGame()
@@ -135,7 +139,7 @@ namespace blastrs
             {
                 Player[r].Initialize();
                 Player[r].Position = Position;
-                
+                GamePad.SetVibration((PlayerIndex)(r), 0f, 0f);
                 if (Position.X == 920)
                 {
                     Position.X = 420;
@@ -146,7 +150,7 @@ namespace blastrs
                     Position.X += 500;
                 }
             }
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfBots; r++)
             {
                 Bot[r].Initialize(this);
                 Bot[r].LoadBlastAnimation("BotBlast_Animation", Content, this);
@@ -214,7 +218,7 @@ namespace blastrs
             ScoreBar[2] = Content.Load<Texture2D>("greenBar");
             ScoreBar[3] = Content.Load<Texture2D>("yellowBar");
 
-            for (int r = 0; r < 2; r++)
+            for (int r = 0; r < NumberOfBots; r++)
             {
                 Bot[r].LoadBotAnimation("BomBot", Content, this); //Content.Load<Texture2D>("bombot2");
                 Bot[r].Shadow = Content.Load<Texture2D>("shadow");
@@ -245,11 +249,11 @@ namespace blastrs
             //video = Content.Load<Video>("smallIntro2");
             //player = new VideoPlayer();
 
-            users = (IUserInterface)Services.GetService(typeof(IUserInterface));
+            //users = (IUserInterface)Services.GetService(typeof(IUserInterface));
             
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
-            Menu.CurrentScreen = Menu.Card.InGame;
+            Menu.CurrentScreen = Menu.Card.MainMenu;
             Menu.Initialize(this, spriteBatch, Content);
             // TODO: use this.Content to load your game content here
         }
@@ -262,23 +266,22 @@ namespace blastrs
             //}
 
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+
 
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
                 for (int r = 0; r < NumberOfPlayers; r++)
                 {
                     Player[r].Update(this, gameTime);
-                    Stadium.CheckCollisionWithPlayer(Player[r], gameTime);
+                    Stadium.CheckCollisionWithPlayer(Player[r], gameTime, r);
 
                     for (int b = 0; b < 10; b++)
                     {
-                        Blast[b].Update(gameTime, Player[r]);
+                        Blast[b].Update(gameTime, Player[r], r);
                     }
                 }
 
-                for (int r = 0; r < 2; r++)
+                for (int r = 0; r < NumberOfBots; r++)
                 {
                     if (Bot[r].Dropped)
                     {
@@ -337,12 +340,12 @@ namespace blastrs
                     Player[r].Draw(gameTime, spriteBatch);
                 }
 
-                for (int r = 0; r < 2; r++)
+                for (int r = 0; r < NumberOfBots; r++)
                 {
-                    Bot[r].Draw(gameTime, spriteBatch);
+                    Bot[r].Draw(gameTime, spriteBatch, Player);
                 }
 
-                for (int r = 0; r < 3; r++)
+                for (int r = 0; r < 10; r++)
                 {
                     Blast[r].Draw(spriteBatch);
                 }

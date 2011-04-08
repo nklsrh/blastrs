@@ -9,3 +9,5 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\Content\obj\x
 E:\iFest\Blastr_Revision7\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp4\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Blastr_Revision7\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\Content\obj\x86\Debug\ResolveAssemblyReference.cache

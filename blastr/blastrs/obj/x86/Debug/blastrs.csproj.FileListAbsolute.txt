@@ -173,7 +173,6 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temps\bin\x86\Debug
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\PlayerInformation.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\bombot2.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\arenaCollisionMap.xnb
-E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\channel2logo.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\bombot.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\bluePlayer.xnb
@@ -265,7 +264,6 @@ E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\3.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\0.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\1.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\2.xnb
-E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\countDown.xnb
 E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\anim.dat
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\obj\x86\Debug\blastrs.exe
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\obj\x86\Debug\blastrs.pdb
@@ -330,3 +328,149 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\yellowBar.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\ChannelLogo\Loading.xnb
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\temp5\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.wma
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.wma
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.wma
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\MainMenu.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\Loading.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\yellowBar.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\blueBar.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\redBar.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\greenBar.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\Controls.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\Controls.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.xnb
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.wma
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\anim.dat
+E:\iFest\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\star.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.wma
+H:\Blastr_Revision7\bin\x86\Debug\Content\bluePlayer.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\Controls.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BomBot\BombBeep.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\greenPlayer.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\Loading.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\redPlayer.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Scoreboard.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\PlayerInformation.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\Controls.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\0.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\redBar.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\bombot2.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BomBot\bombot2.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.wma
+H:\Blastr_Revision7\bin\x86\Debug\Content\greenBar.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\blueBar.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.wma
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\Controls.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\1.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\MainMenu.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\arenaCollisionMap.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\SideSwipes\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\arena.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Controls.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BoldFont.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.wma
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\3.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\Controls.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\yellowBar.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\Explosion.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\CountDown\2.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\bombot.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\yellowPlayer.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\MainMenu.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\shadow.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\font.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\MainMenu.xnb
+H:\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\Content\BomBot\anim.dat
+H:\Blastr_Revision7\bin\x86\Debug\blastrs.exe
+H:\Blastr_Revision7\bin\x86\Debug\blastrs.pdb
+H:\Blastr_Revision7\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Blastr_Revision7\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Blastr_Revision7\obj\x86\Debug\blastrs.exe
+H:\Blastr_Revision7\obj\x86\Debug\blastrs.pdb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\CountDownBackground.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\star.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Controls.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\Explosion.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\PlayerInformation.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\SideSwipes\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.wma
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\SideSwipes\SideSwiper.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\yellowBar.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\MainMenu.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\3.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\PlayerInformation.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\bombot.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\bluePlayer.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\Controls.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BomBot\bombot2.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\2.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BomBot\BombBeep.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BoldFont.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Scoreboard.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\PlayerInformation.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\bombot2.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\arenaCollisionMap.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\Controls.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\0.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\blueBar.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\MainToControls\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\BotBlast.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\arena.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToChars\Controls.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\2.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\greenBar.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\redBar.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\greenPlayer.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\MainMenu.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\Loading.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\font.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\yellowPlayer.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CountDown\1.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\1.wma
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BomBot\bombot2_detonation.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\MainMenu.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\shadow.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\redPlayer.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\CharsToControls\Controls.xnb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\3.wma
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\Audio\Music\0.wma
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ControlsToMain\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BomBot\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\BotBlast_Animation\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\Content\ChannelLogo\anim.dat
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\blastrs.exe
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\bin\x86\Debug\blastrs.pdb
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\obj\x86\Debug\blastrs.exe
+C:\Users\Jayden Tilbrook\Desktop\Blastr_Revision7\obj\x86\Debug\blastrs.pdb

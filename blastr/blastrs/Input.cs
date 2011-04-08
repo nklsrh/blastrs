@@ -119,6 +119,7 @@ namespace blastrs
                 currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
                 if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
                 {
+                    GamePad.SetVibration((PlayerIndex)(i), 0.5f, 0.5f);
                     if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
                     {
                         game.ControlsToChars.Play();
@@ -135,8 +136,14 @@ namespace blastrs
                         }
                     }
                 }
+                else
+                {
+                    GamePad.SetVibration((PlayerIndex)(i), 0f, 0f);
+                }
+
                 if (currentGamePadState[i].Buttons.B == ButtonState.Pressed && previousGamePadState[i].Buttons.B == ButtonState.Released)
                 {
+                    GamePad.SetVibration((PlayerIndex)(i), 0.5f, 0.5f);
                     if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
                     {
                         game.ControlsToMain.Play();
@@ -150,9 +157,17 @@ namespace blastrs
                         game.ControlsToMain.Play();
                     }
                 }
+                else
+                {
+                    GamePad.SetVibration((PlayerIndex)(i), 0f, 0f);
+                }
+            }
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.R))
+            {
+                
+                game.GameInitialize();
             }
 
-            
             #region GameControls
             if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
             {

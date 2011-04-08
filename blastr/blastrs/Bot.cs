@@ -109,13 +109,13 @@ namespace blastrs
 
             try { TintColor.R = (byte)(255 - BlastTimer.Milliseconds /10); } catch { }
 
-            if (Sprite.CurrentFrame == 299)
+            if (Sprite.CurrentFrame == 300)
             {
                 if (!Blasted)
                 {
                     botBlast.Detonate(targets, Position);
-                    Sprite.CurrentFrame = 0;
-                    Sprite.IsPlaying = false;
+                    //Sprite.CurrentFrame = 0;
+                    //Sprite.IsPlaying = false;
                     Blasted = true;
                 }
                 if (BlastTimer <= TimeSpan.Zero)
@@ -142,7 +142,7 @@ namespace blastrs
             }
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch sb)
+        public void Draw(GameTime gameTime, SpriteBatch sb, Player[] players)
         {
             sb.Begin();
             sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y - 10), null, Color.Black, 0f, new Vector2(22, 23), Scale/1.12f, SpriteEffects.None, 1f);
@@ -153,7 +153,7 @@ namespace blastrs
                         
             Sprite.Draw(Position, sb);
             
-            botBlast.Draw(sb);
+            botBlast.Draw(players, sb);
             sb.End();
         }
     }

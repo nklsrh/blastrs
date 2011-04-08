@@ -50,25 +50,27 @@ namespace blastrs
             
             for (int r = 0; r < players.Length; r++)
             {
-               if (Area.Intersects(new Rectangle((int)players[r].Position.X, (int)players[r].Position.Y, 1, 1)) == true)
-               {
-                   if (Math.Abs(players[r].Speed.X) < 0.3f) //IF PLAYER IS NOT MOVING, BLAST FAILS
-                   {
-                       players[r].Speed.X = 2f * Math.Sign(players[r].Speed.X);
-                   }
-                   if (Math.Abs(players[r].Speed.Y) < 0.3f)
-                   {
-                       players[r].Speed.Y = 2f * Math.Sign(players[r].Speed.Y);
-                   }
-                   players[r].Speed.X += (Power * ((players[r].Position.X - Position.X) / (Vector2.Distance(Position, players[r].Position))));
-                   players[r].Speed.Y += (Power * ((players[r].Position.Y - Position.Y) / (Vector2.Distance(Position, players[r].Position))));
-               }
+                if (Area.Intersects(new Rectangle((int)players[r].Position.X, (int)players[r].Position.Y, 1, 1)) == true)
+                {
+                    if (Math.Abs(players[r].Speed.X) < 0.3f) //IF PLAYER IS NOT MOVING, BLAST FAILS
+                    {
+                        players[r].Speed.X = 2f * Math.Sign(players[r].Speed.X);
+                    }
+                    if (Math.Abs(players[r].Speed.Y) < 0.3f)
+                    {
+                        players[r].Speed.Y = 2f * Math.Sign(players[r].Speed.Y);
+                    }
+                    players[r].Speed.X += (Power * ((players[r].Position.X - Position.X) / (Vector2.Distance(Position, players[r].Position))));
+                    players[r].Speed.Y += (Power * ((players[r].Position.Y - Position.Y) / (Vector2.Distance(Position, players[r].Position))));
+                    GamePad.SetVibration((PlayerIndex)(r), 0.7f, 0.7f);
+                }
+
             }
 
             isDetonating = true;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Player[] players, SpriteBatch spriteBatch)
         {
             if (isDetonating == true)
             {
@@ -83,6 +85,11 @@ namespace blastrs
             {
                 isDetonating = false;
                 //BlastAnimation.CurrentFrame = 0;
+                for (int r = 0; r < players.Length; r++)
+                {
+                    GamePad.SetVibration((PlayerIndex)(r), 0f, 0f);
+                }
+                
             }
         }
     }

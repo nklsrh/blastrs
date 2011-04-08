@@ -54,7 +54,7 @@ namespace blastrs
             base.Update(gameTime);
         }
 
-        public void CheckCollisionWithPlayer(Player Player, GameTime gameTime)
+        public void CheckCollisionWithPlayer(Player Player, GameTime gameTime, int index)
         {
             bgColorArr = new Color[1];
             CollisionMap.GetData<Color>(0, new Rectangle((int)Player.Position.X, (int)Player.Position.Y, 1, 1), bgColorArr, 0, 1);
@@ -82,10 +82,12 @@ namespace blastrs
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
-                Player.Score += gameTime.ElapsedGameTime.Milliseconds / 10;
+                Player.Score += gameTime.ElapsedGameTime.Milliseconds / 5;
+                GamePad.SetVibration((PlayerIndex)(index), 0.5f, 0.5f);
             }
             else
             {
+                GamePad.SetVibration((PlayerIndex)(index), 0f, 0f);
                 if (Player.Score > 0)
                 {
                     Player.Score -= gameTime.ElapsedGameTime.Milliseconds / 15;
