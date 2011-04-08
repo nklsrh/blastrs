@@ -578,6 +578,32 @@ namespace blastrs
             }
         }
 
+        /// <summary>
+        /// draws the animation
+        /// </summary>
+        /// <param name="parent">the parent vector to draw from</param>
+        /// <param name="rotationoffset">the parent rotation, in degrees</param>
+        /// <param name="spriteBatch">the spritebatch to use for drawing</param>
+        public void Draw(Vector2 parent, float rotationoffset, SpriteBatch spriteBatch)
+        {
+            if (IsPlaying == true)
+            {
+                for (int i = 0; i < Images.Count; i++)
+                {
+                    try
+                    {
+                        spriteBatch.Begin();
+                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i] + rotationoffset), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                        spriteBatch.End();
+                    }
+                    catch (Exception e)
+                    {
+                        spriteBatch.Draw(Images[i], Position[i] + parent, null, new Color(Tint[i].X, Tint[i].Y, Tint[i].Z, Opacity[i]), MathHelper.ToRadians(Rotation[i] + rotationoffset), Pivot[i], Scale[i], SpriteEffects.None, 1);
+                    }
+                }
+            }
+        }
+
         public void Play()
         {
             //if (IsPlaying == false)
