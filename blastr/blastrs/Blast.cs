@@ -13,15 +13,11 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace blastrs
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
     public class Blast : Microsoft.Xna.Framework.GameComponent
     {
         public Blast(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
         }
         public float Radius;
         public Vector2 Position;
@@ -31,13 +27,9 @@ namespace blastrs
         public Texture2D Sprite;
         public bool Ready;
         public TimeSpan blastTime = new TimeSpan(0,0,3);
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
             Area = new Circle();
             Ready = true;
 
@@ -47,13 +39,8 @@ namespace blastrs
             base.Initialize();
         }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Player Player, int index)
         {
-            // TODO: Add your update code here3
             if (!Ready)
             {
                 blastTime -= gameTime.ElapsedGameTime;
@@ -75,7 +62,7 @@ namespace blastrs
                 {
                     Ready = true;
                     Player.Blasting = false;
-                    blastTime = new TimeSpan(0, 0, 5);
+                    blastTime = new TimeSpan(0, 0, 3);
                 }
             }
 

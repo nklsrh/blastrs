@@ -13,9 +13,6 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace blastrs
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         public Animation SideSwipers;
@@ -44,26 +41,11 @@ namespace blastrs
 
         public Random randomsssss;
 
-        //Video video;
-        //VideoPlayer player;
-        Texture2D videoTexture;
-        Song[] Song;
+        public Video video;
+        public VideoPlayer player;
+        public Texture2D videoTexture;
 
-        //public Device device;
-       // public bool loaded = false;
-
-        public Vector2 psLeftThumbStick;
-        public Vector2 psRightThumbStick;
-        public Vector2 LeftThumbStick;
-        public Vector2 RightThumbStick;
-        public bool HasLeft;
-        public bool HasRight;
-        const float center = 32767.5f;
-
-        //public GamePadConfig conf;
-        //public User[] localUsers;
-        //public IUserInterface users;
-        //public User u1;
+        public Song[] Song;
 
         public int[] myint;
 
@@ -134,7 +116,7 @@ namespace blastrs
         public void NewGame()
         {
             Vector2 Position = new Vector2(420, 120);
-            // TODO: Add your initialization logic here
+
             for (int r = 0; r < NumberOfPlayers; r++)
             {
                 Player[r].Initialize();
@@ -246,28 +228,19 @@ namespace blastrs
             }
             MediaPlayer.Stop();
             MediaPlayer.Play(Song[1]);
-            //video = Content.Load<Video>("smallIntro2");
-            //player = new VideoPlayer();
 
-            //users = (IUserInterface)Services.GetService(typeof(IUserInterface));
+            video = Content.Load<Video>("Video\\Intro");
+            player = new VideoPlayer();
             
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
             Menu.CurrentScreen = Menu.Card.MainMenu;
             Menu.Initialize(this, spriteBatch, Content);
-            // TODO: use this.Content to load your game content here
+
         }
 
         protected override void Update(GameTime gameTime)
         {
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    myint = new Int32[1000];
-            //}
-
-            // Allows the game to exit
-
-
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
                 for (int r = 0; r < NumberOfPlayers; r++)
@@ -307,18 +280,15 @@ namespace blastrs
                     Menu.Initialize(this, spriteBatch, Content);
                 }
             }
-            
 
-            //if (Menu.CurrentScreen = Menu.Card.Intro)
-            //{
-            //    if (player.State == MediaState.Stopped && player.IsLooped = false)
-            //    {
-            //        player.IsLooped = true;
-            //        player.Play(video);
-            //    }
-            //}
 
-            //Window.Title = MediaPlayer.Queue.ActiveSong.Name.ToString();
+            if (Menu.CurrentScreen == Menu.Card.Intro)
+            {
+                if (player.State == MediaState.Stopped)
+                {
+                    Menu.CurrentScreen = Menu.Card.MainMenu;
+                }
+            }
 
             Input.Update(gameTime, Blast, spriteBatch, Menu, this, Content, Player);
 
@@ -352,8 +322,9 @@ namespace blastrs
 
                 DrawScore();
             }
-            // if (player.State != MediaState.Stopped)
-            //     videoTexture = player.GetTexture();
+
+             if (player.State != MediaState.Stopped)
+                 videoTexture = player.GetTexture();
 
             PlayAnimations(gameTime);
 
@@ -429,26 +400,30 @@ namespace blastrs
         }
         public void ShuffleSongs()
         {
-            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\0")
+            try
             {
-                MediaPlayer.Stop();
-                MediaPlayer.Play(Song[2]);
+                if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\0")
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(Song[2]);
+                }
+                if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\2")
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(Song[1]);
+                }
+                if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\3")
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(Song[0]);
+                }
+                if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\1")
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(Song[3]);
+                }
             }
-            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\2")
-            {
-                MediaPlayer.Stop();
-                MediaPlayer.Play(Song[1]);
-            }
-            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\3")
-            {
-                MediaPlayer.Stop();
-                MediaPlayer.Play(Song[0]);
-            }
-            if (MediaPlayer.Queue.ActiveSong.Name == "Audio\\Music\\1")
-            {
-                MediaPlayer.Stop();
-                MediaPlayer.Play(Song[3]);
-            }
+            catch { }
         }
         public void DrawScore()
         {

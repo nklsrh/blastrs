@@ -19,7 +19,6 @@ namespace blastrs
         public Animation(Game game)
             : base(game)
         {
-            //add any child dependencies here
         }
 
         #region variables

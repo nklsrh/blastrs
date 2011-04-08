@@ -18,13 +18,11 @@ namespace blastrs
         public BotBlast(Game game)
         : base(game)
         {
-            // TODO: Construct any child components here
         }
 
         public Vector2 Position;
         public Circle Area;
         public float Radius;
-        // the power of the blast, in pixels per frame
         public float Power;
         public Animation BlastAnimation;
         public Boolean isDetonating;
@@ -47,7 +45,6 @@ namespace blastrs
             Position = Origin;
             Area.Center = Position;
 
-            
             for (int r = 0; r < players.Length; r++)
             {
                 if (Area.Intersects(new Rectangle((int)players[r].Position.X, (int)players[r].Position.Y, 1, 1)) == true)

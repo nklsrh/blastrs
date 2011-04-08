@@ -22,7 +22,6 @@ namespace blastrs
         public Bot(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
         }
 
         public Vector2 Position;
@@ -30,7 +29,6 @@ namespace blastrs
         public float SpeedPower;
         public int Target;
         public Animation Sprite;
-        //public Texture2D Sprite;
         public float Scale;
         public TimeSpan BlastTimer;
         public Color TintColor;
@@ -43,7 +41,6 @@ namespace blastrs
 
         public void Initialize(Game1 game)
         {
-            // TODO: Add your initialization code here
             BlastTimer = new TimeSpan(0, 0, 5);
             Scale = 1f;
             TintColor = Color.White;
@@ -52,9 +49,6 @@ namespace blastrs
             Position.Y = 0;
             Dropped = false;
             SpeedPower = 0.1f;
-
-            //Speed = new Vector2(new Random().Next(-1, 1), new Random().Next(-1, 1));
-
             base.Initialize();
         }
 
@@ -89,21 +83,10 @@ namespace blastrs
                 }
             }
 
-                //if (BotIndex == 1)
-                //{
-                //    //Target = 3 - game.Bot[0].Target; //other bombot chases the opposite color; if blue then yellow
-                //}
-
             Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower);
-
-            
-            //Speed.X = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.X - Position.X));
-            //Speed.Y = SpeedPower * (Vector2.Distance(Position, targets[Target].Position) / (targets[Target].Position.Y - Position.Y));
 
             if (targets[Target].Position.X == Position.X) { Speed.X = 0; }
             if (targets[Target].Position.Y == Position.Y) { Speed.Y = 0; }
-
-            //Position += Speed;
 
             BlastTimer -= gameTime.ElapsedGameTime;
 
@@ -114,8 +97,6 @@ namespace blastrs
                 if (!Blasted)
                 {
                     botBlast.Detonate(targets, Position);
-                    //Sprite.CurrentFrame = 0;
-                    //Sprite.IsPlaying = false;
                     Blasted = true;
                 }
                 if (BlastTimer <= TimeSpan.Zero)

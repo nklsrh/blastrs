@@ -21,8 +21,7 @@ namespace blastrs
     {
         public Stadium(Game game)
             : base(game)
-        {
-            // TODO: Construct any child components here
+        {      
         }
         Game1 game = new Game1();
         public Vector2 CameraPosition;
@@ -31,26 +30,15 @@ namespace blastrs
         public Texture2D CollisionMap;
         public Color bgColor;
         public Color[] bgColorArr;
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public void Initialize(GraphicsDeviceManager graphics)
         {
             CollisionMap = new Texture2D(graphics.GraphicsDevice, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
-            // TODO: Add your initialization code here
             base.Initialize();
         }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-            
-
             base.Update(gameTime);
         }
 
@@ -78,7 +66,7 @@ namespace blastrs
                 {
                     Player.Position.Y = 120;
                 }
-                Player.Score -= 100;
+                Player.Score = 0;
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {
@@ -96,9 +84,8 @@ namespace blastrs
                 {
                     Player.Score = 0;
                 }
-            }
-            
-            Player.TintColour = bgColor;
+                Player.TintColour = bgColor;
+            }     
         }
 
         public void CheckCollisionWithBots(Bot Bot, GameTime gameTime)
@@ -118,7 +105,6 @@ namespace blastrs
             sb.Begin();
             sb.Draw(Sprite, CameraPosition, null, Color.White, 0f, new Vector2(Sprite.Width/2, Sprite.Height/2), 1f, SpriteEffects.None, 1f);
             //sb.Draw(CollisionMap, Vector2.Zero, Color.White);
-
             sb.End();
         }
     }

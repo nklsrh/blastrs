@@ -14,15 +14,11 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace blastrs
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
     public class Menu : Microsoft.Xna.Framework.GameComponent
     {
         public Menu(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
         }
 
         public enum Card{
@@ -57,10 +53,6 @@ namespace blastrs
         }
         public void Draw(Game1 game, GameTime gameTime, SpriteBatch sb, Texture2D videoTexture)
         {
-            if (CurrentScreen == Card.InGame)
-            {
-
-            }
             if (CurrentScreen == Card.Intro)
             {
                 if (videoTexture != null)

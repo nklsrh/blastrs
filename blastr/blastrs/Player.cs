@@ -14,16 +14,13 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace blastrs
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
     public class Player : Microsoft.Xna.Framework.GameComponent
     {
         public Player(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
         }
+
         public Vector2 Position;
         public Vector2 Speed;
         public Texture2D Sprite;
@@ -33,14 +30,9 @@ namespace blastrs
         public Texture2D StarImage;
         public bool Blasting;
         public Texture2D Shadow;
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
-            TintColour = Color.White;
             Blasting = false;
             Score = 50;
             SpeedPower = 0.4f;
@@ -49,13 +41,8 @@ namespace blastrs
             base.Initialize();
         }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(Game1 game, GameTime gameTime)
         {
-            // TODO: Add your update code here
             ClampSpeed();
             Position += Speed;
 
@@ -92,7 +79,7 @@ namespace blastrs
         {
             sb.Begin();
             sb.Draw(Shadow, new Vector2(Position.X - 20, Position.Y), null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
-            sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
+            sb.Draw(Sprite, Position, null, TintColour, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), 1f, SpriteEffects.None, 1f);
             sb.End();
         }
     }
