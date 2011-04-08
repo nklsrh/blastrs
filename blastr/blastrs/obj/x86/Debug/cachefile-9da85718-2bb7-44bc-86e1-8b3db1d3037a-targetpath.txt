@@ -46,6 +46,8 @@ Content\Audio\Music\3.xnb
 Content\Audio\Music\3.wma
 Content\Audio\Music\0.xnb
 Content\Audio\Music\0.wma
+Content\Video\Intro.xnb
+Content\Video\Intro.wmv
 Content\BomBot\anim.dat
 Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat
