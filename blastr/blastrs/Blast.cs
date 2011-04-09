@@ -68,12 +68,29 @@ namespace blastrs
 
             base.Update(gameTime);
         }
+
+        public void UpdateForBot(GameTime gameTime, Bot bot)
+        {
+            if (!Ready)
+            {
+                if (Area.Intersects(new Rectangle((int)bot.Position.X, (int)bot.Position.Y, 1, 1)))
+                {
+                    bot.blastSpeed = Direction;
+                }
+            }
+
+            base.Update(gameTime);
+        }
+
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();
             if (!Ready)
             {
-                sb.Draw(Sprite, Position, null, Color.White, 0f, new Vector2(Sprite.Width / 2, Sprite.Height / 2), Power/30, SpriteEffects.None, 0f);
+                if (Direction.Y <= 0)
+                { sb.Draw(Sprite, Position, null, Color.White, (float)(Math.Atan(-Direction.X / Direction.Y)), new Vector2(Sprite.Width / 2, Sprite.Height / 2), (float)(Power / (12)), SpriteEffects.None, 0f); }
+                if (Direction.Y > 0)
+                { sb.Draw(Sprite, Position, null, Color.White, (float)(Math.PI + Math.Atan(-Direction.X / Direction.Y)), new Vector2(Sprite.Width / 2, Sprite.Height / 2), (float)(Power / (12)), SpriteEffects.None, 0f); }
             }
             sb.End();
         }

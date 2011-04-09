@@ -38,6 +38,7 @@ namespace blastrs
         public Random randomsssss;
         public int BotIndex;
         public BotBlast botBlast;
+        public Vector2 blastSpeed;
 
         public void Initialize(Game1 game)
         {
@@ -48,7 +49,7 @@ namespace blastrs
             Position.X = (float)(randomsssss.NextDouble() * game.graphics.PreferredBackBufferWidth);
             Position.Y = 0;
             Dropped = false;
-            SpeedPower = 0.1f;
+            SpeedPower = 3;
             base.Initialize();
         }
 
@@ -83,10 +84,19 @@ namespace blastrs
                 }
             }
 
-            Position = Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower);
+            //Speed += (Vector2.SmoothStep(Position, targets[Target].Position, SpeedPower) * 0.02f);
 
-            if (targets[Target].Position.X == Position.X) { Speed.X = 0; }
-            if (targets[Target].Position.Y == Position.Y) { Speed.Y = 0; }
+            //if (targets[Target].Position.X == Position.X) { Speed.X = 0; }
+            //if (targets[Target].Position.Y == Position.Y) { Speed.Y = 0; }
+
+            Speed += (targets[Target].Position - Position);
+            Speed.Normalize();
+            Speed = Speed * SpeedPower;
+
+            Speed += blastSpeed * 1.1f;
+            blastSpeed = Vector2.Zero;
+
+            Position += Speed;
 
             BlastTimer -= gameTime.ElapsedGameTime;
 
@@ -109,6 +119,8 @@ namespace blastrs
 
             Sprite.Update(Position);
 
+            Speed = Vector2.Zero;
+
             base.Update(gameTime);
         }
 
@@ -116,6 +128,8 @@ namespace blastrs
         {
             Position.X += (pos.X - Position.X) / 20f;
             Position.Y += (pos.Y - Position.Y) / 20f;
+            Sprite.CurrentFrame = 0;
+            Sprite.IsPlaying = false;
             if (Position.Y >= pos.Y - 4)
             {
                 Dropped = true;

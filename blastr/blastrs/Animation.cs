@@ -290,7 +290,7 @@ namespace blastrs
                         Position_Data[i].Add(Position_Data[i].Last());
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Position_KeyFrame[i].Add(0);
                     Position_KeyFrame[i].Add(EndFrame);
@@ -306,7 +306,7 @@ namespace blastrs
                         Opacity_Data[i].Add(Opacity_Data[i].Last());
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Opacity_KeyFrame[i].Add(0);
                     Opacity_KeyFrame[i].Add(EndFrame);
@@ -322,7 +322,7 @@ namespace blastrs
                         Scale_Data[i].Add(Scale_Data[i].Last());
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Scale_KeyFrame[i].Add(0);
                     Scale_KeyFrame[i].Add(EndFrame);
@@ -338,7 +338,7 @@ namespace blastrs
                         Pivot_Data[i].Add(Pivot_Data[i].Last());
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Pivot_KeyFrame[i].Add(0);
                     Pivot_KeyFrame[i].Add(EndFrame);
@@ -354,7 +354,7 @@ namespace blastrs
                         Rotation_Data[i].Add(Rotation_Data[i].Last());
                     }
                 }
-                catch (Exception e)
+                catch
                 {
                     Rotation_KeyFrame[i].Add(0);
                     Rotation_KeyFrame[i].Add(EndFrame);

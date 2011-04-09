@@ -162,8 +162,9 @@ namespace blastrs
             try
             {
                 Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
-                Player[0].StarImage = Content.Load<Texture2D>("star");
-                Player[0].Shadow = Content.Load<Texture2D>("shadow");
+                Player[0].StarImage = Content.Load<Texture2D>("shadow");
+                Player[0].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[0].tag = Content.Load<SpriteFont>("font_small");
             }
             catch (Exception e)
             {
@@ -172,8 +173,9 @@ namespace blastrs
             try
             {
                 Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
-                Player[1].StarImage = Content.Load<Texture2D>("star");
-                Player[1].Shadow = Content.Load<Texture2D>("shadow");
+                Player[1].StarImage = Content.Load<Texture2D>("shadow");
+                Player[1].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[1].tag = Content.Load<SpriteFont>("font_small");
             }
             catch (Exception e)
             {
@@ -182,16 +184,18 @@ namespace blastrs
             try
             {
                 Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
-                Player[2].StarImage = Content.Load<Texture2D>("star");
-                Player[2].Shadow = Content.Load<Texture2D>("shadow");
+                Player[2].StarImage = Content.Load<Texture2D>("shadow");
+                Player[2].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[2].tag = Content.Load<SpriteFont>("font_small");
             }
             catch (Exception e) { }
 
             try
             {
                 Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
-                Player[3].StarImage = Content.Load<Texture2D>("star");
-                Player[3].Shadow = Content.Load<Texture2D>("shadow");
+                Player[3].StarImage = Content.Load<Texture2D>("shadow");
+                Player[3].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[3].tag = Content.Load<SpriteFont>("font_small");
             }
             catch (Exception e) { }
 
@@ -213,7 +217,7 @@ namespace blastrs
             for (int r = 0; r < 10; r++)
             {
                 Blast[r].Initialize();
-                Blast[r].Sprite = Content.Load<Texture2D>("star");
+                Blast[r].Sprite = Content.Load<Texture2D>("PlayerBlast");
             }
 
             Font = Content.Load<SpriteFont>("font");
@@ -251,6 +255,10 @@ namespace blastrs
                     for (int b = 0; b < 10; b++)
                     {
                         Blast[b].Update(gameTime, Player[r], r);
+                        for (int i = 0; i < Bot.Length; i++)
+                        {
+                            Blast[b].UpdateForBot(gameTime, Bot[i]);
+                        }
                     }
                 }
 
@@ -308,6 +316,7 @@ namespace blastrs
                 for (int r = 0; r < NumberOfPlayers; r++)
                 {
                     Player[r].Draw(gameTime, spriteBatch);
+                    Player[r].DrawTag(gameTime, spriteBatch, r + 1, new Vector3(0.5f, 0.5f, 0.5f));
                 }
 
                 for (int r = 0; r < NumberOfBots; r++)
