@@ -1,0 +1,94 @@
+﻿##CountDownBackground
+BEGIN Opacity
+<0> 1
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 0,0
+END Position
+
+##3
+//the opacity of the image
+BEGIN Opacity
+<0> 0
+<35> 1
+<50> 0
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 0,0
+END Position
+
+##2
+BEGIN Opacity
+<50> 0
+<85> 1
+<100> 0
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<50> 0,0
+END Position
+
+##1
+BEGIN Opacity
+<100> 0
+<135> 1
+<150> 0
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<100> 0,0
+END Position
+
+##0
+BEGIN Opacity
+<150> 0
+<185> 1
+<200> 0
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<150> 0,0
+END Position
+

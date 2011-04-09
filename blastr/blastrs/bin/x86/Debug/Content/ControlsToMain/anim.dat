@@ -1,0 +1,39 @@
+﻿##Controls
+	
+//the opacity of the image
+BEGIN Opacity
+<0> 1
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 0,0
+<20> 0,768
+END Position
+
+##MainMenu
+
+//the opacity of the image
+BEGIN Opacity
+<0> 1
+END Opacity
+
+BEGIN Scale
+<0> 1,1
+END Scale
+
+BEGIN Pivot
+<0> 0,0
+END Pivot
+
+BEGIN Position
+<0> 0,-768
+<20> 0,0
+END Position

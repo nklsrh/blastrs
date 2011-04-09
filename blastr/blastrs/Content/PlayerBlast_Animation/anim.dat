@@ -1,0 +1,23 @@
+﻿##PlayerBlast
+	
+//the opacity of the image
+BEGIN Opacity
+<0> 0
+<2> 1
+<10> 0
+END Opacity
+
+BEGIN Scale
+<0> 0.1,0.1
+<10> 3,3
+END Scale
+
+BEGIN Pivot
+<0> 42,45
+END Pivot
+
+<<_Audio: Explosion
+
+BEGIN Audio_PlayStamps
+<0>
+END Audio_PlayStamps
