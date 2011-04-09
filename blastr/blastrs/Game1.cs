@@ -295,6 +295,7 @@ namespace blastrs
                 if (player.State == MediaState.Stopped)
                 {
                     Menu.CurrentScreen = Menu.Card.MainMenu;
+                    MediaPlayer.Play(Song[0]);
                 }
             }
 
