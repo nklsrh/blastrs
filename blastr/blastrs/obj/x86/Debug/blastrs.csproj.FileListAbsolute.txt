@@ -674,3 +674,4 @@ C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\finalrepo\bin\x86\D
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\finalrepo\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\finalrepo\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\finalrepo\bin\x86\Debug\Content\font_small.xnb
+C:\Users\Harini Suresh.Home-PC\Documents\Nikhil\Games\blastr\finalrepo\bin\x86\Debug\Content\Paused.xnb
