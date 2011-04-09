@@ -26,6 +26,7 @@ namespace blastrs
             Controls,
             PlayerInformation,
             InGame,
+            Paused,
             Scoreboard,
             Intro
         }

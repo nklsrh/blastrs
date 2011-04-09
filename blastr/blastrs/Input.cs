@@ -111,9 +111,9 @@ namespace blastrs
             }
 
             #region GameControls
-            if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
+            for (int i = 0; i < player.Length; i++)
             {
-                for (int i = 0; i < player.Length; i++)
+                if (menu.CurrentScreen == blastrs.Menu.Card.InGame)
                 {
                     if (currentGamePadState[i].ThumbSticks.Left.X != 0)
                     {
@@ -123,7 +123,10 @@ namespace blastrs
                     {
                         player[i].Speed.Y -= player[i].SpeedPower * currentGamePadState[i].ThumbSticks.Left.Y;
                     }
-
+                    if (currentGamePadState[i].IsButtonUp(Buttons.Start) && previousGamePadState[i].IsButtonDown(Buttons.Start))
+                    {
+                        game.Menu.CurrentScreen = Menu.Card.Paused;
+                    }
 
                     if (currentGamePadState[i].Triggers.Right < 0.3)
                     {
@@ -150,10 +153,21 @@ namespace blastrs
                         }
                     }
                 }
-
+                else
+                {
+                    if (game.Menu.CurrentScreen == Menu.Card.Paused)
+                    {
+                        if (currentGamePadState[i].IsButtonUp(Buttons.Start) && previousGamePadState[i].IsButtonDown(Buttons.Start))
+                        {
+                            game.Menu.CurrentScreen = Menu.Card.InGame;
+                        }
+                    }
+                }
             }
             #endregion GameControls
 
+          
+                
             for (int i = 0; i < player.Length; i++) 
             {
                 previousGamePadState[i] = currentGamePadState[i];

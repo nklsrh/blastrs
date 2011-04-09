@@ -30,6 +30,7 @@ namespace blastrs
         public int NumberOfPlayers;
         public int NumberOfBots = 1;
         Texture2D[] ScoreBar = new Texture2D[4];
+        Texture2D PausedScreen;
 
         Stadium Stadium;
         Input Input;
@@ -225,8 +226,6 @@ namespace blastrs
             Font = Content.Load<SpriteFont>("font");
             BoldFont = Content.Load<SpriteFont>("BoldFont");
 
-            
-
             Song = new Song[4];
             for (int i = 0; i < 4; i++)
             {
@@ -237,7 +236,8 @@ namespace blastrs
 
             video = Content.Load<Video>("Video\\Intro");
             player = new VideoPlayer();
-            
+
+            PausedScreen = Content.Load<Texture2D>("Paused");
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
             Menu.CurrentScreen = Menu.Card.MainMenu;
@@ -312,7 +312,7 @@ namespace blastrs
 
             Menu.Draw(this, gameTime, spriteBatch, videoTexture);
 
-            if (Menu.CurrentScreen == Menu.Card.InGame)
+            if (Menu.CurrentScreen == Menu.Card.InGame || Menu.CurrentScreen == Menu.Card.Paused)
             {
                 Stadium.Draw(gameTime, spriteBatch);
 
@@ -333,7 +333,17 @@ namespace blastrs
                 }
 
                 DrawScore();
+
+                if (Menu.CurrentScreen == Menu.Card.Paused)
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(PausedScreen, Vector2.Zero, Color.White);
+                    spriteBatch.End();
+                }
             }
+ 
+                
+ 
 
              if (player.State != MediaState.Stopped)
                  videoTexture = player.GetTexture();
