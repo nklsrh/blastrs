@@ -140,10 +140,6 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <None Include="PlayerBlast_Animation\anim.dat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Name>anim</Name>
-    </None>
     <None Include="CountDown\anim.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>anim</Name>
@@ -363,20 +359,6 @@
       <Name>Intro</Name>
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="PlayerBlast_Animation\Explosion.wav">
-      <Name>Explosion</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="PlayerBlast_Animation\PlayerBlast.png">
-      <Name>PlayerBlast</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

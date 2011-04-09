@@ -67,6 +67,7 @@ namespace blastrs
                     Player.Position.Y = 120;
                 }
                 Player.Score = 0;
+                Player.tagOpacity = 1f;
             }
             if (bgColor == Color.Cyan) //SCOREEEEE
             {

@@ -32,13 +32,12 @@ Content\greenBar.xnb
 Content\yellowBar.xnb
 Content\ChannelLogo\Loading.xnb
 Content\CountDown\CountDownBackground.xnb
-Content\PlayerBlast_Animation\PlayerBlast.xnb
 Content\PlayerBlast.xnb
+Content\shadow.xnb
 Content\font.xnb
 Content\BoldFont.xnb
 Content\BotBlast_Animation\Explosion.xnb
 Content\BomBot\BombBeep.xnb
-Content\PlayerBlast_Animation\Explosion.xnb
 Content\Audio\Music\1.xnb
 Content\Audio\Music\1.wma
 Content\Audio\Music\2.xnb
@@ -49,12 +48,10 @@ Content\Audio\Music\0.xnb
 Content\Audio\Music\0.wma
 Content\Video\Intro.xnb
 Content\Video\Intro.wmv
-Content\shadow.xnb
 Content\font_small.xnb
 Content\BomBot\anim.dat
 Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat
-Content\PlayerBlast_Animation\anim.dat
 Content\ControlsToChars\anim.dat
 Content\ControlsToMain\anim.dat
 Content\CharsToControls\anim.dat

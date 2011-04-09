@@ -159,6 +159,8 @@ namespace blastrs
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            ChannelLogoAnim.Play();
+
             try
             {
                 Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
@@ -223,7 +225,7 @@ namespace blastrs
             Font = Content.Load<SpriteFont>("font");
             BoldFont = Content.Load<SpriteFont>("BoldFont");
 
-            ChannelLogoAnim.Play();
+            
 
             Song = new Song[4];
             for (int i = 0; i < 4; i++)
@@ -317,7 +319,7 @@ namespace blastrs
                 for (int r = 0; r < NumberOfPlayers; r++)
                 {
                     Player[r].Draw(gameTime, spriteBatch);
-                    Player[r].DrawTag(gameTime, spriteBatch, r + 1, new Vector3(0.5f, 0.5f, 0.5f));
+                    Player[r].DrawTag(gameTime, spriteBatch, r + 1, new Vector3(0.6f, 0.6f, 0.6f));
                 }
 
                 for (int r = 0; r < NumberOfBots; r++)

@@ -92,7 +92,7 @@ namespace blastrs
             sb.DrawString(tag, "Player: " + playerNum.ToString(), new Vector2(Position.X + 40, Position.Y - 30), new Color(new Vector4(Colour, tagOpacity)));
             sb.End();
 
-            tagOpacity -= 0.05f;
+            tagOpacity -= 0.03f;
         }
     }
 }
