@@ -34,8 +34,10 @@ Content\ChannelLogo\Loading.xnb
 Content\CountDown\CountDownBackground.xnb
 Content\PlayerBlast.xnb
 Content\shadow.xnb
+Content\Paused.xnb
 Content\font.xnb
 Content\BoldFont.xnb
+Content\font_small.xnb
 Content\BotBlast_Animation\Explosion.xnb
 Content\BomBot\BombBeep.xnb
 Content\Audio\Music\1.xnb
@@ -48,8 +50,6 @@ Content\Audio\Music\0.xnb
 Content\Audio\Music\0.wma
 Content\Video\Intro.xnb
 Content\Video\Intro.wmv
-Content\font_small.xnb
-Content\Paused.xnb
 Content\BomBot\anim.dat
 Content\BotBlast_Animation\anim.dat
 Content\ChannelLogo\anim.dat

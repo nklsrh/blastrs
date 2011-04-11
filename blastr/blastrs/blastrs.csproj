@@ -98,7 +98,7 @@
     <Compile Include="Stadium.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Game.ico" />
+    <Compile Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>

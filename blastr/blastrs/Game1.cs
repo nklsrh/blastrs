@@ -69,10 +69,11 @@ namespace blastrs
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
-            if (!graphics.IsFullScreen)
-            {
-                //graphics.ToggleFullScreen();
-            }
+            //if (!graphics.IsFullScreen)
+            //{
+            //    //graphics.ToggleFullScreen();
+            //}
+            graphics.IsFullScreen = true;
             graphics.ApplyChanges();
 
             NumberOfPlayers = 2;

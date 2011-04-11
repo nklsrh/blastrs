@@ -63,6 +63,10 @@ namespace blastrs
                     Ready = true;
                     Player.Blasting = false;
                     blastTime = new TimeSpan(0, 0, 3);
+                    if (index == 3)
+                    {
+                        blastTime = new TimeSpan(0, 0, 9);
+                    }
                 }
             }
 

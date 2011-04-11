@@ -85,7 +85,10 @@ namespace blastrs
                 {
                     Player.Score = 0;
                 }
-                Player.TintColour = bgColor;
+                if (bgColor != Color.Cyan)
+                {
+                    Player.TintColour = bgColor;
+                }
             }     
         }
 
