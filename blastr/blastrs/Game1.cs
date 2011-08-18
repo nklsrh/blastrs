@@ -73,7 +73,7 @@ namespace blastrs
             //{
             //    //graphics.ToggleFullScreen();
             //}
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             graphics.ApplyChanges();
 
             NumberOfPlayers = 2;
@@ -342,15 +342,15 @@ namespace blastrs
                     spriteBatch.End();
                 }
             }
- 
-                
- 
 
              if (player.State != MediaState.Stopped)
                  videoTexture = player.GetTexture();
 
             PlayAnimations(gameTime);
 
+            spriteBatch.Begin();
+            spriteBatch.Draw(Player[0].Sprite, new Vector2((float)Mouse.GetState().X, (float)Mouse.GetState().Y), new Color(255,255,255,100));
+            spriteBatch.End();
             base.Draw(gameTime);
         }
         public void PlayAnimations(GameTime gameTime)

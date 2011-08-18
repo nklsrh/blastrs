@@ -21,11 +21,15 @@ namespace blastrs
         {
         }
         GamePadState[] previousGamePadState, currentGamePadState;
+        KeyboardState previousKeyboardState, currentKeyboardState;
 
         public void Initialize(Game1 game, Player[] player)
         {
             previousGamePadState = new GamePadState[4];
             currentGamePadState = new GamePadState[4];
+
+            previousKeyboardState = new KeyboardState();
+            currentKeyboardState = new KeyboardState();
 
             for (int i = 0; i < player.Length; i++) //RESET PREVIOUS GAME STATES
             {
@@ -42,7 +46,9 @@ namespace blastrs
             for (int i = 0; i < player.Length; i++)
             {
                 currentGamePadState[i] = GamePad.GetState((PlayerIndex)(i));
-                if (currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released)
+                currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
+
+                if ((currentGamePadState[i].Buttons.A == ButtonState.Pressed && previousGamePadState[i].Buttons.A == ButtonState.Released) || currentKeyboardState.IsKeyDown(Keys.Enter) && previousKeyboardState.IsKeyUp(Keys.Enter))
                 {
                     GamePad.SetVibration((PlayerIndex)(i), 0.5f, 0.5f);
                     if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
@@ -66,7 +72,7 @@ namespace blastrs
                     GamePad.SetVibration((PlayerIndex)(i), 0f, 0f);
                 }
 
-                if (currentGamePadState[i].Buttons.Start == ButtonState.Pressed && previousGamePadState[i].Buttons.Start == ButtonState.Released)
+                if (currentGamePadState[i].Buttons.Start == ButtonState.Pressed && previousGamePadState[i].Buttons.Start == ButtonState.Released || currentKeyboardState.IsKeyDown(Keys.Back) && previousKeyboardState.IsKeyUp(Keys.Back))
                 {
                     if (menu.CurrentScreen == blastrs.Menu.Card.Intro)
                     {
@@ -76,7 +82,7 @@ namespace blastrs
                     }
                 }
 
-                if (currentGamePadState[i].Buttons.B == ButtonState.Pressed && previousGamePadState[i].Buttons.B == ButtonState.Released)
+                if (currentGamePadState[i].Buttons.B == ButtonState.Pressed && previousGamePadState[i].Buttons.B == ButtonState.Released || currentKeyboardState.IsKeyDown(Keys.Escape) && previousKeyboardState.IsKeyUp(Keys.Escape))
                 {
                     GamePad.SetVibration((PlayerIndex)(i), 0.5f, 0.5f);
                     if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
@@ -172,43 +178,44 @@ namespace blastrs
             {
                 previousGamePadState[i] = currentGamePadState[i];
             }
+            previousKeyboardState = currentKeyboardState;
 
 #region KeyboardInput
             //------------------------------------------------------KEGBOARD
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
-            //{
-            //    player[0].Speed.X += player[0].SpeedPower;
-            //}
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
-            //{
-            //    player[0].Speed.X -= player[0].SpeedPower;
-            //}
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.W))
-            //{
-            //    player[0].Speed.Y -= player[0].SpeedPower;
-            //}
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
-            //{
-            //    player[0].Speed.Y += player[0].SpeedPower;
-            //}
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.LeftShift))
-            //{
-            //    if (!player[0].Blasting)
-            //    {
-            //        blast[0].Position = player[0].Position + Vector2.Multiply(player[0].Speed, 1.5f);
-            //        blast[0].Direction = player[0].Speed;
-            //        player[0].Speed = Vector2.Multiply(blast[0].Direction, -0.8f);
-            //        player[0].Blasting = true;
-            //    }
-            //}
-            //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.LeftShift))
-            //{
-            //    if (blast[0].Ready)
-            //    {
-            //        player[0].Blasting = false;
-            //        blast[0].Ready = false;
-            //    }
-            //}
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
+            {
+                player[0].Speed.X += player[0].SpeedPower;
+            }
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
+            {
+                player[0].Speed.X -= player[0].SpeedPower;
+            }
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.W))
+            {
+                player[0].Speed.Y -= player[0].SpeedPower;
+            }
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
+            {
+                player[0].Speed.Y += player[0].SpeedPower;
+            }
+            if (Mouse.GetState().LeftButton == ButtonState.Released)
+            {
+                if (!player[0].Blasting)
+                {
+                    blast[0].Position = player[0].Position + Vector2.Multiply(player[0].Speed, 1.5f);
+                    blast[0].Direction = 5* Vector2.Normalize(new Vector2((float)Mouse.GetState().X - player[0].Position.X, (float)Mouse.GetState().Y - player[0].Position.Y)); 
+                    player[0].Speed = Vector2.Multiply(blast[0].Direction, -0.8f);
+                    player[0].Blasting = true;
+                }
+            }
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                if (blast[0].Ready)
+                {
+                    player[0].Blasting = false;
+                    blast[0].Ready = false;
+                }
+            }
 
             ////------------------------------------------------------KEGBOARD2
             //if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.Right))
@@ -246,33 +253,6 @@ namespace blastrs
             //    }
             //}
 #endregion KeyboardInput
-#region KeyboardMenus
-            //------------------------------------------------------KEYBOARD
-            //currentKeyboardState = Keyboard.GetState(PlayerIndex.One);
-            //if (currentKeyboardState.IsKeyDown(Keys.A) && previousKeyboardState.IsKeyUp(Keys.A))
-            //{
-            //    if (menu.CurrentScreen == blastrs.Menu.Card.Controls)
-            //    {
-            //        game.ControlsToChars.Play();
-            //    }
-            //    if (menu.CurrentScreen == blastrs.Menu.Card.MainMenu)
-            //    {
-            //        game.MenuToControls.Play();
-            //        //game.ChannelLogoAnim.Play();
-            //    }
-            //}
-            //if (currentKeyboardState.IsKeyDown(Keys.Enter) && previousKeyboardState.IsKeyUp(Keys.Enter))
-            //{
-            //    if (menu.CurrentScreen == blastrs.Menu.Card.Scoreboard)
-            //    {
-            //        game.ChannelLogoAnim.Play();
-            //    }
-            //    if (menu.CurrentScreen == blastrs.Menu.Card.PlayerInformation)
-            //    {
-            //        game.ChannelLogoAnim.Play();
-            //    }
-            //}
-            #endregion KeyboardMenus
 
             base.Update(gameTime);
         }
