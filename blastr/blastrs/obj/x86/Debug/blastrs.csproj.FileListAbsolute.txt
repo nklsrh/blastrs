@@ -874,3 +874,8 @@ C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\blastrs.exe
 C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\blastrs.pdb
 C:\Users\Nikhil\Documents\blastrs\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nikhil\Documents\blastrs\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\Lidgren.Network.dll
+C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\Lidgren.Network.Xna.dll
+C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\Lidgren.Network.Xna.pdb
+C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\Lidgren.Network.pdb
+C:\Users\Nikhil\Documents\blastrs\bin\x86\Debug\Lidgren.Network.xml

@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 
+using Lidgren.Network;
+
 namespace blastrs
 {
     public class Game1 : Microsoft.Xna.Framework.Game
@@ -31,6 +33,16 @@ namespace blastrs
         public int NumberOfBots = 1;
         Texture2D[] ScoreBar = new Texture2D[4];
         Texture2D PausedScreen;
+
+        public enum GameMode
+        {
+            Party, 
+            Multiplayer
+        }
+        public GameMode Mode = GameMode.Multiplayer;
+        NetClient client;
+     
+        Int32 MyIndex;
 
         Stadium Stadium;
         Input Input;
@@ -69,22 +81,34 @@ namespace blastrs
 
             graphics.PreferredBackBufferWidth = 1366;
             graphics.PreferredBackBufferHeight = 768;
-            //if (!graphics.IsFullScreen)
-            //{
-            //    //graphics.ToggleFullScreen();
-            //}
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
 
-            NumberOfPlayers = 2;
-
-            for (int i = 2; i < 4; i++)
+            if (Mode == GameMode.Party)
             {
-                if (GamePad.GetCapabilities((PlayerIndex)(i)).IsConnected == true)
+                NumberOfPlayers = 2;
+
+                for (int i = 2; i < 4; i++)
                 {
-                    NumberOfPlayers += 1;
+                    if (GamePad.GetCapabilities((PlayerIndex)(i)).IsConnected == true)
+                    {
+                        NumberOfPlayers += 1;
+                    }
                 }
             }
+            if (Mode == GameMode.Multiplayer)
+            {
+                NumberOfPlayers = 1;
+
+                NetPeerConfiguration config = new NetPeerConfiguration("xnaapp");
+                config.EnableMessageType(NetIncomingMessageType.DiscoveryResponse);
+
+                client = new NetClient(config);
+                client.Start();
+
+                client.Connect("127.0.0.1", 8001);
+            }
+            
 
             Player = new Player[NumberOfPlayers];
 
@@ -163,45 +187,7 @@ namespace blastrs
 
             ChannelLogoAnim.Play();
 
-            try
-            {
-                Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
-                Player[0].StarImage = Content.Load<Texture2D>("shadow");
-                Player[0].ShadowSprite = Content.Load<Texture2D>("shadow");
-                Player[0].tag = Content.Load<SpriteFont>("font_small");
-            }
-            catch (Exception e)
-            {
-            }
-
-            try
-            {
-                Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
-                Player[1].StarImage = Content.Load<Texture2D>("shadow");
-                Player[1].ShadowSprite = Content.Load<Texture2D>("shadow");
-                Player[1].tag = Content.Load<SpriteFont>("font_small");
-            }
-            catch (Exception e)
-            {
-            }
-
-            try
-            {
-                Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
-                Player[2].StarImage = Content.Load<Texture2D>("shadow");
-                Player[2].ShadowSprite = Content.Load<Texture2D>("shadow");
-                Player[2].tag = Content.Load<SpriteFont>("font_small");
-            }
-            catch (Exception e) { }
-
-            try
-            {
-                Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
-                Player[3].StarImage = Content.Load<Texture2D>("shadow");
-                Player[3].ShadowSprite = Content.Load<Texture2D>("shadow");
-                Player[3].tag = Content.Load<SpriteFont>("font_small");
-            }
-            catch (Exception e) { }
+            TryLoadPlayerSprites();
 
             ScoreBar[0] = Content.Load<Texture2D>("redBar");
             ScoreBar[1] = Content.Load<Texture2D>("blueBar");
@@ -241,13 +227,117 @@ namespace blastrs
             PausedScreen = Content.Load<Texture2D>("Paused");
         //--------------------------------------------------------------------------------MENU SELECTLOLOLOL
             Menu = new Menu(this);
-            Menu.CurrentScreen = Menu.Card.MainMenu;
+            Menu.CurrentScreen = Menu.Card.InGame;
             Menu.Initialize(this, spriteBatch, Content);
 
         }
+        public void TryLoadPlayerSprites()
+        {
+            try
+            {
+                Player[0].Sprite = Content.Load<Texture2D>("redPlayer");
+                Player[0].StarImage = Content.Load<Texture2D>("shadow");
+                Player[0].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[0].tag = Content.Load<SpriteFont>("font_small");
+            }
+            catch (Exception e)
+            {
+            }
 
+            try
+            {
+                Player[1].Sprite = Content.Load<Texture2D>("bluePlayer");
+                Player[1].StarImage = Content.Load<Texture2D>("shadow");
+                Player[1].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[1].tag = Content.Load<SpriteFont>("font_small");
+            }
+            catch (Exception e)
+            {
+            }
+
+            try
+            {
+                Player[2].Sprite = Content.Load<Texture2D>("greenPlayer");
+                Player[2].StarImage = Content.Load<Texture2D>("shadow");
+                Player[2].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[2].tag = Content.Load<SpriteFont>("font_small");
+            }
+            catch (Exception e) { }
+
+            try
+            {
+                Player[3].Sprite = Content.Load<Texture2D>("yellowPlayer");
+                Player[3].StarImage = Content.Load<Texture2D>("shadow");
+                Player[3].ShadowSprite = Content.Load<Texture2D>("shadow");
+                Player[3].tag = Content.Load<SpriteFont>("font_small");
+            }
+            catch (Exception e) { }
+        }
+        public void Networking()
+        {
+         
+
+
+            // read messages
+            NetIncomingMessage msg;
+            while ((msg = client.ReadMessage()) != null)
+            {
+                switch (msg.MessageType)
+                {
+                    case NetIncomingMessageType.DiscoveryResponse:
+                        // just connect to first server discovered
+                        client.Connect(msg.SenderEndpoint);
+                        break;
+                    case NetIncomingMessageType.Data:
+                        // server sent a position update                       
+
+                        //for (int s = 0; s < NumberOfPlayers; s++)
+                        //{
+                            int serverNumberOfPlayers = msg.ReadInt32();
+                            if (serverNumberOfPlayers > NumberOfPlayers)
+                            {
+                                NumberOfPlayers = serverNumberOfPlayers;
+                                Player = new Player[NumberOfPlayers];
+                                for (int r = 0; r < NumberOfPlayers; r++)
+                                {
+                                    Player[r] = new Player(this);
+                                }
+                                TryLoadPlayerSprites();
+                            }
+                            int index = msg.ReadInt32();
+                            int x = msg.ReadInt32();
+                            int y = msg.ReadInt32();
+
+                            try
+                            {
+                                Player[index].Position = new Vector2(x, y);
+                            }
+                            catch { }//keep local data coz its real time and therfore smoother
+                        //}
+                        break;
+                }
+
+
+            }
+
+            //
+            // If there's input; send it to server
+            //
+            NetOutgoingMessage om = client.CreateMessage();
+            om.Write((Int32)MyIndex);
+            om.Write((Int32)Player[MyIndex].Position.X); // very inefficient to send a full Int32 (4 bytes) but we'll use this for simplicity
+            om.Write((Int32)Player[MyIndex].Position.Y);
+            client.SendMessage(om, NetDeliveryMethod.ReliableOrdered);
+        }
+
+        
         protected override void Update(GameTime gameTime)
         {
+            if (Mode == GameMode.Multiplayer)
+            {
+                Networking();
+            }
+
             if (Menu.CurrentScreen == Menu.Card.InGame)
             {
                 for (int r = 0; r < NumberOfPlayers; r++)
