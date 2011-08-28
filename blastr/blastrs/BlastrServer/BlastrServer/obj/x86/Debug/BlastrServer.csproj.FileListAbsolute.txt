@@ -10,3 +10,13 @@ C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\bin\x86\Debug\Lidgren.Networ
 C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\obj\x86\Debug\BlastrServer.exe
 C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\obj\x86\Debug\BlastrServer.pdb
 C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\bin\x86\Debug\Content\add.xnb
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Content\add.xnb
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\BlastrServer.exe
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\BlastrServer.pdb
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Lidgren.Network.Xna.pdb
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Lidgren.Network.pdb
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Lidgren.Network.xml
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\obj\x86\Debug\BlastrServer.exe
+C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\obj\x86\Debug\BlastrServer.pdb

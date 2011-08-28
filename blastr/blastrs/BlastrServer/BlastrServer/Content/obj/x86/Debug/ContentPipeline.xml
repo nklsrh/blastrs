@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\bin\x86\Debug\Content\add.xnb</Output>
+      <Output>C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Content\add.xnb</Output>
       <Time>2011-08-18T15:50:02.1932992+10:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -15,10 +15,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Nikhil\Documents\BlastrServer\BlastrServer\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nikhil\Documents\blastrs\BlastrServer\BlastrServer\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
